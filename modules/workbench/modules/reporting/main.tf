@@ -55,14 +55,32 @@ locals {
   }
   QUERY_TEMPLATE_SUFFIX = ".sql"
   # Local filenames for view templates. Returns something like ["latest_users.sql", "users_by_id.sql"]
-  view_query_template_filenames = fileset("${path.module}/assets/views", "*.sql")
+  timeseries_view_template_filenames = fileset("${path.module}/assets/views/timeseries", "*.sql")
   # expanded to fully qualified path, e.g. ["/repos/workbench/terraform/modules/reporting/views/latest_users.sql", ...]
-  view_query_template_paths = [for file_name in local.view_query_template_filenames : pathexpand("${path.module}/assets/views/${file_name}")]
+  timeseries_view_template_paths = [for file_name in local.timeseries_view_template_filenames :
+    pathexpand("${path.module}/assets/views/timeseries/${file_name}")]
+
+  live_view_tables = [for table_input in local.table_inputs : table_input["table_id"] ]
+  live_view_template_path = pathexpand("${path.module}/assets/views/live/live_table.sql")
+
+  # All live views (live_user, live_cohort, etc) depend on the tables being created first, so we need to make sure
+  # Teraform treats each view as depending on all the tables. It's not possible to depend on the exact
+  # table (I think) but this should solve the dependency problem of trying to create the view before
+  # its table. https://stackoverflow.com/q/64795896/12345554
+  live_views = [for table_name in module.main.table_names :
+  merge({
+    view_id = "live_${table_name}"
+    query = templatefile(local.live_view_template_path, {
+      project = var.project_id
+      dataset = var.reporting_dataset_id
+      table_name = table_name
+    })
+  }, local.VIEW_CONSTANTS)]
 
   # Create views for each .sql file in the views directory. There is no Terraform
   # dependency from the view to the table(s) it queries, and I  don't believe the SQL is even checked
   # for accuracy prior to creation on the BQ side.
-  views = [for view_query_template_path in local.view_query_template_paths :
+  timeseries_views = [for view_query_template_path in local.timeseries_view_template_paths :
     merge({
       view_id = replace(basename(view_query_template_path), local.QUERY_TEMPLATE_SUFFIX, ""),
       query = templatefile(view_query_template_path, {
@@ -71,6 +89,7 @@ locals {
       })
   }, local.VIEW_CONSTANTS)]
 
+  views = concat(local.live_views, local.timeseries_views)
 }
 
 # All BigQuery assets for Reporting subsystem
@@ -88,13 +107,6 @@ module "main" {
   description  = "Daily output of relational tables and time series views for analysis. Views are provided for general ad-hoc analysis."
 
   tables = local.tables
-
-  # Note that, when creating this module fom the ground up, it's common to see an error like
-  # `Error: googleapi: Error 404: Not found: Table my-project:my_dataset.my_table, notFound`. It seems
-  # to be a momentary issue due to the dataset's existence not yet being observable to the table/view
-  # create API. So far, it's always worked on a re-run.
-  # TODO(jaycarlton) see if there's a way to put a retry on this. I'm not convinced that will work
-  #   outside of a resource context (and inside a third-party module).
   views = local.views
 
   dataset_labels = {
