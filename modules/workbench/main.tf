@@ -9,3 +9,11 @@ module "reporting" {
   # provider
   project_id = var.project_id
 }
+
+# Stackdriver Alerting
+module "monitoring" {
+  source                    = "./modules/monitoring"
+  project_id                = var.project_id
+  notification_channel_info = var.notification_channel_info
+  aou_env                   = var.aou_env
+}
