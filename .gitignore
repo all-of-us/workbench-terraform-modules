@@ -2,3 +2,4 @@
 *.tfstate
 *.backup
 *.iml
+.DS_Store

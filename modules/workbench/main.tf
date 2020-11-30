@@ -1,4 +1,4 @@
-# Module for creating an instance of the scratch AoU RW Environment
+# Workbench Analytics Reporting Subsystem
 module "reporting" {
   source = "./modules/reporting"
 
