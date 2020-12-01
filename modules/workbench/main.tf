@@ -9,3 +9,8 @@ module "reporting" {
   # provider
   project_id = var.project_id
 }
+
+module "egress_detection" {
+  source          = "./modules/egress_detection"
+  sumologic_users = var.sumologic_users
+}

@@ -5,6 +5,9 @@ terraform {
     google = {
       source = "hashicorp/google"
     }
+    sumologic = {
+      source = "terraform-providers/sumologic"
+    }
   }
 }
 
@@ -16,4 +19,11 @@ provider "google" {
   # Rather than provide a credentials_file value, we should
   # use Application-default credentials.
   # https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login
+}
+
+# Define SUMOLOGIC_ACCESSID and SUMOLOGIC_ACCESSKEY env vars
+provider "sumologic" {
+  access_id   = "sukzQ4XDP8XBDA"
+  access_key  = "0pKae4xvF4QlULDWLzW6J1g4xKkrD7IBbOVRUYO8WZuoLyRAzykZyUv4b7RwYwfM"
+  environment = "us2"
 }
