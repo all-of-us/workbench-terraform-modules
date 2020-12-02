@@ -1,0 +1,49 @@
+
+_sourceCategory = gcp/vpcflowlogs/aou/{{environment}} logName resource timestamp
+| json "message.data.jsonPayload" as payload
+| json "message.data.resource" as resource
+| parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
+| where log_name matches "projects/*/logs/compute.googleapis.com%2Fvpc_flows"
+| json field=resource "type" as type
+| where type = "gce_subnetwork"
+| json field=payload "reporter" as reporter
+| where reporter matches "SRC"
+| json field = payload "connection.dest_ip" as dest_ip
+| where !(dest_ip in (
+  "199.36.153.4",
+  "199.36.153.5",
+  "199.36.153.6",
+  "199.36.153.7"))
+| json field=resource "labels.project_id" as project_name
+| json field=payload "bytes_sent", "start_time", "end_time" as bytes_sent, start_time, end_time
+| json field=payload "src_instance.vm_name" as vm_name nodrop
+| parse regex field=vm_name "^(?<vm_prefix>all-of-us-\d+)(?:$|-[mw].*)" nodrop
+| if (vm_name matches /^all-of-us-\d+$/, bytes_sent, 0) as gce_bytes_sent
+| if (vm_name matches /^all-of-us-\d+-m$/, bytes_sent, 0) as dataproc_master_bytes_sent
+| if (vm_name matches /^all-of-us-\d+-w-\d+$/, bytes_sent, 0) as dataproc_worker_bytes_sent
+| timeslice {{window_in_seconds}}s
+| sum(bytes_sent) as bytes_sent,
+  sum(gce_bytes_sent) as gce_bytes_sent,
+  sum(dataproc_master_bytes_sent) as dataproc_master_bytes_sent,
+  sum(dataproc_worker_bytes_sent) as dataproc_worker_bytes_sent
+  by _timeslice, project_name, vm_prefix
+| bytes_sent / 1Mi as egress_mib
+| gce_bytes_sent / 1Mi as gce_egress_mib
+| dataproc_master_bytes_sent / 1Mi as dataproc_master_egress_mib
+| dataproc_worker_bytes_sent / 1Mi as dataproc_worker_egress_mib
+| toLong(_timeslice) as time_window_start
+| "{{environment}}" as environment
+| "{{window_in_seconds}}" as time_window_duration
+| "{{egress_threshold_in_mib}}" as egress_mib_threshold
+| fields
+  environment,
+  time_window_duration,
+  time_window_start,
+  egress_mib,
+  egress_mib_threshold,
+  project_name,
+  vm_prefix,
+  gce_egress_mib,
+  dataproc_master_egress_mib,
+  dataproc_worker_egress_mib
+| where egress_mib > {{egress_threshold_in_mib}}

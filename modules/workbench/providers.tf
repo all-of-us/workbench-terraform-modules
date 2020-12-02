@@ -21,9 +21,9 @@ provider "google" {
   # https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login
 }
 
-# Define SUMOLOGIC_ACCESSID and SUMOLOGIC_ACCESSKEY env vars
-provider "sumologic" {
-  access_id   = "sukzQ4XDP8XBDA"
-  access_key  = "0pKae4xvF4QlULDWLzW6J1g4xKkrD7IBbOVRUYO8WZuoLyRAzykZyUv4b7RwYwfM"
-  environment = "us2"
-}
+# Define sensitive keys as env vars. All three must be absent from the provider block
+# and exported for this to work.
+# $ export SUMOLOGIC_ACCESSID="your-access-id"
+# $ export SUMOLOGIC_ACCESSKEY="your-access-key"
+# $ export SUMOLOGIC_ENVIRONMENT=us2
+provider "sumologic" {}

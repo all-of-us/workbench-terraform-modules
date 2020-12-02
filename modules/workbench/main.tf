@@ -11,6 +11,7 @@ module "reporting" {
 }
 
 module "egress_detection" {
-  source          = "./modules/egress_detection"
-  sumologic_users = var.sumologic_users
+  source                      = "./modules/egress_detection"
+  sumologic_egress_thresholds = var.sumologic_egress_thresholds
+  aou_env                     = var.aou_env
 }
