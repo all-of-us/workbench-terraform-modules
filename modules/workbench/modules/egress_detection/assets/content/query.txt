@@ -1,5 +1,5 @@
 
-_sourceCategory = gcp/vpcflowlogs/aou/{{environment}} logName resource timestamp
+_sourceCategory = gcp/vpcflowlogs/aou/${aou_env} logName resource timestamp
 | json "message.data.jsonPayload" as payload
 | json "message.data.resource" as resource
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
@@ -32,9 +32,9 @@ _sourceCategory = gcp/vpcflowlogs/aou/{{environment}} logName resource timestamp
 | dataproc_master_bytes_sent / 1Mi as dataproc_master_egress_mib
 | dataproc_worker_bytes_sent / 1Mi as dataproc_worker_egress_mib
 | toLong(_timeslice) as time_window_start
-| "{{environment}}" as environment
-| "{{window_in_seconds}}" as time_window_duration
-| "{{egress_threshold_in_mib}}" as egress_mib_threshold
+| ${aou_env} as environment
+| ${egress_window_sec} as time_window_duration
+| ${egress_threshold_mib} as egress_mib_threshold
 | fields
   environment,
   time_window_duration,
