@@ -67,7 +67,7 @@ locals {
   # Teraform treats each view as depending on all the tables. It's not possible to depend on the exact
   # table (I think) but this should solve the dependency problem of trying to create the view before
   # its table. https://stackoverflow.com/q/64795896/12345554
-  live_views = [for table_name in module.main.table_names :
+  live_views = [for table_name in toset(module.main.table_names) :
     merge({
       view_id = "live_${table_name}"
       query = templatefile(local.live_view_template_path, {
@@ -114,4 +114,5 @@ module "main" {
     terraform_managed = "true"
     aou_env           = var.aou_env
   }
+  access = var.reporting_dataset_access
 }

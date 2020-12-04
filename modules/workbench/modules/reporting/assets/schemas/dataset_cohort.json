@@ -1,0 +1,17 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "cohort_id",
+    "type": "INTEGER",
+    "description": ""
+  },
+  {
+    "name": "dataset_id",
+    "type": "INTEGER",
+    "description": ""
+  }
+]
