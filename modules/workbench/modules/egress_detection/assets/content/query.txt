@@ -21,7 +21,7 @@ _sourceCategory = gcp/vpcflowlogs/aou/${aou_env} logName resource timestamp
 | if (vm_name matches /^all-of-us-\d+$/, bytes_sent, 0) as gce_bytes_sent
 | if (vm_name matches /^all-of-us-\d+-m$/, bytes_sent, 0) as dataproc_master_bytes_sent
 | if (vm_name matches /^all-of-us-\d+-w-\d+$/, bytes_sent, 0) as dataproc_worker_bytes_sent
-| timeslice {{window_in_seconds}}s
+| timeslice ${egress_window_sec}s
 | sum(bytes_sent) as bytes_sent,
   sum(gce_bytes_sent) as gce_bytes_sent,
   sum(dataproc_master_bytes_sent) as dataproc_master_bytes_sent,
@@ -46,4 +46,4 @@ _sourceCategory = gcp/vpcflowlogs/aou/${aou_env} logName resource timestamp
   gce_egress_mib,
   dataproc_master_egress_mib,
   dataproc_worker_egress_mib
-| where egress_mib > {{egress_threshold_in_mib}}
+| where egress_mib > ${egress_threshold_mib}

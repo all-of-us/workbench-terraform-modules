@@ -5,17 +5,28 @@ locals {
   search_configs        = fileset(local.content_dir, "*.json")
   content_template_path = pathexpand("${local.content_dir}/egress_window_template.json")
   query_path            = pathexpand("${local.content_dir}/query.txt")
-}
 
-# Nested calls to templatefile() aren't possible, so maybe doing a template data block
-# for the inner query file will work. https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file
-data "template_file" "query_text" {
-  for_each = var.sumologic_egress_thresholds
-  template = file(local.query_path)
-  vars = {
-    aou_env              = var.aou_env
-    egress_threshold_mib = lookup(each.value, "egress_threshold_mib", 0)
-    egress_window_sec    = lookup(each.value, "egress_window_sec", 0)
+  queries_rendered = { for egress_rule, threshold in var.sumologic_egress_thresholds :
+    tostring(egress_rule) => templatefile(local.query_path, {
+      aou_env              = var.aou_env
+      egress_threshold_mib = lookup(threshold, "egress_threshold_mib", 0)
+      egress_window_sec    = lookup(threshold, "egress_window_sec", 0)
+    })
+  }
+
+  queries_encoded = { for egress_rule, query_text in local.queries_rendered :
+    egress_rule => jsonencode(query_text)
+  }
+
+  # Build a map of rendered Content templates for use in the sumologic_content resource and
+  # module outputs
+  egress_rule_to_config = { for egress_rule, threshold in var.sumologic_egress_thresholds :
+    egress_rule => templatefile(local.content_template_path, {
+      aou_env              = var.aou_env
+      egress_threshold_mib = lookup(threshold, "egress_threshold_mib", 0)
+      egress_window_sec    = lookup(threshold, "egress_window_sec", 0)
+      query_text           = lookup(local.queries_encoded, egress_rule)
+    })
   }
 }
 
@@ -25,11 +36,6 @@ data "template_file" "query_text" {
 resource "sumologic_content" "main" {
   for_each  = var.sumologic_egress_thresholds
   parent_id = data.sumologic_personal_folder.aou_rw_egress_alerts.id
-  config = templatefile(local.content_template_path, {
-    aou_env              = var.aou_env
-    egress_threshold_mib = lookup(each.value, "egress_threshold_mib", 0)
-    egress_window_sec    = lookup(each.value, "egress_window_sec", 0)
-
-    query_text = "${jsonencode(data.template_file.query_text[each.key].rendered)}"
-  })
+  config    = lookup(local.egress_rule_to_config, each.key, "")
 }
+
