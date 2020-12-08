@@ -35,12 +35,15 @@ variable reporting_dataset_id {
   type        = string
 }
 
+variable reporting_dataset_access {
+  description = "Access grants to the dataset"
+  type        = list(map(string)) # It's not possible to use optional attributes, so this is the tightest type
+  default     = []
+}
 #
 # Egress
 #
-variable sumologic_egress_thresholds {
-  description = "Configuration values for egress search content in SumoLogic. The name (key) describes simply the tier name and config: "
-  default = {
+  type        = list(map(string)) # It's not possible to use optional attributes, so this is the tightest type
     tier_1__short = {
       vpc_perimeter_name   = "tier-name-1"
       egress_threshold_mib = 1

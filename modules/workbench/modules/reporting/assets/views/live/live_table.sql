@@ -8,6 +8,4 @@ WHERE
         SELECT
             MAX(u.snapshot_timestamp)
         FROM
-            `${project}`.${dataset}.user u)
-ORDER BY
-    t.${table_name}_id;
+            `${project}`.${dataset}.user u);

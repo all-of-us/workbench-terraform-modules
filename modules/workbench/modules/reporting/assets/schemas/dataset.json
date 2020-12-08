@@ -1,0 +1,52 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "creation_time",
+    "type": "TIMESTAMP",
+    "description": "Timestamp of dataset creation"
+  },
+  {
+    "name": "creator_id",
+    "type": "INTEGER",
+    "description": "FK into user table for user who created this dataset"
+  },
+  {
+    "name": "dataset_id",
+    "type": "INTEGER",
+    "description": "PK in dataset table"
+  },
+  {
+    "name": "description",
+    "type": "STRING",
+    "description": "User-provided description for the dataset."
+  },
+  {
+    "name": "includes_all_participants",
+    "type": "BOOLEAN",
+    "description": "If true, this dataset contains data from all participants available instead a single cohort.."
+  },
+  {
+    "name": "last_modified_time",
+    "type": "TIMESTAMP",
+    "description": "Last user-visible modification to the dataset"
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "description": "User-provided name for this Dataset. Unique within the owning workspace."
+  },
+  {
+    "name": "pre_packaged_concept_set",
+    "type": "INTEGER",
+    "description": "If true, this dataset refers to a pre-packaged concept set."
+  },
+  {
+    "name": "workspace_id",
+    "type": "INTEGER",
+    "description": "ID of workspace containing this dataset. FK into workspace table."
+  }
+]

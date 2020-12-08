@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "dataset_id",
+    "type": "INTEGER",
+    "description": ""
+  },
+  {
+    "name": "domain_id",
+    "type": "STRING",
+    "description": "Numerical ID for domain associated with a value (column) name."
+  },
+  {
+    "name": "value",
+    "type": "STRING",
+    "description": "Human-readable name in ALL CAPS for this column (value)."
+  }
+]
