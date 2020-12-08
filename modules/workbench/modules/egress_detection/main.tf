@@ -1,5 +1,3 @@
-data "sumologic_personal_folder" "aou_rw_egress_alerts" {}
-
 locals {
   content_dir           = pathexpand("${path.module}/assets/content")
   search_configs        = fileset(local.content_dir, "*.json")
@@ -29,6 +27,8 @@ locals {
     })
   }
 }
+
+data "sumologic_personal_folder" "aou_rw_egress_alerts" {}
 
 # Simply export a content file or folder and put the JSON file in ./assets/content.
 # Since the query is so long (and critical) and is json-encoded, it's easier

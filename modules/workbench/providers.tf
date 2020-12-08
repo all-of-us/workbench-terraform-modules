@@ -6,10 +6,15 @@ terraform {
       source = "hashicorp/google"
     }
     sumologic = {
-      source = "terraform-providers/sumologic"
+      source  = "SumoLogic/sumologic"
+      version = "2.6.0"
     }
+    //    sumologic = {
+    //      source = "terraform-providers/sumologic" // "SumoLogic/sumologic" ?
+    //    }
   }
 }
+
 
 provider "google" {
   version = "3.5.0"
