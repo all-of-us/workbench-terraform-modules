@@ -37,8 +37,8 @@ variable reporting_dataset_id {
 
 variable reporting_dataset_access {
   description = "Access list for the reporting dataset"
-  type = list(map(string))
-  default = []
+  type        = list(map(string))
+  default     = []
 }
 
 # TODO(jaycarlton) codegen this top-level variables as the union
@@ -87,11 +87,11 @@ to use recognizable tokens.
 EOF
 
   type = map(
-  object({
-    display_name = string
-    type         = string
-    labels       = map(string)
-    description  = string
-    project_id   = string
+    object({
+      display_name = string
+      type         = string
+      labels       = map(string)
+      description  = string
+      project_id   = string
   }))
 }

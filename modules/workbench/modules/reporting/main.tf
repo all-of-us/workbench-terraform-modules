@@ -68,13 +68,13 @@ locals {
   # table (I think) but this should solve the dependency problem of trying to create the view before
   # its table. https://stackoverflow.com/q/64795896/12345554
   live_views = [for table_name in module.main.table_ids :
-  merge({
-    view_id = "live_${table_name}"
-    query = templatefile(local.live_view_template_path, {
-      project = var.project_id
-      dataset = var.reporting_dataset_id
-      table_name = table_name
-    })
+    merge({
+      view_id = "live_${table_name}"
+      query = templatefile(local.live_view_template_path, {
+        project    = var.project_id
+        dataset    = var.reporting_dataset_id
+        table_name = table_name
+      })
   }, local.VIEW_CONSTANTS)]
 
   # Create views for each .sql file in the views directory. There is no Terraform
