@@ -5,6 +5,7 @@ variable aou_env {
 
 variable sumologic_egress_thresholds {
   description = "Configuration values for egress search content in SumoLogic. The name (key) describes simply the tier name and config: "
+  type        = map(map(any))
   default = {
     tier_1__short = {
       vpc_perimeter_name   = "tier-name-1"
@@ -36,8 +37,5 @@ variable sumologic_egress_thresholds {
       egress_threshold_mib = 1000000
       egress_window_sec    = 1800
     }
-
   }
-
-  type = map(any)
 }

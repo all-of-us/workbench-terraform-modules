@@ -43,7 +43,11 @@ variable reporting_dataset_access {
 #
 # Egress
 #
-  type        = list(map(string)) # It's not possible to use optional attributes, so this is the tightest type
+
+variable sumologic_egress_thresholds {
+  description = "Configuration values for egress search content in SumoLogic. The name (key) describes simply the tier name and config: "
+  type        = map(map(any))
+  default = {
     tier_1__short = {
       vpc_perimeter_name   = "tier-name-1"
       egress_threshold_mib = 1
@@ -75,5 +79,4 @@ variable reporting_dataset_access {
       egress_window_sec    = 1800
     }
   }
-  type = map(any)
 }
