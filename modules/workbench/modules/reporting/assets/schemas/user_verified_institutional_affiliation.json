@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "institution_id",
+    "type": "INTEGER",
+    "description": "Foreign key into institution table. Each user is only affiliated\nwith a single institution."
+  },
+  {
+    "name": "institutional_role_enum",
+    "type": "STRING",
+    "description": "Description of the user's role at the institution they are\naffiliated with. Selected from a list of predefined values. If \"other\", see institutional_role_other_text\nfor custom description."
+  },
+  {
+    "name": "institutional_role_other_text",
+    "type": "STRING",
+    "description": "If the institutional_role_enum is \"other\", custom description\nof this user's role in the institution."
+  }
+]

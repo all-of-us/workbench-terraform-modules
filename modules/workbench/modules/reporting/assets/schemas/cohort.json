@@ -17,7 +17,7 @@
   {
     "name": "creator_id",
     "type": "INTEGER",
-    "description": "User ID of cohort creator. Should be a foreign key into the user table."
+    "description": "User ID of cohort crerator. Should be a foreign key into the user table."
   },
   {
     "name": "criteria",
@@ -38,16 +38,6 @@
     "name": "name",
     "type": "STRING",
     "description": "User-provided human-readable name for this cohort."
-  },
-  {
-    "name": "type",
-    "type": "STRING",
-    "description": "Deprecated. For internal use only."
-  },
-  {
-    "name": "version",
-    "type": "INTEGER",
-    "description": "Deprecated. For internal use only."
   },
   {
     "name": "workspace_id",

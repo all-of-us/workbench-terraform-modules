@@ -119,6 +119,7 @@
     "type": "STRING",
     "description": "Intended field of study for this research"
   },
+
   {
     "name": "rp_methods_development",
     "type": "BOOLEAN",

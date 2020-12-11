@@ -1,0 +1,57 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "concept_set_id",
+    "type": "INTEGER",
+    "description": "PK for concept_set table. Globally unique."
+  },
+  {
+    "name": "creation_time",
+    "type": "TIMESTAMP",
+    "description": "Time concept set was created by a user."
+  },
+  {
+    "name": "creator_id",
+    "type": "INTEGER",
+    "description": "FK into user table for creator of this concept set."
+  },
+  {
+    "name": "description",
+    "type": "STRING",
+    "description": "User-provided plain text description for this concept set."
+  },
+  {
+    "name": "domain",
+    "type": "INTEGER",
+    "description": "The subject area to which all concepts in this set belongs."
+  },
+  {
+    "name": "last_modified_time",
+    "type": "TIMESTAMP",
+    "description": "Time of last user modification of this concept set."
+  },
+  {
+    "name": "name",
+    "type": "STRING",
+    "description": "User-defined name for this concept set"
+  },
+  {
+    "name": "participant_count",
+    "type": "INTEGER",
+    "description": "Number of participants in the corpus that match one or  more concepts in this set."
+  },
+  {
+    "name": "survey",
+    "type": "STRING",
+    "description": "If present, name of survey supplying concepts in this concept set. Pre-defined list of choices."
+  },
+  {
+    "name": "workspace_id",
+    "type": "INTEGER",
+    "description": "FK into workspace table. ID of the workspace owning this concept set."
+  }
+]

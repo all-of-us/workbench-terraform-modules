@@ -1,0 +1,47 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "demographic_survey_id",
+    "type": "INTEGER",
+    "description": ""
+  },
+  {
+    "name": "disability",
+    "type": "INTEGER",
+    "description": ""
+  },
+  {
+    "name": "education",
+    "type": "INTEGER",
+    "description": ""
+  },
+  {
+    "name": "ethnicity",
+    "type": "INTEGER",
+    "description": ""
+  },
+  {
+    "name": "identifies_as_lgbtq",
+    "type": "BOOLEAN",
+    "description": ""
+  },
+  {
+    "name": "lgbtq_identity",
+    "type": "STRING",
+    "description": ""
+  },
+  {
+    "name": "user_id",
+    "type": "INTEGER",
+    "description": ""
+  },
+  {
+    "name": "year_of_birth",
+    "type": "INTEGER",
+    "description": ""
+  }
+]

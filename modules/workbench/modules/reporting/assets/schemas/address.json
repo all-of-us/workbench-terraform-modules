@@ -1,0 +1,37 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "city",
+    "type": "STRING",
+    "description": "User-reported city of residence."
+  },
+  {
+    "name": "country",
+    "type": "STRING",
+    "description": "User-reported country of residence."
+  },
+  {
+    "name": "state",
+    "type": "STRING",
+    "description": "User-reported state or province. Not guaranteed to match official abbreviations or spellings."
+  },
+  {
+    "name": "street_address_1",
+    "type": "STRING",
+    "description": "First line of user street address."
+  },
+  {
+    "name": "street_address_2",
+    "type": "STRING",
+    "description": "Second line of user street address."
+  },
+  {
+    "name": "zip_code",
+    "type": "STRING",
+    "description": "Up to 10-digit zip code for use residence."
+  }
+]
