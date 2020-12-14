@@ -47,6 +47,12 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "pre_packaged_concept_set",
+    "type": "INTEGER",
+    "description": "If true, this dataset refers to a pre-packaged concept set.",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "workspace_id",
     "type": "INTEGER",
     "description": "ID of workspace containing this dataset. FK into workspace table.",

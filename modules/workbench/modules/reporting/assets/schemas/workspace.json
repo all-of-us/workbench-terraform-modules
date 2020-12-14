@@ -139,7 +139,7 @@
   {
     "name": "rp_intended_study",
     "type": "STRING",
-    "description": "",
+    "description": "Intended field of study for this research",
     "mode": "NULLABLE"
   },
   {
@@ -151,7 +151,7 @@
   {
     "name": "rp_other_population_details",
     "type": "STRING",
-    "description": "",
+    "description": "If studying a specific population categorized as Other, user's description of that population.",
     "mode": "NULLABLE"
   },
   {
@@ -175,7 +175,7 @@
   {
     "name": "rp_reason_for_all_of_us",
     "type": "STRING",
-    "description": "",
+    "description": "Why All of Us was chosen for the research in this workspace.",
     "mode": "NULLABLE"
   },
   {
@@ -200,6 +200,12 @@
     "name": "rp_time_requested",
     "type": "TIMESTAMP",
     "description": "Time user  requested a research purpose review, or null if never requested.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "pre_packaged_concept_set",
+    "type": "INTEGER",
+    "description": "deprecated",
     "mode": "NULLABLE"
   },
   {
