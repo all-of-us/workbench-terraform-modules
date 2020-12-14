@@ -5,13 +5,13 @@
     "type": "INTEGER"
   },
   {
-    "name": "cohort_id",
+    "name": "concept_id",
     "type": "INTEGER",
     "description": "",
     "mode": "NULLABLE"
   },
   {
-    "name": "dataset_id",
+    "name": "concept_set_id",
     "type": "INTEGER",
     "description": "",
     "mode": "NULLABLE"

@@ -7,46 +7,49 @@
   {
     "name": "creation_time",
     "type": "TIMESTAMP",
-    "description": "Timestamp of dataset creation"
+    "description": "Timestamp of dataset creation",
+    "mode": "NULLABLE"
   },
   {
     "name": "creator_id",
     "type": "INTEGER",
-    "description": "FK into user table for user who created this dataset"
+    "description": "FK into user table for user who created this dataset",
+    "mode": "NULLABLE"
   },
   {
     "name": "dataset_id",
     "type": "INTEGER",
-    "description": "PK in dataset table"
+    "description": "PK in dataset table",
+    "mode": "NULLABLE"
   },
   {
     "name": "description",
     "type": "STRING",
-    "description": "User-provided description for the dataset."
+    "description": "User-provided description for the dataset.",
+    "mode": "NULLABLE"
   },
   {
     "name": "includes_all_participants",
     "type": "BOOLEAN",
-    "description": "If true, this dataset contains data from all participants available instead a single cohort.."
+    "description": "If true, this dataset contains data from all participants available instead a single cohort..",
+    "mode": "NULLABLE"
   },
   {
     "name": "last_modified_time",
     "type": "TIMESTAMP",
-    "description": "Last user-visible modification to the dataset"
+    "description": "Last user-visible modification to the dataset",
+    "mode": "NULLABLE"
   },
   {
     "name": "name",
     "type": "STRING",
-    "description": "User-provided name for this Dataset. Unique within the owning workspace."
-  },
-  {
-    "name": "pre_packaged_concept_set",
-    "type": "INTEGER",
-    "description": "If true, this dataset refers to a pre-packaged concept set."
+    "description": "User-provided name for this Dataset. Unique within the owning workspace.",
+    "mode": "NULLABLE"
   },
   {
     "name": "workspace_id",
     "type": "INTEGER",
-    "description": "ID of workspace containing this dataset. FK into workspace table."
+    "description": "ID of workspace containing this dataset. FK into workspace table.",
+    "mode": "NULLABLE"
   }
 ]
