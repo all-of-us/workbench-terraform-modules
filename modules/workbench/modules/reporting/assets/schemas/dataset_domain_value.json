@@ -7,16 +7,19 @@
   {
     "name": "dataset_id",
     "type": "INTEGER",
-    "description": ""
+    "description": "",
+    "mode": "NULLABLE"
   },
   {
     "name": "domain_id",
     "type": "STRING",
-    "description": "Numerical ID for domain associated with a value (column) name."
+    "description": "Numerical ID for domain associated with a value (column) name.",
+    "mode": "NULLABLE"
   },
   {
     "name": "value",
     "type": "STRING",
-    "description": "Human-readable name in ALL CAPS for this column (value)."
+    "description": "Human-readable name in ALL CAPS for this column (value).",
+    "mode": "NULLABLE"
   }
 ]
