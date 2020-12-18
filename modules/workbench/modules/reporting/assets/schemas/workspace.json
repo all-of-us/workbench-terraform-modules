@@ -7,171 +7,211 @@
   {
     "name": "billing_account_type",
     "type": "STRING",
-    "description": "Whether the workspace's billing account is the free tier account, or a user-provided billing\naccount"
+    "description": "Whether the workspace's billing account is the free tier account, or a user-provided billing\naccount",
+    "mode": "NULLABLE"
   },
   {
     "name": "billing_status",
     "type": "STRING",
-    "description": "Is the billing account associated with this workspace available to incur costs?  For a free\ntier project, this indicates whether a user has an available balance in their quota.  For a\nuser-provided billing account, this corresponds to whether payment is valid and up to date."
+    "description": "Is the billing account associated with this workspace available to incur costs?  For a free\ntier project, this indicates whether a user has an available balance in their quota.  For a\nuser-provided billing account, this corresponds to whether payment is valid and up to date.",
+    "mode": "NULLABLE"
   },
   {
     "name": "cdr_version_id",
     "type": "INTEGER",
-    "description": "Foreign key into CDR table."
+    "description": "Foreign key into CDR table.",
+    "mode": "NULLABLE"
   },
   {
     "name": "creation_time",
     "type": "TIMESTAMP",
-    "description": "Time workspace was initially created."
+    "description": "Time workspace was initially created.",
+    "mode": "NULLABLE"
   },
   {
     "name": "creator_id",
     "type": "INTEGER",
-    "description": "User ID of user who initially created this workspace."
+    "description": "User ID of user who initially created this workspace.",
+    "mode": "NULLABLE"
   },
   {
     "name": "disseminate_research_other",
     "type": "STRING",
-    "description": "Description of user-defined research dissemination option."
+    "description": "Description of user-defined research dissemination option.",
+    "mode": "NULLABLE"
   },
   {
     "name": "last_accessed_time",
     "type": "TIMESTAMP",
-    "description": "No longer in use. Column should be ignored."
+    "description": "No longer in use. Column should be ignored.",
+    "mode": "NULLABLE"
   },
   {
     "name": "last_modified_time",
     "type": "TIMESTAMP",
-    "description": "Last time a modification was made to this workspace, with  certain exceptions. In general,\nonly changes that should alter sort order in the Recent Workspaces UI trigger an update\nto the last modified time."
+    "description": "Last time a modification was made to this workspace, with  certain exceptions. In general,\nonly changes that should alter sort order in the Recent Workspaces UI trigger an update\nto the last modified time.",
+    "mode": "NULLABLE"
   },
   {
     "name": "name",
     "type": "STRING",
-    "description": "User-defined name for this workspace. Human-readable."
+    "description": "User-defined name for this workspace. Human-readable.",
+    "mode": "NULLABLE"
   },
   {
     "name": "needs_rp_review_prompt",
     "type": "INTEGER",
-    "description": "If true, the owner of the workspace will be asked to review the Research purpose."
+    "description": "If true, the owner of the workspace will be asked to review the Research purpose.",
+    "mode": "NULLABLE"
   },
   {
     "name": "published",
     "type": "BOOLEAN",
-    "description": "If true, this workspace has been published."
+    "description": "If true, this workspace has been published.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_additional_notes",
     "type": "STRING",
-    "description": "Research purpose additional notes input."
+    "description": "Research purpose additional notes input.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_ancestry",
     "type": "BOOLEAN",
-    "description": "If true, user has reported this workspace will study ancestry."
+    "description": "If true, user has reported this workspace will study ancestry.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_anticipated_findings",
     "type": "STRING",
-    "description": "Answer to question: \"What are the anticipated findings from the study?\nHow would your findings contribute to the body of scientific knowledge in\nthe field?\" 1000 character limit (applied client-side)."
+    "description": "Answer to question: \"What are the anticipated findings from the study?\nHow would your findings contribute to the body of scientific knowledge in\nthe field?\" 1000 character limit (applied client-side).",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_approved",
     "type": "BOOLEAN",
-    "description": "Status of the most recent Request for Review of Research Purpose\nDescription for this workspace.\nIf true, this workspace has been approved  by the Resource Access\nBoard. If false, it was rejected. If null, the workspace has not\nbeen adjudicated. If rp_review_requested is true and rp_approved is\nnull, the workspace has a review pending."
+    "description": "Status of the most recent Request for Review of Research Purpose\nDescription for this workspace.\nIf true, this workspace has been approved  by the Resource Access\nBoard. If false, it was rejected. If null, the workspace has not\nbeen adjudicated. If rp_review_requested is true and rp_approved is\nnull, the workspace has a review pending.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_commercial_purpose",
     "type": "BOOLEAN",
-    "description": "If true, this workspace and research have commercial goals."
+    "description": "If true, this workspace and research have commercial goals.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_control_set",
     "type": "BOOLEAN",
-    "description": "Reserch Control selected. All of Us data will be used as a reference or control\ndataset for comparison with another dataset from a different resource (e.g.\nCase-control studies)."
+    "description": "Reserch Control selected. All of Us data will be used as a reference or control\ndataset for comparison with another dataset from a different resource (e.g.\nCase-control studies).",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_disease_focused_research",
     "type": "BOOLEAN",
-    "description": "Disease-focused research: The primary purpose of the research is to learn more about\na particular disease or disorder (for example, type 2 diabetes), a trait (for example,\nblood pressure), or a set of related conditions (for example, autoimmune diseases,\npsychiatric disorders)."
+    "description": "Disease-focused research: The primary purpose of the research is to learn more about\na particular disease or disorder (for example, type 2 diabetes), a trait (for example,\nblood pressure), or a set of related conditions (for example, autoimmune diseases,\npsychiatric disorders).",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_disease_of_focus",
     "type": "STRING",
-    "description": "For workspaces that include Disese-focused Research, the user-supplied name of the diseas\nof focus (in the Name of Disease field)."
+    "description": "For workspaces that include Disese-focused Research, the user-supplied name of the diseas\nof focus (in the Name of Disease field).",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_drug_development",
     "type": "BOOLEAN",
-    "description": "Drug/Therapeutics Development Research selected. Primary focus of the research\nis drug/therapeutics development. The data will be used to understand treatment-gene\ninteractions or treatment outcomes relevant to the therapeutic(s) of interest."
+    "description": "Drug/Therapeutics Development Research selected. Primary focus of the research\nis drug/therapeutics development. The data will be used to understand treatment-gene\ninteractions or treatment outcomes relevant to the therapeutic(s) of interest.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_educational",
     "type": "BOOLEAN",
-    "description": "Educational Purpose: The data will be used for education purposes (e.g. for a college\nresearch methods course, to educate students on population-based research approaches)."
+    "description": "Educational Purpose: The data will be used for education purposes (e.g. for a college\nresearch methods course, to educate students on population-based research approaches).",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_ethics",
     "type": "BOOLEAN",
-    "description": "Ethical, Legal, and Social Implications (ELSI) Research: this\nresearch focuses on ethical, legal, and social implications (ELSI) of, or related to design,\nconduct, and translation of research."
+    "description": "Ethical, Legal, and Social Implications (ELSI) Research: this\nresearch focuses on ethical, legal, and social implications (ELSI) of, or related to design,\nconduct, and translation of research.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_intended_study",
     "type": "STRING",
-    "description": "Intended field of study for this research"
+    "description": "Intended field of study for this research",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_methods_development",
     "type": "BOOLEAN",
-    "description": "Methods development/validation study: The primary purpose of the use of All of Us data is to\ndevelop and/or validate specific methods/tools for analyzing or interpreting data (e.g.\nstatistical methods for describing data trends, developing more powerful methods to detect\ngene-environment, or other types of interactions in genome-wide association studies)."
+    "description": "Methods development/validation study: The primary purpose of the use of All of Us data is to\ndevelop and/or validate specific methods/tools for analyzing or interpreting data (e.g.\nstatistical methods for describing data trends, developing more powerful methods to detect\ngene-environment, or other types of interactions in genome-wide association studies).",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_other_population_details",
     "type": "STRING",
-    "description": "If studying a specific population categorized as Other, user's description of that population."
+    "description": "If studying a specific population categorized as Other, user's description of that population.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_other_purpose",
     "type": "BOOLEAN",
-    "description": "Other Purpose checkbox (requires rp_other_purpose_details)."
+    "description": "Other Purpose checkbox (requires rp_other_purpose_details).",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_other_purpose_details",
     "type": "STRING",
-    "description": "If your purpose of use is different from the options listed above, please\nselect \"Other Purpose\" and provide details regarding your purpose of data use here (500 character limit).\nrp_other_purpose should be true if this field is populated."
+    "description": "If your purpose of use is different from the options listed above, please\nselect \"Other Purpose\" and provide details regarding your purpose of data use here (500 character limit).\nrp_other_purpose should be true if this field is populated.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_population_health",
     "type": "BOOLEAN",
-    "description": "Population Health/Public Health Research: the primary purpose of using All of Us data is to\ninvestigate health behaviors, outcomes, access, and disparities in populations."
+    "description": "Population Health/Public Health Research: the primary purpose of using All of Us data is to\ninvestigate health behaviors, outcomes, access, and disparities in populations.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_reason_for_all_of_us",
     "type": "STRING",
-    "description": "Why All of Us was chosen for the research in this workspace."
+    "description": "Why All of Us was chosen for the research in this workspace.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_review_requested",
     "type": "BOOLEAN",
-    "description": "If true, a reivew has been requested by the Resource Access Board. This\nflag is currently not reset when a review is completed."
+    "description": "If true, a reivew has been requested by the Resource Access Board. This\nflag is currently not reset when a review is completed.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_scientific_approach",
     "type": "STRING",
-    "description": "Answer to the question \"What are the scientific approaches you plan to use for your\nstudy? Describe the datasets, research methods, and tools you will use to answer\nyour scientific question(s).\""
+    "description": "Answer to the question \"What are the scientific approaches you plan to use for your\nstudy? Describe the datasets, research methods, and tools you will use to answer\nyour scientific question(s).\"",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_social_behavioral",
     "type": "BOOLEAN",
-    "description": "If true, user states the research focuses on the social or behavioral phenomena or determinants of health."
+    "description": "If true, user states the research focuses on the social or behavioral phenomena or determinants of health.",
+    "mode": "NULLABLE"
   },
   {
     "name": "rp_time_requested",
     "type": "TIMESTAMP",
-    "description": "Time user  requested a research purpose review, or null if never requested."
+    "description": "Time user  requested a research purpose review, or null if never requested.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "pre_packaged_concept_set",
+    "type": "INTEGER",
+    "description": "deprecated",
+    "mode": "NULLABLE"
   },
   {
     "name": "workspace_id",
     "type": "INTEGER",
-    "description": "Primary key of the workspace table in Workrbench application database. Along with\nsnapshot_timestamp, serves as a pseudo-primary key for this table."
+    "description": "Primary key of the workspace table in Workrbench application database. Along with\nsnapshot_timestamp, serves as a pseudo-primary key for this table.",
+    "mode": "NULLABLE"
   }
 ]

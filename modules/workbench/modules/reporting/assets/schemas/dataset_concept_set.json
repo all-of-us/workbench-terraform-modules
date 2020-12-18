@@ -7,11 +7,13 @@
   {
     "name": "concept_set_id",
     "type": "INTEGER",
-    "description": "Unique concept set identifier. FK into concept_set table."
+    "description": "Unique concept set identifier. FK into concept_set table.",
+    "mode": "NULLABLE"
   },
   {
     "name": "dataset_id",
     "type": "INTEGER",
-    "description": "FK for dataset table."
+    "description": "FK for dataset table.",
+    "mode": "NULLABLE"
   }
 ]

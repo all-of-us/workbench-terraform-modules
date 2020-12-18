@@ -7,42 +7,50 @@
   {
     "name": "cohort_id",
     "type": "INTEGER",
-    "description": "Unique ID of this cohort in the application DB. Should be unique within each snapshot."
+    "description": "Unique ID of this cohort in the application DB. Should be unique within each snapshot.",
+    "mode": "NULLABLE"
   },
   {
     "name": "creation_time",
     "type": "TIMESTAMP",
-    "description": "Timestamp for creation of this cohort."
+    "description": "Timestamp for creation of this cohort.",
+    "mode": "NULLABLE"
   },
   {
     "name": "creator_id",
     "type": "INTEGER",
-    "description": "User ID of cohort creator. Should be a foreign key into the user table."
+    "description": "User ID of cohort crerator. Should be a foreign key into the user table.",
+    "mode": "NULLABLE"
   },
   {
     "name": "criteria",
     "type": "STRING",
-    "description": "JSON serialization of the selection criteria for this cohort. Schema is defined at\nhttps://github.com/all-of-us/workbench/pull/4076/files.  TODO: update with permanent URL."
+    "description": "JSON serialization of the selection criteria for this cohort. Schema is defined at\nhttps://github.com/all-of-us/workbench/pull/4076/files.  TODO: update with permanent URL.",
+    "mode": "NULLABLE"
   },
   {
     "name": "description",
     "type": "STRING",
-    "description": "User-provided cohort description from the Save Cohort dialog."
+    "description": "User-provided cohort description from the Save Cohort dialog.",
+    "mode": "NULLABLE"
   },
   {
     "name": "last_modified_time",
     "type": "TIMESTAMP",
-    "description": "Timestamp of last user modification to the cohort definition."
+    "description": "Timestamp of last user modification to the cohort definition.",
+    "mode": "NULLABLE"
   },
   {
     "name": "name",
     "type": "STRING",
-    "description": "User-provided human-readable name for this cohort."
+    "description": "User-provided human-readable name for this cohort.",
+    "mode": "NULLABLE"
   },
   {
     "name": "type",
     "type": "STRING",
-    "description": "Deprecated. For internal use only."
+    "description": "Deprecated. For internal use only.",
+        "mode": "NULLABLE"
   },
   {
     "name": "version",
@@ -52,6 +60,7 @@
   {
     "name": "workspace_id",
     "type": "INTEGER",
-    "description": "Application workspace ID of the workspace containing this cohort. Should be a foreign\nkey into the workspace table."
+    "description": "Application workspace ID of the workspace containing this cohort. Should be a foreign\nkey into the workspace table.",
+    "mode": "NULLABLE"
   }
 ]

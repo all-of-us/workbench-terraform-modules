@@ -36,7 +36,22 @@ variable reporting_dataset_id {
 }
 
 variable reporting_dataset_access {
-  description = "Access grants to the dataset"
-  type        = list(map(string)) # It's not possible to use optional attributes, so this is the tightest type
+  description = "Access list for the reporting dataset"
+  type        = list(map(string))
   default     = []
+}
+
+# TODO(jaycarlton) codegen this top-level variables as the union
+#   of all modules' variables files.
+# List of objects whose values correspond to the google_monitoring_notification_channel
+# structure
+variable "notification_channels" {
+  description = "Email address and Friendly Descriptions for Email Notification Channels"
+  default = [{
+    display_name = "Anonymous  Notification Channel"
+    type         = "" # email or
+    labels = {
+      email = ""
+    }
+  }]
 }

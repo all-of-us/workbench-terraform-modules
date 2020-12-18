@@ -1,4 +1,4 @@
- [
+[
   {
     "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
     "name": "snapshot_timestamp",
@@ -7,137 +7,164 @@
   {
     "name": "about_you",
     "type": "STRING",
-    "description": "User's description of themselves."
+    "description": "User's description of  their research background, experience and research interests.",
+    "mode": "NULLABLE"
   },
   {
     "name": "area_of_research",
     "type": "STRING",
-    "description": "User's primary area of research focus."
+    "description": "User's research area of focus.",
+    "mode": "NULLABLE"
   },
   {
     "name": "compliance_training_bypass_time",
     "type": "TIMESTAMP",
-    "description": "Time Compliance Training administratively bypassed, or null if this requirement\nwas never bypassed for this user."
+    "description": "Time Compliance Training administratively bypassed, or null if this requirement\nwas never bypassed for this user.",
+    "mode": "NULLABLE"
   },
   {
     "name": "compliance_training_completion_time",
     "type": "TIMESTAMP",
-    "description": "Time Compliance Training completed, or null if never completed."
+    "description": "Time Compliance Training completed, or null if never completed.",
+    "mode": "NULLABLE"
   },
   {
     "name": "compliance_training_expiration_time",
     "type": "TIMESTAMP",
-    "description": "Time  User's compliance training will expire, or null training not taken or if bypassed"
+    "description": "Time  User's compliance training will expire, or null if training not taken or if bypassed",
+    "mode": "NULLABLE"
   },
   {
     "name": "contact_email",
     "type": "STRING",
-    "description": "User's external email address on file."
+    "description": "User's external email address on file.",
+    "mode": "NULLABLE"
   },
   {
     "name": "creation_time",
     "type": "TIMESTAMP",
-    "description": "Timestamp of account creation."
+    "description": "Timestamp of account creation.",
+    "mode": "NULLABLE"
   },
   {
     "name": "current_position",
     "type": "STRING",
-    "description": "User's current role/position."
+    "description": "User's current role/position.",
+    "mode": "NULLABLE"
   },
   {
     "name": "data_access_level",
     "type": "STRING",
-    "description": "An indication of whether the user has completed the requirements for access to the\nregistered tier."
+    "description": "An indication of whether the user has completed the requirements for access to the\nregistered tier.",
+    "mode": "NULLABLE"
   },
   {
     "name": "data_use_agreement_bypass_time",
     "type": "TIMESTAMP",
-    "description": "Time an admin bypassed the DUCC rerquirement for this user, or null if that has not happened.\nThis value is reset to null if a user's bypassed status  is revoked."
+    "description": "Time an admin bypassed the DUCC rerquirement for this user, or null if that has not happened.\nThis value is reset to null if a user's bypassed status  is revoked.",
+    "mode": "NULLABLE"
   },
   {
     "name": "data_use_agreement_completion_time",
     "type": "TIMESTAMP",
-    "description": "Time user last completed DUCC"
+    "description": "Time user last completed DUCC",
+    "mode": "NULLABLE"
   },
   {
     "name": "data_use_agreement_signed_version",
     "type": "INTEGER",
-    "description": "Version of DUCC last signed by this user."
+    "description": "Version of DUCC last signed by this user.",
+    "mode": "NULLABLE"
   },
   {
     "name": "demographic_survey_completion_time",
     "type": "TIMESTAMP",
-    "description": "Timestamp for completion of Demographic Survey (if completed)."
+    "description": "Timestamp for completion of Demographic Survey (if completed).",
+    "mode": "NULLABLE"
   },
   {
     "name": "disabled",
     "type": "BOOLEAN",
-    "description": "If true, this account has been disabled by an administrator (or potentially an automatic process)."
+    "description": "If true, this account has been disabled by an administrator (or potentially an automatic process).",
+    "mode": "NULLABLE"
   },
   {
     "name": "era_commons_bypass_time",
     "type": "TIMESTAMP",
-    "description": "Time an administrator bypassed the ERA Commons requirement for this user."
+    "description": "Time an administrator bypassed the ERA Commons requirement for this user.",
+    "mode": "NULLABLE"
   },
   {
     "name": "era_commons_completion_time",
     "type": "TIMESTAMP",
-    "description": "Time user completed ERA Commons account link."
+    "description": "Time user completed ERA Commons account link.",
+    "mode": "NULLABLE"
   },
   {
     "name": "family_name",
     "type": "STRING",
-    "description": "User last name (family name)."
+    "description": "User last name (family name).",
+    "mode": "NULLABLE"
   },
   {
     "name": "first_registration_completion_time",
     "type": "TIMESTAMP",
-    "description": "Time user first completed registration."
+    "description": "Time user first completed registration.",
+    "mode": "NULLABLE"
   },
   {
     "name": "first_sign_in_time",
     "type": "TIMESTAMP",
-    "description": "Time user first signed into the Workbench with a GSuite account."
+    "description": "Time user first signed into the Workbench with a GSuite account.",
+    "mode": "NULLABLE"
   },
   {
     "name": "free_tier_credits_limit_days_override",
     "type": "INTEGER",
-    "description": "Override value for the default free tier time limit (days)."
+    "description": "Override value for the default free tier time limit (days).",
+    "mode": "NULLABLE"
   },
   {
     "name": "free_tier_credits_limit_dollars_override",
-    "type": "FLOAT",
-    "description": "Override value for the default free tier spending limit (USD)."
+    "type": "FLOAT64",
+    "description": "Override value for the default free tier spending limit (USD).",
+    "mode": "NULLABLE"
   },
   {
     "name": "given_name",
     "type": "STRING",
-    "description": "User first name (given name)."
+    "description": "User first name (given name).",
+    "mode": "NULLABLE"
   },
   {
     "name": "last_modified_time",
     "type": "TIMESTAMP",
-    "description": "Time of last modification to this user account."
+    "description": "Time of last modification to this user account.",
+    "mode": "NULLABLE"
   },
   {
     "name": "professional_url",
     "type": "STRING",
-    "description": "User's URL at primary place of work."
+    "description": "User's URL at primary place of work.",
+    "mode": "NULLABLE"
   },
   {
     "name": "two_factor_auth_bypass_time",
     "type": "TIMESTAMP",
-    "description": "Time an administrator bypassed the two-factor authentication requirement for this user,\nor null if it has not been bypassed."
+    "description": "Time an administrator bypassed the two-factor authentication requirement for this user,\nor null if it has not been bypassed.",
+    "mode": "NULLABLE"
   },
   {
     "name": "two_factor_auth_completion_time",
     "type": "TIMESTAMP",
-    "description": "Time user registered a two-factor authentication method satisfying the 2FA requirement."
+    "description": "Time user registered a two-factor authentication method satisfying the 2FA requirement.",
+    "mode": "NULLABLE"
   },
   {
     "name": "user_id",
     "type": "INTEGER",
-    "description": "Unique integer ID for this user, as assigned in the main Application DB. Serves as a pseudo-\nprimary key in this table when combined with a snapshot_timestamp. BigQuery doesn't enforce\nthis uniqueness, though."
+    "description": "Unique integer ID for this user, as assigned in the main Application DB. Serves as a pseudo-\nprimary key in this table when combined with a snapshot_timestamp. BigQuery doesn't enforce\nthis uniqueness, though.",
+    "mode": "NULLABLE"
   },
   {
     "name": "username",
@@ -147,46 +174,55 @@
   {
     "name": "city",
     "type": "STRING",
-    "description": "User-reported city of residence."
+    "description": "User-reported city of residence.",
+    "mode": "NULLABLE"
   },
   {
     "name": "country",
     "type": "STRING",
-    "description": "User-reported country of residence."
+    "description": "User-reported country of residence.",
+    "mode": "NULLABLE"
   },
   {
     "name": "state",
     "type": "STRING",
-    "description": "User-reported state or province. Not guaranteed to match official abbreviations or spellings."
+    "description": "User-reported state or province. Not guaranteed to match official abbreviations or spellings.",
+    "mode": "NULLABLE"
   },
   {
     "name": "street_address_1",
     "type": "STRING",
-    "description": "First line of user street address."
+    "description": "First line of user street address.",
+    "mode": "NULLABLE"
   },
   {
     "name": "street_address_2",
     "type": "STRING",
-    "description": "Second line of user street address."
+    "description": "Second line of user street address.",
+    "mode": "NULLABLE"
   },
   {
     "name": "zip_code",
     "type": "STRING",
-    "description": "Up to 10-digit zip code for use residence."
+    "description": "Up to 10-digit zip code for use residence.",
+    "mode": "NULLABLE"
   },
   {
     "name": "institution_id",
     "type": "INTEGER",
-    "description": "Foreign key into institution table. Each user is only affiliated\nwith a single institution."
+    "description": "Foreign key into institution table. Each user is only affiliated\nwith a single institution.",
+    "mode": "NULLABLE"
   },
   {
     "name": "institutional_role_enum",
     "type": "STRING",
-    "description": "Description of the user's role at the institution they are\naffiliated with. Selected from a list of predefined values. If \"other\", see institutional_role_other_text\nfor custom description."
+    "description": "Description of the user's role at the institution they are\naffiliated with. Selected from a list of predefined values. If \"other\", see institutional_role_other_text\nfor custom description.",
+    "mode": "NULLABLE"
   },
   {
     "name": "institutional_role_other_text",
     "type": "STRING",
-    "description": "If the institutional_role_enum is \"other\", custom description\nof this user's role in the institution."
+    "description": "If the institutional_role_enum is \"other\", custom description\nof this user's role in the institution.",
+    "mode": "NULLABLE"
   }
 ]
