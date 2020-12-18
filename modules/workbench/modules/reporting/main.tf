@@ -60,6 +60,10 @@ locals {
   timeseries_view_template_paths = [for file_name in local.timeseries_view_template_filenames :
   pathexpand("${path.module}/assets/views/timeseries/${file_name}")]
 
+  restructured_view_template_filenames = fileset("${path.module}/assets/views/restructured", "*.sql")
+  restructured_view_template_paths = [for file_name in local.restructured_view_template_filenames :
+  pathexpand("${path.module}/assets/views/restructured/${file_name}")]
+
   live_view_tables        = [for table_input in local.table_inputs : table_input["table_id"]]
   live_view_template_path = pathexpand("${path.module}/assets/views/live/live_table.sql")
 
@@ -84,12 +88,25 @@ locals {
     merge({
       view_id = replace(basename(view_query_template_path), local.QUERY_TEMPLATE_SUFFIX, ""),
       query = templatefile(view_query_template_path, {
-        project = var.project_id
-        dataset = var.reporting_dataset_id
+        project                = var.project_id
+        dataset                = var.reporting_dataset_id
+        __dependency_on_tables = module.main.table_ids
       })
   }, local.VIEW_CONSTANTS)]
 
-  views = concat(local.live_views, local.timeseries_views)
+  # The restructured views take live views as inputs, and we need a dummy entry in the templatefile()
+  # call to let Terraform know to put an edge in the graph for us. It's not obvious how to do this,
+  # as there's no output variable that indicates only the views I depend on.
+  restructured_views = [for view_query_template_path in local.restructured_view_template_paths :
+    merge({
+      view_id = "restructured_live_${replace(basename(view_query_template_path), local.QUERY_TEMPLATE_SUFFIX, "")}",
+      query = templatefile(view_query_template_path, {
+        project = var.project_id
+        dataset = var.reporting_dataset_id
+        //        __dependency_on_live_views = module.main.google_bigquery_table.view["live_*"]
+      })
+  }, local.VIEW_CONSTANTS)]
+  views = concat(local.live_views, local.timeseries_views, local.restructured_views)
 }
 
 # All BigQuery assets for Reporting subsystem
