@@ -9,3 +9,9 @@ module "reporting" {
   # provider
   project_id = var.project_id
 }
+
+module "egress_detection" {
+  source                      = "./modules/egress_detection"
+  sumologic_egress_thresholds = var.sumologic_egress_thresholds
+  aou_env                     = var.aou_env
+}
