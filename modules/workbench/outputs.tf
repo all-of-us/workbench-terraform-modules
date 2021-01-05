@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 output "bigquery_dataset" {
   value = module.reporting.bigquery_dataset
 }
