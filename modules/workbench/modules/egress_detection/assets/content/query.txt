@@ -3,11 +3,8 @@
 // and grouped by project / VM name to identify VMs with high amounts of egress
 // in a given period of time.
 //
-// We currently manually publish the below query into SumoLogic. It's feasible
-// to automate this, but we haven't invested the effort yet.
-//
-// All SumoLogic saved searches are collected in the "AoU RW Egress Alerts" folder
-// located at https://service.us2.sumologic.com/ui/#/library/folder/10810149.
+// All SumoLogic saved searches are collected in the "AoU RW Egress Alerts" folder is created in sumologic UI then passed
+// here as variable
 // There should be one saved search for each {environment, window width} tuple.
 //
 // Unfortunately, not all parameters involved in a saved search can be specified in
