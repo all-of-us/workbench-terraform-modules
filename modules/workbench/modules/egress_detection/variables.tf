@@ -25,12 +25,12 @@ variable sumologic_egress_thresholds {
   }
 }
 
-variable sumologic_parent_folder_id {
-  description = "The folder to create alert within"
+variable sumologic_parent_folder_id_hexadecimal {
+  description = "The folder to create alert within, in hexadecimal format"
   type        = string
 }
 
-variable sumologic_webhook_id {
-  description = "The webhook ID to notify the alert to"
+variable sumologic_webhook_id_hexadecimal {
+  description = "The webhook ID to notify the alert to, in hexadecimal format"
   type        = string
 }
