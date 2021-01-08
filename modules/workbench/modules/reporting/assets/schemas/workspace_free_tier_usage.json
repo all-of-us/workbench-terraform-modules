@@ -1,0 +1,22 @@
+ [
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "cost",
+    "type": "FLOAT64",
+    "description": "Free tier usage cost for this workspace."
+  },
+  {
+    "name": "user_id",
+    "type": "INTEGER",
+    "description": "ID of the user whose free tier quota was billed for this workspace."
+  },
+  {
+    "name": "workspace_id",
+    "type": "INTEGER",
+    "description": "ID of the workspace associated with this free tier cost."
+  }
+]
