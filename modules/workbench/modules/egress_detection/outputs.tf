@@ -4,9 +4,3 @@ output "rendered_queries" {
     local.queries_rendered
   ]
 }
-
-output "finished_content" {
-  description = "Completed content files sent to SumoLogic API."
-  value       = sumologic_content.main[*]
-}
-
