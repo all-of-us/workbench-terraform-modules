@@ -126,7 +126,7 @@
   },
   {
     "name": "free_tier_credits_limit_dollars_override",
-    "type": "FLOAT64",
+    "type": "FLOAT",
     "description": "Override value for the default free tier spending limit (USD).",
     "mode": "NULLABLE"
   },
