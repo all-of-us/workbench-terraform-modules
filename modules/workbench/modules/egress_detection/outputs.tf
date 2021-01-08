@@ -5,11 +5,6 @@ output "rendered_queries" {
   ]
 }
 
-output "encoded_json_queries" {
-  description = "JSON-encoded queries"
-  value       = local.queries_encoded[*]
-}
-
 output "finished_content" {
   description = "Completed content files sent to SumoLogic API."
   value       = sumologic_content.main[*]
