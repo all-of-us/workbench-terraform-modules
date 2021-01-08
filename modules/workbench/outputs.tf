@@ -10,6 +10,6 @@ output "table_names" {
   value = module.reporting.table_names
 }
 
-output "rendered_queries" {
-  value = module.egress_detection.rendered_queries
+output "egress_alert_rendered_queries" {
+  value = module.egress_detection.egress_alert_rendered_queries
 }
