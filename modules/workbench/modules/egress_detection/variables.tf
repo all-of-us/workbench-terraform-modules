@@ -7,35 +7,30 @@ variable sumologic_egress_thresholds {
   description = "Configuration values for egress search content in SumoLogic. The name (key) describes simply the tier name and config: "
   type        = map(map(any))
   default = {
-    tier_1__short = {
-      vpc_perimeter_name   = "tier-name-1"
-      egress_threshold_mib = 1
+    registered_tier_60sec_50mib = {
+      tier_name   = "registered"
+      egress_threshold_mib = 50
       egress_window_sec    = 60
     }
-    tier_1__med = {
-      vpc_perimeter_name   = "tier-name-1"
-      egress_threshold_mib = 1000000
-      egress_window_sec    = 120
+    registered_tier_600sec_150mib = {
+      tier_name   = "registered"
+      egress_threshold_mib = 150
+      egress_window_sec    = 600
     }
-    tier_1__large = {
-      vpc_perimeter_name   = "tier-name-1"
-      egress_threshold_mib = 1000000
-      egress_window_sec    = 1800
-    }
-    tier_2__short = {
-      vpc_perimeter_name   = "tier-name-2"
-      egress_threshold_mib = 1
-      egress_window_sec    = 60
-    }
-    tier_2__med = {
-      vpc_perimeter_name   = "tier-name-2"
-      egress_threshold_mib = 1000000
-      egress_window_sec    = 120
-    }
-    tier_2__large = {
-      vpc_perimeter_name   = "tier-name-2"
-      egress_threshold_mib = 1000000
-      egress_window_sec    = 1800
+    registered_tier_3600sec_200mib= {
+      tier_name   = "registered"
+      egress_threshold_mib = 200
+      egress_window_sec    = 3600
     }
   }
+}
+
+variable parent_folder_id {
+  description = "The folder to create alert within"
+  type        = string
+}
+
+variable webhook_id {
+  description = "The webhook ID to notify the alert to"
+  type        = string
 }

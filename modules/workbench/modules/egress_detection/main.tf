@@ -7,6 +7,7 @@ locals {
   queries_rendered = { for egress_rule, threshold in var.sumologic_egress_thresholds :
     tostring(egress_rule) => templatefile(local.query_path, {
       aou_env              = var.aou_env
+      tier_name            = lookup(threshold, "tier_name", 0)
       egress_threshold_mib = lookup(threshold, "egress_threshold_mib", 0)
       egress_window_sec    = lookup(threshold, "egress_window_sec", 0)
     })
@@ -19,23 +20,23 @@ locals {
   # Build a map of rendered Content templates for use in the sumologic_content resource and
   # module outputs
   egress_rule_to_config = { for egress_rule, threshold in var.sumologic_egress_thresholds :
-    egress_rule => templatefile(local.content_template_path, {
-      aou_env              = var.aou_env
-      egress_threshold_mib = lookup(threshold, "egress_threshold_mib", 0)
-      egress_window_sec    = lookup(threshold, "egress_window_sec", 0)
-      query_text           = lookup(local.queries_encoded, egress_rule)
-    })
+  egress_rule => templatefile(local.content_template_path, {
+    aou_env              = var.aou_env
+    webhook_id           = var.webhook_id
+    tier_name            = lookup(threshold, "tier_name", 0)
+    egress_threshold_mib = lookup(threshold, "egress_threshold_mib", 0)
+    egress_window_sec    = lookup(threshold, "egress_window_sec", 0)
+    query_text           = lookup(local.queries_encoded, egress_rule)
+  })
   }
 }
-
-data "sumologic_personal_folder" "aou_rw_egress_alerts" {}
 
 # Simply export a content file or folder and put the JSON file in ./assets/content.
 # Since the query is so long (and critical) and is json-encoded, it's easier
 # to configure it separately.
 resource "sumologic_content" "main" {
   for_each  = var.sumologic_egress_thresholds
-  parent_id = data.sumologic_personal_folder.aou_rw_egress_alerts.id
+  parent_id = var.parent_folder_id
   config    = lookup(local.egress_rule_to_config, each.key, "")
 }
 
