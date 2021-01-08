@@ -22,7 +22,7 @@ locals {
   egress_rule_to_config = { for egress_rule, threshold in var.sumologic_egress_thresholds :
   egress_rule => templatefile(local.content_template_path, {
     aou_env              = var.aou_env
-    webhook_id           = var.webhook_id
+    webhook_id           = var.sumologic_webhook_id
     tier_name            = lookup(threshold, "tier_name", 0)
     egress_threshold_mib = lookup(threshold, "egress_threshold_mib", 0)
     egress_window_sec    = lookup(threshold, "egress_window_sec", 0)
@@ -36,7 +36,7 @@ locals {
 # to configure it separately.
 resource "sumologic_content" "main" {
   for_each  = var.sumologic_egress_thresholds
-  parent_id = var.parent_folder_id
+  parent_id = var.sumologic_parent_folder_id
   config    = lookup(local.egress_rule_to_config, each.key, "")
 }
 

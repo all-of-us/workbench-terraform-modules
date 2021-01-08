@@ -87,7 +87,12 @@ variable sumologic_egress_thresholds {
   }
 }
 
-variable webhook_id {
+variable sumologic_parent_folder_id {
+  description = "The folder to create alert within"
+  type        = string
+}
+
+variable sumologic_webhook_id {
   description = "The webhook ID to notify the alert to"
   type        = string
 }
