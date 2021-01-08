@@ -7,17 +7,17 @@ variable sumologic_egress_thresholds {
   description = "Configuration values for egress search content in SumoLogic. The name (key) describes simply the tier name and config: "
   type        = map(map(any))
   default = {
-    registered_tier_60sec_50mib = {
+    registered_tier_1min_50mib = {
       tier_name   = "registered"
       egress_threshold_mib = 50
       egress_window_sec    = 60
     }
-    registered_tier_600sec_150mib = {
+    registered_tier_10min_150mib = {
       tier_name   = "registered"
       egress_threshold_mib = 150
       egress_window_sec    = 600
     }
-    registered_tier_3600sec_200mib= {
+    registered_tier_1hr_200mib= {
       tier_name   = "registered"
       egress_threshold_mib = 200
       egress_window_sec    = 3600
