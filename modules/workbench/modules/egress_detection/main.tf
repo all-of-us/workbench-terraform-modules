@@ -26,6 +26,9 @@ locals {
     tier_name            = lookup(threshold, "tier_name", 0)
     egress_threshold_mib = lookup(threshold, "egress_threshold_mib", 0)
     egress_window_sec    = lookup(threshold, "egress_window_sec", 0)
+    cron_expression      = lookup(threshold, "cron_expression", 0)
+    schedule_type        = lookup(threshold, "schedule_type", 0)
+    time_range           = lookup(threshold, "time_range", 0)
     query_text           = lookup(local.queries_encoded, egress_rule)
   })
   }

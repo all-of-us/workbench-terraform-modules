@@ -57,13 +57,13 @@
     "parsingMode": "Manual"
   },
   "searchSchedule": {
-    "cronExpression": "0 0 * * * ? *",
-    "displayableTimeRange": "-120m",
+    "cronExpression": "${cron_expression}",
+    "displayableTimeRange": "${time_range}",
     "parseableTimeRange": {
       "type": "BeginBoundedTimeRange",
       "from": {
         "type": "RelativeTimeRangeBoundary",
-        "relativeTime": "-2h"
+        "relativeTime": "${time_range}"
       },
       "to": null
     },
@@ -80,7 +80,7 @@
       "itemizeAlerts": false,
       "maxItemizedAlerts": 1
     },
-    "scheduleType": "1Hour",
+    "scheduleType": "schedule_type",
     "muteErrorEmails": false,
     "parameters": [
       {

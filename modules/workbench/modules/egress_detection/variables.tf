@@ -6,6 +6,8 @@ variable aou_env {
 variable sumologic_egress_thresholds {
   description = "Configuration values for egress search content in SumoLogic. The name (key) describes simply the tier name and config: "
   type        = map(map(any))
+  default = {
+  }
 }
 
 variable sumologic_parent_folder_id_hexadecimal {

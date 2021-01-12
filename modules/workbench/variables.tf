@@ -73,16 +73,25 @@ variable sumologic_egress_thresholds {
       tier_name   = "registered"
       egress_threshold_mib = 50
       egress_window_sec    = 60
+      cron_expression      = "0 * * * * ? *"
+      time_range           = "-5m"
+      schedule_type        = "RealTime"
     }
     registered_tier_10min_150mib = {
       tier_name   = "registered"
       egress_threshold_mib = 150
       egress_window_sec    = 600
+      cron_expression      = "0 * * * * ? *"
+      time_range           = "-5m"
+      schedule_type        = "RealTime"
     }
     registered_tier_1hr_200mib= {
       tier_name   = "registered"
       egress_threshold_mib = 200
       egress_window_sec    = 3600
+      cron_expression      = "0 0 * * * ? *"
+      time_range           = "-12m"
+      schedule_type        = "1Hour"
     }
   }
 }
