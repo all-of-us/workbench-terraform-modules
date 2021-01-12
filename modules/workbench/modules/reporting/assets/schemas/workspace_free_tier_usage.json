@@ -6,17 +6,20 @@
   },
   {
     "name": "cost",
-    "type": "FLOAT64",
-    "description": "Free tier usage cost for this workspace."
+    "type": "FLOAT",
+    "description": "Free tier usage cost for this workspace.",
+    "mode": "NULLABLE"
   },
   {
     "name": "user_id",
     "type": "INTEGER",
-    "description": "ID of the user whose free tier quota was billed for this workspace."
+    "description": "ID of the user whose free tier quota was billed for this workspace.",
+    "mode": "NULLABLE"
   },
   {
     "name": "workspace_id",
     "type": "INTEGER",
-    "description": "ID of the workspace associated with this free tier cost."
+    "description": "ID of the workspace associated with this free tier cost.",
+    "mode": "NULLABLE"
   }
 ]

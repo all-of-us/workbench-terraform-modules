@@ -203,15 +203,15 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "pre_packaged_concept_set",
-    "type": "INTEGER",
-    "description": "deprecated",
-    "mode": "NULLABLE"
-  },
-  {
     "name": "workspace_id",
     "type": "INTEGER",
     "description": "Primary key of the workspace table in Workrbench application database. Along with\nsnapshot_timestamp, serves as a pseudo-primary key for this table.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "pre_packaged_concept_set",
+    "type": "INTEGER",
+    "description": "deprecated",
     "mode": "NULLABLE"
   },
   {
