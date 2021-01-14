@@ -80,7 +80,7 @@
       "itemizeAlerts": false,
       "maxItemizedAlerts": 1
     },
-    "scheduleType": "schedule_type",
+    "scheduleType": "${schedule_type}",
     "muteErrorEmails": false,
     "parameters": [
       {

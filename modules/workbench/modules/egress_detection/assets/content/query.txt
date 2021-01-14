@@ -7,10 +7,6 @@
 // here as variable
 // There should be one saved search for each {environment, window width} tuple.
 //
-// Unfortunately, not all parameters involved in a saved search can be specified in
-// this query file. There are a number of parameters which must be entered via the
-// "Edit search" dialog in order to properly configure each search.
-//
 // Note: the "time range" parameter is set to be double the window_in_seconds duration,
 // causing the search to query across multiple windows' worth of log messages. This may
 // result in duplicate high-egress event notifications being sent, but it may also increase

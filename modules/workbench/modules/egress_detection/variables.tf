@@ -11,11 +11,11 @@ variable sumologic_egress_thresholds {
 }
 
 variable sumologic_parent_folder_id_hexadecimal {
-  description = "The folder to create alert within, in hexadecimal format"
+  description = "The folder to create alert within, in hexadecimal format. It is generated manually outside of Terraform"
   type        = string
 }
 
 variable sumologic_webhook_id_hexadecimal {
-  description = "The webhook ID to notify the alert to, in hexadecimal format"
+  description = "The webhook ID to notify the alert to, in hexadecimal format. It is generated manually outside of Terraform"
   type        = string
 }
