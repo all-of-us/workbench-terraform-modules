@@ -43,3 +43,8 @@ it makes sense to add these sorts of things:
 In other words, the primary focus of the module is the Reporting system, but it may be convenient to
 add reporting-specific artifacts that might otherwise be concerned with Monitoring or other auxiliary
 services.
+
+### Egress alert
+Generates sumologic contents to analyse a set of Google VPC flow logs for high-egress events. The incoming set of flow 
+logs are bucketed into non-overlapping time slices and grouped by project / VM name to identify VMs with high amounts 
+of egress in a given period of time.
