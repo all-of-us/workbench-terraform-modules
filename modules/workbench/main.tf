@@ -10,6 +10,7 @@ module "reporting" {
   project_id = var.project_id
 }
 
+
 module "egress_detection" {
   source                                  = "./modules/egress_detection"
   aou_env                                 = var.aou_env
@@ -20,8 +21,8 @@ module "egress_detection" {
 
 # GCP Monitoring
 module "monitoring" {
-  source                    = "./modules/monitoring"
-  project_id                = var.project_id
+  source = "./modules/monitoring"
+  project_id = var.project_id
   notification_channel_info = var.notification_channel_info
-  aou_env                   = var.aou_env
+  aou_env = var.aou_env
 }
