@@ -1,5 +1,3 @@
-
-
 variable "notification_channel_info" {
   description = <<EOF
 I want to use an  array  of objects,  but  as of v0.13, only
