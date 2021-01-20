@@ -137,11 +137,11 @@ to use recognizable tokens.
 EOF
 
   type = map(
-    object({
-      display_name = string
-      type         = string
-      labels       = map(string)
-      description  = string
-      project_id   = string
+  object({
+    display_name = string
+    type         = string
+    labels       = map(string)
+    description  = string
+    project_id   = string
   }))
 }

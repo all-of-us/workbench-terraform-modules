@@ -10,7 +10,6 @@ module "reporting" {
   project_id = var.project_id
 }
 
-
 module "egress_detection" {
   source                                  = "./modules/egress_detection"
   aou_env                                 = var.aou_env
@@ -26,3 +25,4 @@ module "monitoring" {
   notification_channel_info = var.notification_channel_info
   aou_env = var.aou_env
 }
+
