@@ -25,7 +25,7 @@
     "mimeType": "text/markdown"
   },
   "notificationChannels": [
-    "projects/all-of-us-rw-prod/notificationChannels/15847279805921515769"
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
   ],
   "userLabels": {
     "type": "cron_failure"

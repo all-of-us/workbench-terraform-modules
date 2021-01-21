@@ -7,6 +7,7 @@ locals {
     jsondecode(templatefile("${local.policy_dir}/${policy_path}", {
       project_id = var.project_id
       namespace  = var.aou_env
+      notification_channel_id  = var.notification_channel_id
     }))
   ]
   # The map-valued for-expression syntax is flaky. A workaround is to make a list of keys and 0

@@ -41,21 +41,6 @@ variable reporting_dataset_access {
   default     = []
 }
 
-# TODO(jaycarlton) codegen this top-level variables as the union
-#   of all modules' variables files.
-# List of objects whose values correspond to the google_monitoring_notification_channel
-# structure
-variable "notification_channels" {
-  description = "Email address and Friendly Descriptions for Email Notification Channels"
-  default = [{
-    display_name = "Anonymous  Notification Channel"
-    type         = "" # email or
-    labels = {
-      email = ""
-    }
-  }]
-}
-
 #
 # Egress
 #
@@ -109,39 +94,9 @@ variable sumologic_webhook_id_hexadecimal {
 #
 # Monitoring
 #
-variable "notification_channel_info" {
-  description = <<EOF
-I want to use an  array  of objects,  but  as of v0.13, only
-sets of strings or  single objects are supported. Next best thing is
-a map where the keys are unique, short names for the instances. It's
-possible to name them anonymously like _0, _1, etc, but I found it helpful
-to use recognizable tokens.
-{
-    email_channel_1 = {
-      display_name = "An email channel"
-      type         = "email" # email or
-      project_id   = "my-project-id" # belt and suspenders
-      labels = {
-        email_address = "a@b.co"
-      }
-    },
-    slack_random = {
-      display_name = "Slack Random Channel"
-      type         = "slack"
-      project_id   = "my-project-id" # belt and suspenders
-      labels = {
-        channel_name = "#random"
-        auth_token = "my_token"
-      }
-    }
-EOF
 
-  type = map(
-  object({
-    display_name = string
-    type         = string
-    labels       = map(string)
-    description  = string
-    project_id   = string
-  }))
+variable notification_channel_id {
+  description = "The notification channel on where the alert should be delivered to"
+  type        = string
 }
+
