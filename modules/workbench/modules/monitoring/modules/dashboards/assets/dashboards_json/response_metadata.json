@@ -1,0 +1,83 @@
+{
+    "displayName": "Response Metadata",
+    "gridLayout": {
+        "columns": "2",
+        "widgets": [
+            {
+                "title": "GAE Application - Response count (filtered) [SUM]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\">=\"200\" metric.label.\"response_code\"<\"300\" resource.label.\"project_id\"=\"${project_id}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM"
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "legendTemplate": "2XX Responses",
+                            "minAlignmentPeriod": "60s"
+                        },
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" resource.label.\"project_id\"=\"${project_id}\" metric.label.\"response_code\">=\"300\" metric.label.\"response_code\"<\"400\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM"
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "legendTemplate": "3XX Responses\n",
+                            "minAlignmentPeriod": "60s"
+                        },
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" resource.label.\"project_id\"=\"${project_id}\" metric.label.\"response_code\">=\"400\" metric.label.\"response_code\"<\"500\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM"
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "legendTemplate": "4XX Responses",
+                            "minAlignmentPeriod": "60s"
+                        },
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" resource.label.\"project_id\"=\"${project_id}\" metric.label.\"response_code\">=\"500\" metric.label.\"response_code\"<\"600\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM"
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "legendTemplate": "5XX Responses",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            }
+        ]
+    }
+}

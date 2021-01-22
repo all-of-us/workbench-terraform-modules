@@ -1,0 +1,20 @@
+{
+    "labels": [
+        {
+            "key": "DataAccessLevel"
+        },
+        {
+            "key": "ActiveStatus"
+        },
+        {
+            "key": "opencensus_task",
+            "description": "Opencensus task identifier"
+        }
+    ],
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Count of all workspaces",
+    "displayName": "custom.googleapis.com/workspace_count_3",
+    "type": "custom.googleapis.com/workspace_count_3"
+}

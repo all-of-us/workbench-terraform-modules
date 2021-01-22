@@ -1,0 +1,16 @@
+{
+    "labels": [
+        {
+            "key": "operation_name",
+            "description": "Name of operation"
+        },
+        {
+            "key": "log"
+        }
+    ],
+    "metricKind": "DELTA",
+    "valueType": "DISTRIBUTION",
+    "unit": "ms",
+    "description": "Time to complete workspace operations",
+    "type": "logging.googleapis.com/user/workspace_operation_time"
+}

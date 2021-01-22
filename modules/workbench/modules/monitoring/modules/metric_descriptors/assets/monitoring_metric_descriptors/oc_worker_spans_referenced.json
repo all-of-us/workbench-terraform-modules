@@ -1,0 +1,14 @@
+{
+    "labels": [
+        {
+            "key": "opencensus_task",
+            "description": "Opencensus task identifier"
+        }
+    ],
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Current number of spans referenced by the exporter thread.",
+    "displayName": "custom.googleapis.com/${namespace}/oc_worker_spans_referenced",
+    "type": "custom.googleapis.com/${namespace}/oc_worker_spans_referenced"
+}

@@ -1,0 +1,56 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_MEAN",
+            "perSeriesAligner": "ALIGN_MEAN"
+          }
+        ],
+        "comparison": "COMPARISON_LT",
+        "duration": "60s",
+        "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count\" resource.type=\"generic_node\"\nresource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"AVAILABLE\"",
+        "thresholdValue": 25,
+        "trigger": {
+          "count": 1
+        }
+      },
+      "displayName": "Too Few Available Projects",
+    },
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_MEAN",
+            "perSeriesAligner": "ALIGN_MEAN"
+          },
+          {
+            "alignmentPeriod": "60s",
+            "perSeriesAligner": "ALIGN_PERCENT_CHANGE"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "0s",
+        "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count\" resource.type=\"generic_node\"\nresource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"ERROR\"",
+        "thresholdValue": 5,
+        "trigger": {
+          "count": 1
+        }
+      },
+      "displayName": "Error Count Rises Too Fast",
+    }
+  ],
+  "displayName": "Billing Buffer Health",
+  "documentation": {
+    "content": "Playbook: https://broad.io/aou-playbook",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ]
+}

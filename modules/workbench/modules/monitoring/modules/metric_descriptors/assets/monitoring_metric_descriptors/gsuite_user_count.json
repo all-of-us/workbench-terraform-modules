@@ -1,0 +1,17 @@
+{
+    "labels": [
+        {
+            "key": "gsuite_domain"
+        },
+        {
+            "key": "opencensus_task",
+            "description": "Opencensus task identifier"
+        }
+    ],
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Number of users in GSuite Directory.",
+    "displayName": "custom.googleapis.com/gsuite_user_count",
+    "type": "custom.googleapis.com/gsuite_user_count"
+}

@@ -1,0 +1,33 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_PERCENTILE_95",
+            "perSeriesAligner": "ALIGN_SUM"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "300s",
+        "filter": "metric.type=\"appengine.googleapis.com/http/server/response_latencies\"\nresource.type=\"gae_app\"",
+        "thresholdValue": 15000,
+        "trigger": {
+          "count": 1
+        }
+      },
+      "displayName": "Response latency [95TH PERCENTILE]",
+    }
+  ],
+  "displayName": "Response Latency",
+  "documentation": {
+    "content": "A sustained spike in latency may indicate an upstream performance issue\nor potentially an under-provisioning of the current system. Check tracing reports,\nactivity logs, database logs, and Terra metrics.",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ]
+}

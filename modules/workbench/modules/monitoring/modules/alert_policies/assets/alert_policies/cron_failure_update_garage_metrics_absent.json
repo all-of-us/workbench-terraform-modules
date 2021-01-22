@@ -1,0 +1,34 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionAbsent": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_RATE"
+          }
+        ],
+        "duration": "300s",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\"\nmetric.label.\"name\"=\"bufferBillingProjects\" metric.label.\"status\"=\"204\"",
+        "trigger": {
+          "percent": 100
+        }
+      },
+      "displayName": "Update Gauge Metrics Cron Signal Absent",
+    }
+  ],
+  "displayName": "Cron Failure: Update Gauge Metrics",
+  "documentation": {
+    "content": "The updateGaugeMetrics cron is critical for all gauge metric reporting, including several that are operatioinally important. To address this, look at the stack trace to see which class implementing GaugeDataCollector threw an exception. The cron endpoint works by calling all such classes' getGaugeData() methods, and some of these make calls in turn to third party services or the MySql database.\n",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ],
+  "userLabels": {
+    "type": "cron_failure"
+  }
+}

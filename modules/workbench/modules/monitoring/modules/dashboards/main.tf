@@ -7,6 +7,7 @@ locals {
   dashboards = [for full_path in local.dashboard_files :
     templatefile(pathexpand("${path.module}/assets/dashboards_json/${full_path}"), {
       namespace                           = var.aou_env
+      project_id                          = var.project_id
       metric__labels__buffer_entry_status = join("", ["$", "{metric.labels.BufferEntryStatus}"])
       metric__labels__data_access_level   = join("", ["$", "{metric.labels.DataAccessLevel}"])
       metric__labels__gsuite_domain       = join("", ["$", "{metric.labels.gsuite_domain}"])

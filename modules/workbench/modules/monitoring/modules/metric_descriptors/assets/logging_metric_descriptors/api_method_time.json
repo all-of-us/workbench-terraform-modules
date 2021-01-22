@@ -1,0 +1,15 @@
+{
+    "labels": [
+        {
+            "key": "method_name",
+            "description": "API Method Name"
+        },
+        {
+            "key": "log"
+        }
+    ],
+    "metricKind": "DELTA",
+    "valueType": "DISTRIBUTION",
+    "unit": "ms",
+    "type": "logging.googleapis.com/user/api_method_time"
+}

@@ -1,0 +1,12 @@
+{
+    "labels": [
+        {
+            "key": "log"
+        }
+    ],
+    "metricKind": "DELTA",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Clone Notebook",
+    "type": "logging.googleapis.com/user/notebook_clone_2"
+}

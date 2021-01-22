@@ -1,0 +1,14 @@
+{
+    "labels": [
+        {
+            "key": "opencensus_task",
+            "description": "Opencensus task identifier"
+        }
+    ],
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Current number of billing projects with assigning status.",
+    "displayName": "custom.googleapis.com/${namespace}/billing_project_buffer_assigning_project_count",
+    "type": "custom.googleapis.com/${namespace}/billing_project_buffer_assigning_project_count"
+}

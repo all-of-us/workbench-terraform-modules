@@ -1,0 +1,315 @@
+{
+    "displayName": "Operations",
+    "gridLayout": {
+        "columns": "2",
+        "widgets": [
+            {
+                "title": "Response codes",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\"!=\"304\" metric.label.\"response_code\"!=\"204\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"response_code\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "300s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Latency \u2013\u00a0by method name",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/api_method_time\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_SUM",
+                                        "crossSeriesReducer": "REDUCE_PERCENTILE_99",
+                                        "groupByFields": [
+                                            "metric.label.\"method_name\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Latency \u2013\u00a0global",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_latencies\" resource.type=\"gae_app\" resource.label.\"project_id\"=\"${project_id}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_SUM",
+                                        "crossSeriesReducer": "REDUCE_MEAN"
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        },
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_latencies\" resource.type=\"gae_app\" resource.label.\"project_id\"=\"${project_id}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_SUM",
+                                        "crossSeriesReducer": "REDUCE_PERCENTILE_05"
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        },
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_latencies\" resource.type=\"gae_app\" resource.label.\"project_id\"=\"${project_id}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_SUM",
+                                        "crossSeriesReducer": "REDUCE_PERCENTILE_95"
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "GSuite user count",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"custom.googleapis.com/gsuite_user_count\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_MEAN",
+                                        "crossSeriesReducer": "REDUCE_MAX",
+                                        "groupByFields": [
+                                            "metric.label.\"gsuite_domain\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Workspaces by status",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"custom.googleapis.com/workspace_count_3\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_MEAN",
+                                        "crossSeriesReducer": "REDUCE_MAX",
+                                        "groupByFields": [
+                                            "metric.label.\"ActiveStatus\"",
+                                            "metric.label.\"DataAccessLevel\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Instance count (filtered) by label.state [SUM]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/system/instance_count\" resource.type=\"gae_app\" metric.label.\"state\"!=\"\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_MEAN",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"state\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Cron Jobs - All",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"status\"<\"300\" metric.label.\"status\">=\"200\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_COUNT",
+                                        "groupByFields": [
+                                            "metric.label.\"name\"",
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric.labels.name} ${metric.labels.status}",
+                            "minAlignmentPeriod": "60s"
+                        },
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"status\">=\"300\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_COUNT",
+                                        "groupByFields": [
+                                            "metric.label.\"name\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric.labels.name} ${metric.labels.status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Failing Cron Jobs",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"status\">=\"300\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_COUNT",
+                                        "groupByFields": [
+                                            "metric.label.\"name\"",
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric.labels.name} ${metric.labels.status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            }
+        ]
+    }
+}

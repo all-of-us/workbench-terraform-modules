@@ -1,0 +1,14 @@
+{
+    "labels": [
+        {
+            "key": "opencensus_task",
+            "description": "Opencensus task identifier"
+        }
+    ],
+    "metricKind": "CUMULATIVE",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Clone (duplicate) a notebook",
+    "displayName": "custom.googleapis.com/notebook_clone_2",
+    "type": "custom.googleapis.com/notebook_clone_2"
+}

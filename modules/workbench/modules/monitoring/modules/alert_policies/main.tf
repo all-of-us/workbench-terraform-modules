@@ -4,11 +4,11 @@ locals {
   policy_names = [for policy_path in local.policy_paths : replace(basename(policy_path), ".json", "")]
 
   policy_tuple = [for policy_path in local.policy_paths :
-    jsondecode(templatefile("${local.policy_dir}/${policy_path}", {
-      project_id = var.project_id
-      namespace  = var.aou_env
-      notification_channel_id  = var.notification_channel_id
-    }))
+  jsondecode(templatefile("${local.policy_dir}/${policy_path}", {
+    project_id = var.project_id
+    namespace  = var.aou_env
+    notification_channel_id  = var.notification_channel_id
+  }))
   ]
   # The map-valued for-expression syntax is flaky. A workaround is to make a list of keys and 0
   # a list of values and just zip them. https://github.com/hashicorp/terraform/issues/20230#issuecomment-461783910
@@ -24,26 +24,21 @@ resource "google_monitoring_alert_policy" "policy" {
   dynamic "conditions" {
     for_each = each.value.conditions
     content {
-      display_name = lookup(conditions, "displayName")
+      display_name = lookup(conditions.value, "displayName")
       condition_absent {
-        duration = lookup(conditions.conditionAbsent, "duration")
-        filter   = lookup(conditions.conditionAbsent, "filter")
+        duration = lookup(conditions.value.conditionAbsent, "duration")
+        filter   = lookup(conditions.value.conditionAbsent, "filter")
         trigger {
-          percent = lookup(lookup(conditions.conditionAbsent, "trigger"), "percent")
+          percent = lookup(lookup(conditions.value.conditionAbsent, "trigger"), "percent")
         }
-        aggregations {
-          alignment_period     = lookup(lookup(conditions.conditionAbsent, "aggregations"), "alignmentPeriod")
-          per_series_aligner   = lookup(lookup(conditions.conditionAbsent, "aggregations"), "perSeriesAligner")
-          cross_series_reducer = lookup(lookup(conditions.conditionAbsent, "aggregations"), "crossSeriesReducer")
-        }
-      }
-      condition_threshold {
-        filter     = "metric.type=\"compute.googleapis.com/instance/disk/write_bytes_count\" AND resource.type=\"gce_instance\""
-        duration   = "60s"
-        comparison = "COMPARISON_GT"
-        aggregations {
-          alignment_period   = "60s"
-          per_series_aligner = "ALIGN_RATE"
+
+        dynamic "aggregations" {
+          for_each = lookup(conditions.value.conditionAbsent, "aggregations")
+          content {
+            alignment_period     = lookup(aggregations.value, "alignmentPeriod")
+            per_series_aligner     = lookup(aggregations.value, "perSeriesAligner")
+            cross_series_reducer     = lookup(aggregations.value, "crossSeriesReducer")
+          }
         }
       }
     }

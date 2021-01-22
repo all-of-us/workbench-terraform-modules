@@ -1,0 +1,31 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionAbsent": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_RATE"
+          }
+        ],
+        "duration": "108000s",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\"\nmetric.label.\"status\"=\"204\" metric.label.\"name\"=\"uploadReportingSnapshot\"",
+        "trigger": {
+          "percent": 100
+        }
+      },
+      "displayName": "uploadReportingSnapshot Cron Signal Absent",
+    }
+  ],
+  "displayName": "Cron Failure: Upload Reporting Snapshot",
+  "documentation": {
+    "content": "This job checks that the most recent reporting upload job succeeded..\n",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "perSeriesAligner": "ALIGN_COUNT_TRUE"
+          }
+        ],
+        "comparison": "COMPARISON_LT",
+        "duration": "60s",
+        "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" resource.type=\"uptime_url\"\nmetric.label.\"check_id\"=\"is-api-up-1576606412\"",
+        "thresholdValue": 1,
+        "trigger": {
+          "count": 2
+        }
+      },
+      "displayName": "Health Check is-api-up Failed",
+    }
+  ],
+  "displayName": "RW API Server Uptime",
+  "documentation": {
+    "content": "Uptime checks from one or more regions are too low. Please investigate.",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ]
+}

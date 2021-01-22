@@ -1,0 +1,12 @@
+{
+    "labels": [
+        {
+            "key": "log"
+        }
+    ],
+    "metricKind": "DELTA",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Count of all Action Audit Events",
+    "type": "logging.googleapis.com/user/action_audit_event_count"
+}

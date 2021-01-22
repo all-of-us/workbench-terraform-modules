@@ -1,0 +1,24 @@
+{
+    "labels": [
+        {
+            "key": "status",
+            "valueType": "INT64",
+            "description": "HTTP Status code"
+        },
+        {
+            "key": "name",
+            "description": "Cron job name (from URL)"
+        },
+        {
+            "key": "log"
+        },
+        {
+            "key": "requestId",
+            "description": "Request ID. Useful for finding the log entry later"
+        }
+    ],
+    "metricKind": "DELTA",
+    "valueType": "INT64",
+    "description": "Completed cron jobs",
+    "type": "logging.googleapis.com/user/cron_job_completion"
+}

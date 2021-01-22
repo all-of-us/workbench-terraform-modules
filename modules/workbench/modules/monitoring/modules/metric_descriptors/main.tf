@@ -1,4 +1,3 @@
-
 locals {
   monitoring_metric_descriptor_paths = [for metric_file in fileset("${path.module}/assets/monitoring_metric_descriptors/", "*.json") : pathexpand(metric_file)]
   monitoring_metric_descriptor_names = [for metric_path in local.monitoring_metric_descriptor_paths : replace(basename(metric_path), ".json", "")]
@@ -41,11 +40,3 @@ resource "google_monitoring_metric_descriptor" "basic" {
     ingest_delay  = null # each.value.metadata.ingest_delay
   }
 }
-
-
-//resource "google_logging_metric" "basic" {
-//
-//  filter = ""
-//  name = ""
-//  metric_descriptor {}
-//}
