@@ -22,7 +22,7 @@ module "egress_detection" {
 module "monitoring" {
   source = "./modules/monitoring"
   project_id = var.project_id
-  notification_channel_info = var.notification_channel_info
+  notification_channel_id = var.notification_channel_id
   aou_env = var.aou_env
 }
 
