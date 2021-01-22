@@ -1,5 +1,5 @@
 locals {
-  policy_dir   = "${path.module}/assets/alert_policiess"
+  policy_dir   = "${path.module}/assets/alert_policies"
   policy_paths = [for policy_file in fileset("${local.policy_dir}/", "*.json") : pathexpand(policy_file)]
   policy_names = [for policy_path in local.policy_paths : replace(basename(policy_path), ".json", "")]
 
