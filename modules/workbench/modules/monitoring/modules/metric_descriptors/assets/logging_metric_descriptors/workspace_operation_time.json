@@ -1,16 +1,30 @@
 {
-    "labels": [
-        {
-            "key": "operation_name",
-            "description": "Name of operation"
-        },
-        {
-            "key": "log"
-        }
-    ],
-    "metricKind": "DELTA",
-    "valueType": "DISTRIBUTION",
-    "unit": "ms",
+    "name": "workspace_operation_time",
     "description": "Time to complete workspace operations",
-    "type": "logging.googleapis.com/user/workspace_operation_time"
+    "filter": "resource.type=\"generic_node\"\nlogName=\"projects/${project_id}/logs/debug-logs-based-metrics\"\nresource.labels.namespace=\"${namespace}\"\nresource.labels.location=\"us-central\"\njsonPayload.metric_name=\"workspace_operation_time\"",
+    "metricDescriptor": {
+        "name": "projects/${project_id}/metricDescriptors/logging.googleapis.com/user/workspace_operation_time",
+        "labels": [
+            {
+                "key": "operation_name",
+                "description": "Name of operation"
+            }
+        ],
+        "metricKind": "DELTA",
+        "valueType": "DISTRIBUTION",
+        "unit": "ms",
+        "description": "Time to complete workspace operations",
+        "type": "logging.googleapis.com/user/workspace_operation_time"
+    },
+    "valueExtractor": "EXTRACT(jsonPayload.data_point_value)",
+    "labelExtractors": {
+        "operation_name": "EXTRACT(jsonPayload.labels.OperationName)"
+    },
+    "bucketOptions": {
+        "exponentialBuckets": {
+            "numFiniteBuckets": 64,
+            "growthFactor": 2,
+            "scale": 0.01
+        }
+    }
 }

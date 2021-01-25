@@ -1,12 +1,13 @@
 {
-    "labels": [
-        {
-            "key": "log"
-        }
-    ],
-    "metricKind": "DELTA",
-    "valueType": "INT64",
-    "unit": "1",
+    "name": "notebook_clone_2",
     "description": "Clone Notebook",
-    "type": "logging.googleapis.com/user/notebook_clone_2"
+    "filter": "resource.type=\"generic_node\"\nresource.labels.location=\"us-central\"\njsonPayload.metric_name=\"notebook_clone_2\"",
+    "metricDescriptor": {
+        "name": "projects/${project_id}/metricDescriptors/logging.googleapis.com/user/notebook_clone_2",
+        "metricKind": "DELTA",
+        "valueType": "INT64",
+        "unit": "1",
+        "description": "Clone Notebook",
+        "type": "logging.googleapis.com/user/notebook_clone_2"
+    }
 }

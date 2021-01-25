@@ -1,11 +1,11 @@
-module "dashboards" {
-  source     = "./modules/dashboards"
+module "metric_descriptors" {
+  source     = "./modules/metric_descriptors"
   aou_env    = var.aou_env
   project_id = var.project_id
 }
 
-module "metric_descriptors" {
-  source     = "./modules/metric_descriptors"
+module "dashboards" {
+  source     = "./modules/dashboards"
   aou_env    = var.aou_env
   project_id = var.project_id
 }
