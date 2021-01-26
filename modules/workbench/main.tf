@@ -25,4 +25,3 @@ module "monitoring" {
   notification_channel_id = var.notification_channel_id
   aou_env = var.aou_env
 }
-

@@ -4,26 +4,26 @@ locals {
   monitoring_metric_descriptor_names = [for metric_path in local.monitoring_metric_descriptor_paths : replace(basename(metric_path), ".json", "")]
 
   metric_tuple = [for metric_path in local.monitoring_metric_descriptor_paths :
-    jsondecode(templatefile("${path.module}/assets/monitoring_metric_descriptors/${metric_path}", {
-      project_id = var.project_id
-      namespace  = var.aou_env
-    }))
+  jsondecode(templatefile("${path.module}/assets/monitoring_metric_descriptors/${metric_path}", {
+    project_id = var.project_id
+    namespace  = var.aou_env
+  }))
   ]
   # The map-valued for-expression syntax is flaky. A workaround is to make a list of keys and 0
   # a list of values and just zip them. https://github.com/hashicorp/terraform/issues/20230#issuecomment-461783910
   name_to_monitoring_metric_descriptor = zipmap(local.monitoring_metric_descriptor_names, local.metric_tuple)
 
   # Logging Metric
-  logging_metric_descriptor_paths = [for metric_file in fileset("${path.module}/assets/logging_metric_descriptors/", "*.json") : pathexpand(metric_file)]
-  logging_metric_descriptor_names = [for metric_path in local.logging_metric_descriptor_paths : replace(basename(metric_path), ".json", "")]
+  logging_metric_descriptor_paths = [for logging_metric_file in fileset("${path.module}/assets/logging_metric_descriptors/", "*.json") : pathexpand(logging_metric_file)]
+  logging_metric_descriptor_names = [for logging_metric_path in local.logging_metric_descriptor_paths : replace(basename(logging_metric_path), ".json", "")]
 
-  logging_metric_tuple = [for metric_path in local.logging_metric_descriptor_paths :
-  jsondecode(templatefile("${path.module}/assets/logging_metric_descriptors/${logging_metric_tuple}", {
+  logging_metric_tuple = [for logging_metric_path in local.monitoring_metric_descriptor_paths :
+  jsondecode(templatefile("${path.module}/assets/logging_metric_descriptors/${logging_metric_path}", {
     project_id = var.project_id
     namespace  = var.aou_env
   }))
   ]
-  name_to_logging_metric_descriptor = zipmap(local.logging_metric_descriptor_names, local.metric_tuple)
+  name_to_logging_metric_descriptor = zipmap(local.logging_metric_descriptor_names, local.logging_metric_tuple)
 }
 
 resource "google_monitoring_metric_descriptor" "metric_descriptor" {
