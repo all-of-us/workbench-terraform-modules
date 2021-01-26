@@ -5,7 +5,7 @@
     {
       "conditionAbsent": {
         "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"billingProjectGarbageCollection\" metric.label.\"status\"=\"204\"",
-        "duration": "10800s",
+        "duration": "90000s",
         "trigger": {
           "percent": 100
         },

@@ -10,7 +10,7 @@
             "perSeriesAligner": "ALIGN_RATE"
           }
         ],
-        "duration": "108000s",
+        "duration": "90000s",
         "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\"\nmetric.label.\"name\"=\"exportToRdr\" metric.label.\"status\"=\"204\"",
         "trigger": {
           "percent": 100
