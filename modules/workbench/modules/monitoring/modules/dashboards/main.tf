@@ -22,7 +22,6 @@ locals {
 }
 
 resource "google_monitoring_dashboard" "dashboard" {
-  provider       = google-beta
   for_each       = local.name_to_dashboard
   dashboard_json = each.value
 }
