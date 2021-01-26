@@ -16,7 +16,7 @@
           "percent": 100
         }
       },
-      "displayName": "Bulk Sync Two Factor Auth Cron Signal Absent",
+      "displayName": "Bulk Sync Two Factor Auth Cron Signal Absent"
     }
   ],
   "displayName": "Cron Failure: Sync Two Factor Auth",

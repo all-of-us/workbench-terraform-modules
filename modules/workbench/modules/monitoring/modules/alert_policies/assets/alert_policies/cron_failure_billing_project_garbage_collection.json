@@ -16,7 +16,7 @@
           "percent": 100
         }
       },
-      "displayName": "billingProjectGarbageCollection Cron Signal Absent",
+      "displayName": "billingProjectGarbageCollection Cron Signal Absent"
     }
   ],
   "displayName": "Cron Failure: Billing Project Garbage Collection",

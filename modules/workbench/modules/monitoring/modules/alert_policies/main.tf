@@ -20,28 +20,59 @@ resource "google_monitoring_alert_policy" "policy" {
 
   combiner     = each.value.combiner
   display_name = each.value.displayName
+  enabled      = each.value.enabled
+
+  documentation {
+    content     =  lookup(each.value.documentation, "content")
+    mime_type   =  lookup(each.value.documentation, "mimeType")
+  }
 
   dynamic "conditions" {
     for_each = each.value.conditions
     content {
       display_name = lookup(conditions.value, "displayName")
-      condition_absent {
-        duration = lookup(conditions.value.conditionAbsent, "duration")
-        filter   = lookup(conditions.value.conditionAbsent, "filter")
-        trigger {
-          percent = lookup(lookup(conditions.value.conditionAbsent, "trigger"), "percent")
-        }
+      dynamic "condition_absent" {
+        for_each = conditions.value == "conditionAbsent" ? [conditions.value] : []
+        content {
+          duration = lookup(condition_absent.value, "duration")
+          filter   = lookup(condition_absent.value, "filter")
+          trigger {
+            percent = lookup(lookup(condition_absent.value, "trigger"), "percent")
+            count   = lookup(lookup(condition_absent.value, "trigger"), "count")
+          }
 
-        dynamic "aggregations" {
-          for_each = lookup(conditions.value.conditionAbsent, "aggregations")
-          content {
-            alignment_period     = lookup(aggregations.value, "alignmentPeriod")
-            per_series_aligner     = lookup(aggregations.value, "perSeriesAligner")
-            cross_series_reducer     = lookup(aggregations.value, "crossSeriesReducer")
+          dynamic "aggregations" {
+            for_each = lookup(condition_absent.value, "aggregations")
+            content {
+              alignment_period       = lookup(aggregations.value, "alignmentPeriod")
+              per_series_aligner     = lookup(aggregations.value, "perSeriesAligner")
+              cross_series_reducer   = lookup(aggregations.value, "crossSeriesReducer")
+            }
+          }
+        }
+      }
+      dynamic "condition_threshold" {
+        for_each = conditions.value == "conditionThreshold" ? [conditions.value] : []
+        content {
+          duration = lookup(condition_threshold.value, "duration")
+          filter   = lookup(condition_threshold.value, "filter")
+          comparison   = lookup(condition_threshold.value, "comparison")
+          threshold_value   = lookup(condition_threshold.value, "thresholdValue")
+          trigger {
+            percent = lookup(lookup(condition_threshold.value, "trigger"), "percent")
+            count = lookup(lookup(condition_threshold.value, "trigger"), "count")
+          }
+
+          dynamic "aggregations" {
+            for_each = lookup(condition_threshold.value, "aggregations")
+            content {
+              alignment_period     = lookup(aggregations.value, "alignmentPeriod")
+              per_series_aligner     = lookup(aggregations.value, "perSeriesAligner")
+              cross_series_reducer     = lookup(aggregations.value, "crossSeriesReducer")
+            }
           }
         }
       }
     }
   }
 }
-

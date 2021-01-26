@@ -18,7 +18,7 @@
           "count": 1
         }
       },
-      "displayName": "Response latency [95TH PERCENTILE]",
+      "displayName": "Response latency [95TH PERCENTILE]"
     }
   ],
   "displayName": "Response Latency",

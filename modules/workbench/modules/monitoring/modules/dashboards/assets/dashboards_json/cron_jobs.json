@@ -103,7 +103,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "legendTemplate": "${metric.labels.name} ${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -143,7 +143,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_AREA",
-                            "legendTemplate": "${metric.labels.name} ${metric.labels.status} ${metric.labels.requestId}",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status} ${metric__labels__requestId}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -183,7 +183,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.name} ${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],

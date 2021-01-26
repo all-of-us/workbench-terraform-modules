@@ -16,7 +16,7 @@
           "percent": 100
         }
       },
-      "displayName": "checkClusters failed",
+      "displayName": "checkClusters failed"
     }
   ],
   "displayName": "Cron Failure: Check Clusters",

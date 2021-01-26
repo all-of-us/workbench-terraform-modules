@@ -16,7 +16,7 @@
           "percent": 100
         }
       },
-      "displayName": "exportToRdr Cron Signal Absent",
+      "displayName": "exportToRdr Cron Signal Absent"
     }
   ],
   "displayName": "Cron Failure: Export to RDR",

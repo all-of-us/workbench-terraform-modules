@@ -16,7 +16,7 @@
           "percent": 100
         }
       },
-      "displayName": "Bulk Sync eRA Commons Cron Signal Absent",
+      "displayName": "Bulk Sync eRA Commons Cron Signal Absent"
     }
   ],
   "displayName": "Cron Failure: Sync eRA Commons",

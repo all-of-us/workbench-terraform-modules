@@ -16,7 +16,7 @@
           "percent": 100
         }
       },
-      "displayName": "Buffer Billing Projects Task Failures",
+      "displayName": "Buffer Billing Projects Task Failures"
     }
   ],
   "displayName": "Cron Failure: Sync Billing Project Status",
