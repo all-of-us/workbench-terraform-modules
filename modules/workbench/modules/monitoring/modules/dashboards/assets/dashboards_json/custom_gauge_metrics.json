@@ -4,7 +4,7 @@
         "columns": "2",
         "widgets": [
             {
-                "title": "Billing Buffer Live Projects [Test Env]",
+                "title": "Billing Buffer Live Projects [${namespace}]",
                 "xyChart": {
                     "dataSets": [
                         {
@@ -22,7 +22,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "Status: ${metric.labels.BufferEntryStatus}",
+                            "legendTemplate": "Status: ${metric__labels__buffer_entry_status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -90,7 +90,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "legendTemplate": "Tier: ${metric.labels.DataAccessLevel}",
+                            "legendTemplate": "Tier: ${metric__labels__data_access_level}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -183,7 +183,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "legendTemplate": "Domain: ${metric.labels.gsuite_domain}",
+                            "legendTemplate": "Domain: ${metric__labels__gsuite_domain}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],

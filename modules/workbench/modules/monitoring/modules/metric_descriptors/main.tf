@@ -48,7 +48,7 @@ resource "google_monitoring_metric_descriptor" "metric_descriptor" {
     }
   }
   dynamic "metadata" {
-    for_each = each.value.metadata ? each.value.metadata : {}
+    for_each = each.value.metadata
     content {
       sample_period = lookup(metadata.value, "sample_period", null)
       ingest_delay = lookup(metadata.value, "ingest_delay", null)
@@ -82,10 +82,10 @@ resource "google_logging_metric" "logging_metric" {
     "sku"  = each.value.label_extractors.sku
   }
   dynamic "bucket_options" {
-    for_each = each.value.bucket_options ? each.value.bucket_options : {}
+    for_each = each.value.bucket_options
     content {
       dynamic "linear_buckets" {
-        for_each = bucket_options.value.linear_buckets ? bucket_options.value.linear_buckets : {}
+        for_each = bucket_options.value.linear_buckets
         content {
           num_finite_buckets = linear_buckets.value.num_finite_buckets
           width              = linear_buckets.value.width
@@ -93,11 +93,11 @@ resource "google_logging_metric" "logging_metric" {
         }
       }
       dynamic "exponentialBuckets" {
-        for_each = bucket_options.value.exponentialBuckets ? bucket_options.value.exponentialBuckets : {}
+        for_each = bucket_options.value.exponentialBuckets
         content {
-          numFiniteBuckets = exponentialBuckets.value.numFiniteBuckets
-          growthFactor              = exponentialBuckets.value.growthFactor
-          scale             = exponentialBuckets.value.offset
+          numFiniteBuckets    = exponentialBuckets.value.numFiniteBuckets
+          growthFactor        = exponentialBuckets.value.growthFactor
+          scale               = exponentialBuckets.value.offset
         }
       }
     }

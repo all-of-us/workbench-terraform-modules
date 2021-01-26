@@ -11,6 +11,9 @@ locals {
       metric__labels__buffer_entry_status = join("", ["$", "{metric.labels.BufferEntryStatus}"])
       metric__labels__data_access_level   = join("", ["$", "{metric.labels.DataAccessLevel}"])
       metric__labels__gsuite_domain       = join("", ["$", "{metric.labels.gsuite_domain}"])
+      metric__labels__status              = join("", ["$", "{metric.labels.status}"])
+      metric__labels__name                = join("", ["$", "{metric.labels.name}"])
+      metric__labels__requestId           = join("", ["$", "{metric.labels.requestId}"])
     })
   ]
 
