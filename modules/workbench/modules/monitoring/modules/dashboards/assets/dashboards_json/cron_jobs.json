@@ -23,7 +23,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -63,7 +63,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -217,7 +217,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -251,7 +251,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -285,7 +285,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -319,7 +319,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -353,7 +353,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -387,7 +387,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -421,7 +421,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],

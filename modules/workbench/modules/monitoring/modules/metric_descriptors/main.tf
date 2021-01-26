@@ -17,7 +17,7 @@ locals {
   logging_metric_descriptor_paths = [for logging_metric_file in fileset("${path.module}/assets/logging_metric_descriptors/", "*.json") : pathexpand(logging_metric_file)]
   logging_metric_descriptor_names = [for logging_metric_path in local.logging_metric_descriptor_paths : replace(basename(logging_metric_path), ".json", "")]
 
-  logging_metric_tuple = [for logging_metric_path in local.monitoring_metric_descriptor_paths :
+  logging_metric_tuple = [for logging_metric_path in local.logging_metric_descriptor_paths :
   jsondecode(templatefile("${path.module}/assets/logging_metric_descriptors/${logging_metric_path}", {
     project_id = var.project_id
     namespace  = var.aou_env
@@ -92,12 +92,12 @@ resource "google_logging_metric" "logging_metric" {
           offset             = linear_buckets.value.offset
         }
       }
-      dynamic "exponentialBuckets" {
+      dynamic "exponential_buckets" {
         for_each = bucket_options.value.exponentialBuckets
         content {
-          numFiniteBuckets    = exponentialBuckets.value.numFiniteBuckets
-          growthFactor        = exponentialBuckets.value.growthFactor
-          scale               = exponentialBuckets.value.offset
+          num_finite_buckets    = exponentialBuckets.value.numFiniteBuckets
+          growth_factor        = exponentialBuckets.value.growthFactor
+          scale               = exponentialBuckets.value.scale
         }
       }
     }
