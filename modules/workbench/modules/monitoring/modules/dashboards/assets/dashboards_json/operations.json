@@ -242,7 +242,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric__labels__name} ${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         },
                         {
@@ -261,7 +261,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric__labels__name} ${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
@@ -296,7 +296,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric__labels__name} ${metric.labels.status}",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],

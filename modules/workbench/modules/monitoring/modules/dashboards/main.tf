@@ -14,6 +14,7 @@ locals {
       metric__labels__status              = join("", ["$", "{metric.labels.status}"])
       metric__labels__name                = join("", ["$", "{metric.labels.name}"])
       metric__labels__requestId           = join("", ["$", "{metric.labels.requestId}"])
+      metric__labels__data_access_level   = join("", ["$", "{metric.labels.dataAccessLevel}"])
     })
   ]
 
