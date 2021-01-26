@@ -17,8 +17,8 @@ locals {
   logging_metric_descriptor_paths = [for metric_file in fileset("${path.module}/assets/logging_metric_descriptors/", "*.json") : pathexpand(metric_file)]
   logging_metric_descriptor_names = [for metric_path in local.logging_metric_descriptor_paths : replace(basename(metric_path), ".json", "")]
 
-  metric_tuple = [for metric_path in local.logging_metric_descriptor_paths :
-  jsondecode(templatefile("${path.module}/assets/logging_metric_descriptors/${metric_path}", {
+  logging_metric_tuple = [for metric_path in local.logging_metric_descriptor_paths :
+  jsondecode(templatefile("${path.module}/assets/logging_metric_descriptors/${logging_metric_tuple}", {
     project_id = var.project_id
     namespace  = var.aou_env
   }))
