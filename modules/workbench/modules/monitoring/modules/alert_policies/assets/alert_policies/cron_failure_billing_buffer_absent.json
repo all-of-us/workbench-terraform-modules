@@ -27,5 +27,8 @@
   "enabled": true,
   "notificationChannels": [
     "projects/${project_id}/notificationChannels/${notification_channel_id}"
-  ]
+  ],
+  "userLabels": {
+    "type": "cron_failure"
+  }
 }

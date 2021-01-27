@@ -75,4 +75,5 @@ resource "google_monitoring_alert_policy" "policy" {
       }
     }
   }
+  user_labels = each.value.userLabels
 }
