@@ -51,4 +51,4 @@ One recommended way can be:
 1. Manually create/modify metrics/alerts/dahsboard in test env. 
 2. Get the updated json file via google API or gcloud console.
 3. Create/Replace the new json file.
-4: Apply this change to other envs.
+4. Apply this change to other envs.
