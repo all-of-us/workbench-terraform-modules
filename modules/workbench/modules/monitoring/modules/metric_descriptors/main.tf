@@ -51,20 +51,20 @@ resource "google_monitoring_metric_descriptor" "metric_descriptor" {
     for_each = lookup(each.value, "metadata", [])
     content {
       sample_period = lookup(metadata.value, "samplePeriod", null)
-      ingest_delay = lookup(metadata.value, "ingestDelay", null)
+      ingest_delay  = lookup(metadata.value, "ingestDelay", null)
     }
   }
 }
 
 resource "google_logging_metric" "logging_metric" {
-  for_each = local.name_to_logging_metric_descriptor
-  name   = each.value.name
+  for_each     = local.name_to_logging_metric_descriptor
+  name         = each.value.name
   description  = lookup(each.value, "description", null)
-  filter = each.value.filter
+  filter       = each.value.filter
   metric_descriptor {
     metric_kind = lookup(each.value.metricDescriptor, "metricKind", null)
-    value_type = lookup(each.value.metricDescriptor, "valueType", null)
-    unit = lookup(each.value.metricDescriptor, "unit", null)
+    value_type  = lookup(each.value.metricDescriptor, "valueType", null)
+    unit        = lookup(each.value.metricDescriptor, "unit", null)
 
     # Build a list of label objects for each outer iteration
     dynamic "labels" {
@@ -86,7 +86,7 @@ resource "google_logging_metric" "logging_metric" {
         for_each = bucket_options.key == "linearBuckets" ? [bucket_options.value] : []
         content {
           num_finite_buckets = lookup(linear_buckets.value, "numFiniteBuckets", null)
-          width = lookup(linear_buckets.value, "width", null)
+          width  = lookup(linear_buckets.value, "width", null)
           offset = lookup(linear_buckets.value, "offset", null)
         }
       }
@@ -94,8 +94,8 @@ resource "google_logging_metric" "logging_metric" {
         for_each = bucket_options.key == "exponentialBuckets" ? [bucket_options.value] : []
         content {
           num_finite_buckets = lookup(exponential_buckets.value, "numFiniteBuckets", null)
-          growth_factor = lookup(exponential_buckets.value, "growthFactor", null)
-          scale = lookup(exponential_buckets.value, "scale", null)
+          growth_factor      = lookup(exponential_buckets.value, "growthFactor", null)
+          scale               = lookup(exponential_buckets.value, "scale", null)
         }
       }
       dynamic "explicit_buckets" {
