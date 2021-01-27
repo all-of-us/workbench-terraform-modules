@@ -23,7 +23,7 @@
   ],
   "displayName": "Too Few Instances",
   "documentation": {
-    "content": "If there are too few instances of the application, this could indicate\na GAE failure, config issue, or other problem. It may indicate that the service\nwill not have enough capacity soon.",
+    "content": "If there are too few instances of the application, this could indicate a GAE failure, config issue, or other problem. It may indicate that the service will not have enough capacity soon.",
     "mimeType": "text/markdown"
   },
   "enabled": true,
