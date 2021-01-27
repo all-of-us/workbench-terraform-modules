@@ -34,9 +34,6 @@ locals {
   }
 }
 
-resource "sumologic_gcp_source" "gcp_source" {
-}
-
 # Simply export a content file or folder and put the JSON file in ./assets/content.
 # Since the query is so long (and critical) and is json-encoded, it's easier
 # to configure it separately.
@@ -44,7 +41,6 @@ resource "sumologic_content" "main" {
   for_each  = var.sumologic_egress_thresholds
   parent_id = var.sumologic_parent_folder_id_hexadecimal
   config    = lookup(local.egress_rule_to_config, each.key, "")
-  depends_on = [sumologic_gcp_source.gcp_source.id]
 }
 
 
