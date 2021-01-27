@@ -1,5 +1,5 @@
 {
-    "displayName": "Operations",
+    "displayName": "Operations [${namespace}]",
     "gridLayout": {
         "columns": "2",
         "widgets": [

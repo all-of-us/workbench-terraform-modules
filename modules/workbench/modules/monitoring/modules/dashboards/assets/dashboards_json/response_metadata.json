@@ -1,5 +1,5 @@
 {
-    "displayName": "Response Metadata",
+    "displayName": "Response Metadata [${namespace}]",
     "gridLayout": {
         "columns": "2",
         "widgets": [

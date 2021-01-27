@@ -43,3 +43,15 @@ it makes sense to add these sorts of things:
 In other words, the primary focus of the module is the Reporting system, but it may be convenient to
 add reporting-specific artifacts that might otherwise be concerned with Monitoring or other auxiliary
 services.
+
+### Monitoring
+We use Terraform to manage metrics descriptor, logs-based Metrics, alert policies, and dashboards. 
+To add a new one: 
+* Reporting-specific metrics
+* Notifications on the system
+* Reporting-specific logs, specific logs
+* Data blocks for views (maybe)
+
+In other words, the primary focus of the module is the Reporting system, but it may be convenient to
+add reporting-specific artifacts that might otherwise be concerned with Monitoring or other auxiliary
+services.

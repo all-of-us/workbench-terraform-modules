@@ -10,7 +10,7 @@
             "perSeriesAligner": "ALIGN_RATE"
           }
         ],
-        "duration": "90000s",
+        "duration": "10800s",
         "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\"\nmetric.label.\"name\"=\"billingProjectGarbageCollection\" metric.label.\"status\"=\"204\"",
         "trigger": {
           "percent": 100

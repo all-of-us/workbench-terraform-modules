@@ -4,7 +4,7 @@
         "columns": "2",
         "widgets": [
             {
-                "title": "Buffer Billing Projects [Every Minute]",
+                "title": "Buffer Billing Projects [Every Minute] [${namespace}]",
                 "xyChart": {
                     "dataSets": [
                         {

@@ -9,6 +9,6 @@
     "valueType": "INT64",
     "unit": "1",
     "description": "Number of spans pushed by the exporter thread to the exporter.",
-    "displayName": "custom.googleapis.com/${namespace}/oc_worker_spans_pushed",
-    "type": "custom.googleapis.com/${namespace}/oc_worker_spans_pushed"
+    "displayName": "custom.googleapis.com/oc_worker_spans_pushed",
+    "type": "custom.googleapis.com/oc_worker_spans_pushed"
 }
