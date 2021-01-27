@@ -46,8 +46,10 @@ services.
 
 ### Monitoring
 We use Terraform to manage metrics descriptor, logs-based Metrics, alert policies, and dashboards. 
-To add/edit a new one you can either add/edit on json files directly or manually setup in GCP console to get json file.
-* Reporting-specific metrics
+To add/edit a new one: you can either add/edit on json files directly or manually setup in GCP console to get json file.
+One recommanded way of doing this can be:
+1. 
+ Reporting-specific metrics
 * Notifications on the system
 * Reporting-specific logs, specific logs
 * Data blocks for views (maybe)
