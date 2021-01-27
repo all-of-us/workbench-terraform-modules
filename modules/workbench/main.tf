@@ -21,7 +21,4 @@ module "egress_detection" {
 # GCP Monitoring
 module "egress2" {
   source = "./modules/egress_2"
-  project_id = var.project_id
-  notification_channel_id = var.notification_channel_id
-  aou_env = var.aou_env
 }
