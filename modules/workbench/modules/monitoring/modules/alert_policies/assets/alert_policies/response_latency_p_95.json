@@ -12,7 +12,7 @@
         ],
         "comparison": "COMPARISON_GT",
         "duration": "300s",
-        "filter": "metric.type=\"appengine.googleapis.com/http/server/response_latencies\"\nresource.type=\"gae_app\"",
+        "filter": "metric.type=\"appengine.googleapis.com/http/server/response_latencies\" resource.type=\"gae_app\"",
         "thresholdValue": 15000,
         "trigger": {
           "count": 1
@@ -23,7 +23,7 @@
   ],
   "displayName": "Response Latency",
   "documentation": {
-    "content": "A sustained spike in latency may indicate an upstream performance issue\nor potentially an under-provisioning of the current system. Check tracing reports,\nactivity logs, database logs, and Terra metrics.",
+    "content": "A sustained spike in latency may indicate an upstream performance issue or potentially an under-provisioning of the current system. Check tracing reports, activity logs, database logs, and Terra metrics.",
     "mimeType": "text/markdown"
   },
   "enabled": true,

@@ -11,7 +11,7 @@
           }
         ],
         "duration": "90000s",
-        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\"\nmetric.label.\"status\"=\"204\" metric.label.\"name\"=\"uploadReportingSnapshot\"",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"status\"=\"204\" metric.label.\"name\"=\"uploadReportingSnapshot\"",
         "trigger": {
           "percent": 100
         }

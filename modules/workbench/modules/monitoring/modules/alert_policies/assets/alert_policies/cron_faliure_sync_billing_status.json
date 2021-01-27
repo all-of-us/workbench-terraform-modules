@@ -11,7 +11,7 @@
           }
         ],
         "duration": "600s",
-        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\"\nmetric.label.\"name\"=\"syncBillingProjectStatus\" metric.label.\"status\"=\"204\"",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"syncBillingProjectStatus\" metric.label.\"status\"=\"204\"",
         "trigger": {
           "percent": 100
         }
@@ -21,7 +21,7 @@
   ],
   "displayName": "Cron Failure: Sync Billing Project Status",
   "documentation": {
-    "content": "Billing Buffer-related cron tasks. Repeated failures may affect our ability\nto run the billing buffer pipeline effectively.",
+    "content": "Billing Buffer-related cron tasks. Repeated failures may affect our ability to run the billing buffer pipeline effectively.",
     "mimeType": "text/markdown"
   },
   "enabled": true,

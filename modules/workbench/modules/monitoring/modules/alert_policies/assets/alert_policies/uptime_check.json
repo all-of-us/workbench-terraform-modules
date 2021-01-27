@@ -11,7 +11,7 @@
         ],
         "comparison": "COMPARISON_LT",
         "duration": "60s",
-        "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" resource.type=\"uptime_url\"\nmetric.label.\"check_id\"=\"is-api-up-1576606412\"",
+        "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" resource.type=\"uptime_url\" metric.label.\"check_id\"=\"is-api-up-1576606412\"",
         "thresholdValue": 1,
         "trigger": {
           "count": 2
