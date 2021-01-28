@@ -8,4 +8,5 @@ WHERE
         SELECT
             MAX(u.snapshot_timestamp)
         FROM
-            `${project}`.${dataset}.user u);
+            `${project}`.${dataset}.verified_snapshot vs)
+         WHERE vs.verified is TRUE;
