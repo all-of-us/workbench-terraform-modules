@@ -16,5 +16,5 @@ variable reporting_dataset_id {
 variable reporting_dataset_access {
   description = "Access list for the reporting dataset"
   type        = list(map(string))
-  default     = []
+  default     = null
 }
