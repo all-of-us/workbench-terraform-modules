@@ -1,0 +1,14 @@
+{
+    "labels": [
+        {
+            "key": "opencensus_task",
+            "description": "Opencensus task identifier"
+        }
+    ],
+    "metricKind": "CUMULATIVE",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Number of spans dropped by the exporter thread.",
+    "displayName": "custom.googleapis.com/oc_worker_spans_dropped",
+    "type": "custom.googleapis.com/oc_worker_spans_dropped"
+}

@@ -43,3 +43,12 @@ it makes sense to add these sorts of things:
 In other words, the primary focus of the module is the Reporting system, but it may be convenient to
 add reporting-specific artifacts that might otherwise be concerned with Monitoring or other auxiliary
 services.
+
+### Monitoring
+We use Terraform to manage metrics descriptor, logs-based Metrics, alert policies, and dashboards. 
+To add/edit a new one: you can either add/edit on json files directly or manually setup in GCP console to get json file.
+One recommended way can be:
+1. Manually create/modify metrics/alerts/dahsboard in test env. 
+2. Get the updated json file via google API or gcloud console.
+3. Create/Replace the new json file.
+4. Apply this change to other envs.

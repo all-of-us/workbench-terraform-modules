@@ -1,0 +1,133 @@
+{
+    "displayName": "Distribution Metrics [${namespace}]",
+    "gridLayout": {
+        "columns": "2",
+        "widgets": [
+            {
+                "title": "Op Time Heatmap",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"custom.googleapis.com/cohort_operation_time\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_DELTA",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"OperationName\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "HEATMAP",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Workspace Operation Times 99th",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/workspace_operation_time\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_DELTA",
+                                        "crossSeriesReducer": "REDUCE_SUM"
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "HEATMAP",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Workspaces Performance",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/workspace_operation_time\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_SUM",
+                                        "crossSeriesReducer": "REDUCE_MEAN",
+                                        "groupByFields": [
+                                            "metric.label.\"operation_name\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "logging/user/api_method_time for test by label.method_name [99TH PERCENTILE]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/api_method_time\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_SUM",
+                                        "crossSeriesReducer": "REDUCE_PERCENTILE_99",
+                                        "groupByFields": [
+                                            "metric.label.\"method_name\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "ms"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            }
+        ]
+    }
+}

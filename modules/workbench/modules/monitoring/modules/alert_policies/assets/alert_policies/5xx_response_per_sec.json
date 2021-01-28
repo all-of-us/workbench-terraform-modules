@@ -1,0 +1,33 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_RATE"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "180s",
+        "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\"\u003e=\"500\" metric.label.\"response_code\"\u003c\"600\"",
+        "thresholdValue": 0.25,
+        "trigger": {
+          "count": 1
+        }
+      },
+      "displayName": "5xx responses per second"
+    }
+  ],
+  "displayName": "Too-many-500s",
+  "documentation": {
+    "content": "Playbook: https://broad.io/aou-playbook",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ]
+}

@@ -1,0 +1,440 @@
+{
+    "displayName": "Cron Jobs",
+    "gridLayout": {
+        "columns": "2",
+        "widgets": [
+            {
+                "title": "Buffer Billing Projects [Every Minute] [${namespace}]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"bufferBillingProjects\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "thresholds": [
+                        {
+                            "label": "label",
+                            "value": 0.01666666753590107
+                        }
+                    ],
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Update Gauge Metrics [Every Minute]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"monitoring/updateGaugeMetrics\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "thresholds": [
+                        {
+                            "label": "label",
+                            "value": 0.01666666753590107
+                        }
+                    ],
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Sync Billing Project Status [Every Minute]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"syncBillingProjectStatus\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "thresholds": [
+                        {
+                            "label": "label",
+                            "value": 0.01666666753590107
+                        }
+                    ],
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Clean Billing Buffer [Every Hour]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"cleanBillingBuffer\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_COUNT",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_AREA",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status} ${metric__labels__requestId}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "thresholds": [
+                        {
+                            "label": "label",
+                            "value": 0.01666666753590107
+                        }
+                    ],
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Check Clusters [Every 3 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkClusters\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Bulk Sync Compliance Training Status [Every 24 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"bulkSyncComplianceTrainingStatus\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Bulk Sync EraCommons Status [Every 24 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"bulkSyncEraCommonsStatus\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_COUNT",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Bulk Sync Two Factor Auth Status [Every 24 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"bulkSyncTwoFactorAuthStatus\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "Bulk Audit Project Access [Every 24 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"bulkAuditProjectAccess\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "checkFreeTierBillingUsage [Every 3 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkFreeTierBillingUsage\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "billingProjectGarbageCollection [Every 24 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkFreeTierBillingUsage\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "exportToRdr [Every 24 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"exportToRdr\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            }
+        ]
+    }
+}

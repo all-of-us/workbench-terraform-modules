@@ -1,0 +1,72 @@
+{
+    "displayName": "HTTP Monitoring [${namespace}]",
+    "gridLayout": {
+        "columns": "2",
+        "widgets": [
+            {
+                "title": "GAE Application - Response count (filtered) by label.response_code [SUM]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\"!=\"304\" metric.label.\"response_code\"!=\"204\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"response_code\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "300s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            },
+            {
+                "title": "GAE Application - Response count (filtered) by label.response_code [SUM]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\"!=\"304\" metric.label.\"response_code\"!=\"204\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"response_code\""
+                                        ]
+                                    }
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "LINE",
+                            "minAlignmentPeriod": "300s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -48,3 +48,7 @@ services.
 Generates sumologic contents to analyse a set of Google VPC flow logs for high-egress events. The incoming set of flow 
 logs are bucketed into non-overlapping time slices and grouped by project / VM name to identify VMs with high amounts 
 of egress in a given period of time.
+
+### Monitoring
+Generates Stackdriver alert configs, Stackdriver dashboards, log based metrics.
+

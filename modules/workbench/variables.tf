@@ -41,21 +41,6 @@ variable reporting_dataset_access {
   default     = []
 }
 
-# TODO(jaycarlton) codegen this top-level variables as the union
-#   of all modules' variables files.
-# List of objects whose values correspond to the google_monitoring_notification_channel
-# structure
-variable "notification_channels" {
-  description = "Email address and Friendly Descriptions for Email Notification Channels"
-  default = [{
-    display_name = "Anonymous  Notification Channel"
-    type         = "" # email or
-    labels = {
-      email = ""
-    }
-  }]
-}
-
 #
 # Egress
 #
@@ -103,5 +88,15 @@ variable sumologic_parent_folder_id_hexadecimal {
 
 variable sumologic_webhook_id_hexadecimal {
   description = "The webhook ID to notify the alert to, in hexadecimal format"
+  type = string
+}
+
+#
+# Monitoring
+#
+
+variable notification_channel_id {
+  description = "The notification channel on where the alert should be delivered to"
   type        = string
 }
+

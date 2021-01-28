@@ -43,3 +43,4 @@ resource "sumologic_content" "main" {
   config    = lookup(local.egress_rule_to_config, each.key, "")
 }
 
+

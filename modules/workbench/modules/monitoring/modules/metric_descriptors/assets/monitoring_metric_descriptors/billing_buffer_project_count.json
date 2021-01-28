@@ -1,0 +1,17 @@
+{
+    "labels": [
+        {
+            "key": "opencensus_task",
+            "description": "Opencensus task identifier"
+        },
+        {
+            "key": "BufferEntryStatus"
+        }
+    ],
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Number of projects in the billing buffer for each status",
+    "displayName": "custom.googleapis.com/billing_buffer_project_count",
+    "type": "custom.googleapis.com/billing_buffer_project_count"
+}

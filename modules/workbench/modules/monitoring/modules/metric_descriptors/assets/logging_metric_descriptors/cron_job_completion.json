@@ -1,0 +1,33 @@
+{
+    "name": "cron_job_completion",
+    "description": "Completed cron jobs",
+    "filter": "resource.type=\"gae_app\"\nlogName=\"projects/${project_id}/logs/appengine.googleapis.com%2Frequest_log\"\nprotoPayload.resource:\"/v1/cron/\"",
+    "metricDescriptor": {
+        "name": "projects/${project_id}/metricDescriptors/logging.googleapis.com/user/cron_job_completion",
+        "labels": [
+            {
+                "key": "requestId",
+                "description": "Request ID. Useful for finding the log entry later"
+            },
+            {
+                "key": "status",
+                "valueType": "INT64",
+                "description": "HTTP Status code"
+            },
+            {
+                "key": "name",
+                "description": "Cron job name (from URL)"
+            }
+        ],
+        "metricKind": "DELTA",
+        "valueType": "INT64",
+        "unit": "1",
+        "description": "Completed cron jobs",
+        "type": "logging.googleapis.com/user/cron_job_completion"
+    },
+    "labelExtractors": {
+        "requestId": "EXTRACT(protoPayload.requestId)",
+        "status": "EXTRACT(httpRequest.status)",
+        "name": "REGEXP_EXTRACT(protoPayload.resource, \"\\\\/v1\\\\/cron\\\\/([\\\\w/]+)\")"
+    }
+}

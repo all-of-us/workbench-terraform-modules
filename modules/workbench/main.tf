@@ -17,3 +17,11 @@ module "egress_detection" {
   sumologic_parent_folder_id_hexadecimal  = var.sumologic_parent_folder_id_hexadecimal
   sumologic_webhook_id_hexadecimal        = var.sumologic_webhook_id_hexadecimal
 }
+
+# GCP Monitoring
+module "monitoring" {
+  source = "./modules/monitoring"
+  project_id = var.project_id
+  notification_channel_id = var.notification_channel_id
+  aou_env = var.aou_env
+}
