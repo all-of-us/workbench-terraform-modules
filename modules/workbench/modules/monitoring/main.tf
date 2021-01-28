@@ -21,4 +21,5 @@ module "alert_policies" {
   project_id = var.project_id
   aou_env    = var.aou_env
   notification_channel_id = var.notification_channel_id
+  expected_instance_count = var.expected_instance_count
 }
