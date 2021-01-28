@@ -6,7 +6,7 @@ FROM
 WHERE
         t.snapshot_timestamp = (
         SELECT
-            MAX(u.snapshot_timestamp)
+            MAX(vs.snapshot_timestamp)
         FROM
             `${project}`.${dataset}.verified_snapshot vs)
          WHERE vs.verified is TRUE;
