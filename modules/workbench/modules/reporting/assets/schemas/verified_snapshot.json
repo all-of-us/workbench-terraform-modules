@@ -1,12 +1,7 @@
  [
    {
-     "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+     "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot. If present, this is a successful upload",
      "name": "snapshot_timestamp",
      "type": "INTEGER"
-   },
-  {
-    "description": "Whether this upload is verify as a successful upload.",
-    "name": "verified",
-    "type": "BOOLEAN"
-  }
+   }
 ]
