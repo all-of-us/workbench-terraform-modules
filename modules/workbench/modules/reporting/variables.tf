@@ -16,5 +16,18 @@ variable reporting_dataset_id {
 variable reporting_dataset_access {
   description = "Access list for the reporting dataset"
   type        = list(map(string))
-  default     = null
+  default     = [
+    {
+      role          = "roles/bigquery.dataOwner"
+      special_group = "projectOwners"
+    },
+    {
+      role          = "roles/bigquery.dataViewer"
+      special_group = "projectReaders"
+    },
+    {
+      role          = "roles/bigquery.dataWriter"
+      special_group = "projectWriters"
+    }
+  ]
 }
