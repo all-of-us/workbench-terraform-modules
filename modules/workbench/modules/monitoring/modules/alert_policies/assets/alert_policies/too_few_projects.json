@@ -12,7 +12,7 @@
         ],
         "comparison": "COMPARISON_LT",
         "duration": "60s",
-        "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count\" resource.type=\"generic_node\"resource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"AVAILABLE\"",
+        "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"AVAILABLE\"",
         "thresholdValue": 25,
         "trigger": {
           "count": 1
@@ -35,7 +35,7 @@
         ],
         "comparison": "COMPARISON_GT",
         "duration": "0s",
-        "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count\" resource.type=\"generic_node\"resource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"ERROR\"",
+        "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"ERROR\"",
         "thresholdValue": 5,
         "trigger": {
           "count": 1
