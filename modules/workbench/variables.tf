@@ -48,11 +48,7 @@ variable reporting_dataset_access {
       special_group = "projectReaders"
     },
     {
-      role          = "roles/bigquery.dataEditor"
-      special_group = "projectWriters"
-    },
-    {
-      role          = "roles/bigquery.datasets.update"
+      role          = "roles/bigquery.dataOwner"
       special_group = "projectWriters"
     }
   ]
