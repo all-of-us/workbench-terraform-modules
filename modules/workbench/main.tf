@@ -5,6 +5,7 @@ module "reporting" {
   # reporting
   aou_env              = var.aou_env
   reporting_dataset_id = var.reporting_dataset_id
+  reporting_dataset_access = var.reporting_dataset_access
 
   # provider
   project_id = var.project_id
