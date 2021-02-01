@@ -1,6 +1,5 @@
 locals {
   content_dir           = pathexpand("${path.module}/assets/content")
-  search_configs        = fileset(local.content_dir, "*.json")
   content_template_path = pathexpand("${local.content_dir}/egress_window_template.json")
   query_path            = pathexpand("${local.content_dir}/query.txt")
 
