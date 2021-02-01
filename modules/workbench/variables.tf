@@ -40,15 +40,15 @@ variable reporting_dataset_access {
   type        = list(map(string))
   default     = [
     {
-      role          = "roles/bigquery.dataOwner"
+      role          = "roles/owner"
       special_group = "projectOwners"
     },
     {
-      role          = "roles/bigquery.dataViewer"
+      role          = "roles/viewer"
       special_group = "projectReaders"
     },
     {
-      role          = "roles/bigquery.dataEditor"
+      role          = "roles/editor"
       special_group = "projectWriters"
     }
   ]
