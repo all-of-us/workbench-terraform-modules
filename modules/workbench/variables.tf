@@ -50,6 +50,10 @@ variable reporting_dataset_access {
     {
       role          = "roles/bigquery.dataEditor"
       special_group = "projectWriters"
+    },
+    {
+      role          = "roles/bigquery.datasets.update"
+      special_group = "projectWriters"
     }
   ]
 }
