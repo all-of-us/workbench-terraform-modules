@@ -224,5 +224,65 @@
     "type": "STRING",
     "description": "If the institutional_role_enum is \"other\", custom description\nof this user's role in the institution.",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "degrees",
+    "type": "STRING",
+    "description": "List of user's degrees.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "race",
+    "type": "STRING",
+    "description": "User-reported race information.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ethnicity",
+    "type": "STRING",
+    "description": "User-reported Ethnicity information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gender_identity",
+    "type": "STRING",
+    "description": "User-reported Gender Identity information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "identifies_as_lgbtq",
+    "type": "STRING",
+    "description": "User-reported Identify as LGBTQ information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "lgbtq_identity",
+    "type": "STRING",
+    "description": "User-reported LGBTQ Identity information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "sex_at_birth",
+    "type": "STRING",
+    "description": "User-reported Sex at birth information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "year_of_birth",
+    "type": "INTEGER",
+    "description": "User-reported Year of birth information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "disability",
+    "type": "STRING",
+    "description": "User-reported Disability information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "highest_education",
+    "type": "STRING",
+    "description": "User-reported HighestEducation information",
+    "mode": "NULLABLE"
   }
 ]
