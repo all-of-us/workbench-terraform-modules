@@ -252,7 +252,7 @@
   {
     "name": "identifies_as_lgbtq",
     "type": "STRING",
-    "description": "User-reported Identify as LGBTQ information",
+    "description": "User-reported Identify as LGBTQ information, comma-delimited if multiple answers were provided\"",
     "mode": "NULLABLE"
   },
   {
@@ -262,7 +262,7 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "sex_at_births",
+    "name": "sexes_at_birth",
     "type": "STRING",
     "description": "User-reported Sex at birth information, comma-delimited if multiple answers were provided",
     "mode": "NULLABLE"
