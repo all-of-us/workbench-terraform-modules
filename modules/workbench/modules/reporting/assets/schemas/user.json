@@ -228,13 +228,13 @@
   {
     "name": "degrees",
     "type": "STRING",
-    "description": "List of user's degrees.",
+    "description": "List of user's degrees, comma-delimited if multiple answers were provided",
     "mode": "NULLABLE"
   },
   {
-    "name": "race",
+    "name": "races",
     "type": "STRING",
-    "description": "User-reported race information.",
+    "description": "User-reported race information, comma-delimited if multiple answers were provided",
     "mode": "NULLABLE"
   },
   {
@@ -244,9 +244,9 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "gender_identity",
+    "name": "gender_identities",
     "type": "STRING",
-    "description": "User-reported Gender Identity information",
+    "description": "User-reported Gender Identity information, comma-delimited if multiple answers were provided",
     "mode": "NULLABLE"
   },
   {
@@ -262,9 +262,9 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "sex_at_birth",
+    "name": "sex_at_births",
     "type": "STRING",
-    "description": "User-reported Sex at birth information",
+    "description": "User-reported Sex at birth information, comma-delimited if multiple answers were provided",
     "mode": "NULLABLE"
   },
   {
