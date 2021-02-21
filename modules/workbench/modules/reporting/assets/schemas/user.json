@@ -244,7 +244,7 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "gender_identifies",
+    "name": "gender_identities",
     "type": "STRING",
     "description": "User-reported Gender Identity information, comma-delimited if multiple answers were provided",
     "mode": "NULLABLE"
