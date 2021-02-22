@@ -49,6 +49,9 @@ We use Terraform to manage metrics descriptor, logs-based Metrics, alert policie
 To add/edit a new one: you can either add/edit on json files directly or manually setup in GCP console to get json file.
 One recommended way can be:
 1. Manually create/modify metrics/alerts/dahsboard in test env. 
-2. Get the updated json file via google API or gcloud console.
+2. Get the updated json file via google API or gcloud console. Api explorer:
+    * [Lists metric descriptors](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.metricDescriptors/list?apix_params=%7B%22name%22%3A%22projects%2Fall-of-us-rw-prod%22%2C%22filter%22%3A%22metric.type%20%3D%20starts_with(%5C%22logging.googleapis.com%2Fuser%5C%22)%22%7D)
+    * [Lists dashboards](https://cloud.google.com/monitoring/api/ref_v3/rest/v1/projects.dashboards/list?apix_params=%7B%22parent%22%3A%22projects%2Fall-of-us-rw-prod%22%7D)
+    * [Lists logs-based metrics](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.metrics/list?apix_params=%7B%22parent%22%3A%22projects%2Fall-of-us-rw-prod%22%7D)
 3. Create/Replace the new json file.
 4. Apply this change to other envs.
