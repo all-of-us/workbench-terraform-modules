@@ -3,10 +3,6 @@
 terraform {
   required_providers {
     google = ">= 3.23.0"
-    sumologic = {
-      source  = "SumoLogic/sumologic"
-      version = "2.6.0"
-    }
   }
 }
 

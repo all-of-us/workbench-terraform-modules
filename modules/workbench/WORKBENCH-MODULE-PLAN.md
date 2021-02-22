@@ -61,12 +61,3 @@ This module maps to
 case, we need to do `terraform state import`.)
 * Logs-based metrics on the initial log stream
 * Reporting datasets in BigQuery
-
-## Tiers and Egress Detection
-There is a [sumo logic provider](https://www.sumologic.com/blog/terraform-provider-hosted/) for Terraform, which is very good
-news. It looks really svelte.
-
-We will also want to control the VPC flow logs,
-perimeters, etc, but it  won't be  in this `workbench` module,
-because Terra-not-form owns the organization and needs to do
-creation manually for now.
