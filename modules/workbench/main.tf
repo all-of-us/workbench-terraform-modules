@@ -13,8 +13,6 @@ module "reporting" {
 
 # GCP Monitoring
 module "monitoring" {
-  count = var.monitoring_enabled ? 1 : 0
-
   source = "./modules/monitoring"
   project_id = var.project_id
   notification_channel_id = var.notification_channel_id

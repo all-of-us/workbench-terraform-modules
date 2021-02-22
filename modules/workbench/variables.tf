@@ -67,9 +67,3 @@ variable expected_instance_count {
   type        = number
   default     = 0
 }
-variable monitoring_enabled {
-  description = "Whether to enable monitoring module "
-  type        = bool
-  default     = true
-}
-
