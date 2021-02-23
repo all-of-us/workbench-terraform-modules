@@ -55,56 +55,6 @@ variable reporting_dataset_access {
 }
 
 #
-# Egress
-#
-variable tiers {
-  description = "List of tiers"
-  type        = list(string)
-  default     = ["registered"]
-}
-
-variable sumologic_egress_thresholds {
-  description = "Configuration values for egress search content in SumoLogic. The name (key) describes simply the tier name and config: "
-  type        = map(map(any))
-  default = {
-    registered_tier_1min_50mib = {
-      tier_name   = "registered"
-      egress_threshold_mib = 50
-      egress_window_sec    = 60
-      cron_expression      = "0 * * * * ? *"
-      time_range           = "-5m"
-      schedule_type        = "RealTime"
-    }
-    registered_tier_10min_150mib = {
-      tier_name   = "registered"
-      egress_threshold_mib = 150
-      egress_window_sec    = 600
-      cron_expression      = "0 * * * * ? *"
-      time_range           = "-5m"
-      schedule_type        = "RealTime"
-    }
-    registered_tier_1hr_200mib= {
-      tier_name   = "registered"
-      egress_threshold_mib = 200
-      egress_window_sec    = 3600
-      cron_expression      = "0 0 * * * ? *"
-      time_range           = "-12m"
-      schedule_type        = "1Hour"
-    }
-  }
-}
-
-variable sumologic_parent_folder_id_hexadecimal {
-  description = "The folder to create alert within, in hexadecimal format"
-  type        = string
-}
-
-variable sumologic_webhook_id_hexadecimal {
-  description = "The webhook ID to notify the alert to, in hexadecimal format"
-  type = string
-}
-
-#
 # Monitoring
 #
 
