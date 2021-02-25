@@ -5,6 +5,12 @@
     "type": "INTEGER"
   },
   {
+    "name": "access_tier_short_name",
+    "type": "STRING",
+    "description": "A brief string identifying the access tier of this workspace, e.g. 'registered'",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "billing_account_type",
     "type": "STRING",
     "description": "Whether the workspace's billing account is the free tier account, or a user-provided billing\naccount",
