@@ -32,7 +32,7 @@ variable "zone" {
 }
 
 variable monitoring_project_id {
-  description = "GCP Project to create alerts&dashboard&metrics within"
+  description = "GCP Project to create alerts, dashboards and metrics within"
   type        = string
   default     = null
 }
