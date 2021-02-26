@@ -67,3 +67,8 @@ variable expected_instance_count {
   type        = number
   default     = 0
 }
+variable "monitoring_enabled" {
+  type        = bool
+  description = "Enable flag for this module. If set to false, no resources will be created."
+  default     = true
+}

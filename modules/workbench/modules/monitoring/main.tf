@@ -22,4 +22,5 @@ module "alert_policies" {
   aou_env    = var.aou_env
   notification_channel_id = var.notification_channel_id
   expected_instance_count = var.expected_instance_count
+  monitoring_enabled = var.monitoring_enabled
 }

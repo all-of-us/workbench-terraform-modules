@@ -19,3 +19,9 @@ variable "zone" {
   type        = string
   default     = "us-central1-c"
 }
+
+variable "monitoring_enabled" {
+  type        = bool
+  description = "Enable flag for this module. If set to false, no resources will be created."
+  default     = true
+}

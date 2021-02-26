@@ -17,3 +17,9 @@ variable expected_instance_count {
   description = "The expected number of instances. It is used for too_few_instances alert."
   type        = number
 }
+
+variable "monitoring_enabled" {
+  type        = bool
+  description = "Enable flag for this module. If set to false, no resources will be created."
+  default     = true
+}

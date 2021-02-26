@@ -17,7 +17,7 @@ locals {
 }
 
 resource "google_monitoring_alert_policy" "policy" {
-  for_each = local.name_to_alert_policy
+  for_each = var.monitoring_enabled ? local.name_to_alert_policy : null
 
   combiner     = each.value.combiner
   display_name = each.value.displayName

@@ -22,7 +22,7 @@ locals {
 }
 
 resource "google_monitoring_dashboard" "dashboard" {
-  for_each       = local.name_to_dashboard
+  for_each = var.monitoring_enabled ? local.name_to_dashboard : null
   dashboard_json = each.value
 }
 

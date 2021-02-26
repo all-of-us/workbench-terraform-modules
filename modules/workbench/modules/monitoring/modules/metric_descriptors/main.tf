@@ -27,7 +27,7 @@ locals {
 }
 
 resource "google_monitoring_metric_descriptor" "metric_descriptor" {
-  for_each = local.name_to_monitoring_metric_descriptor
+  for_each = var.monitoring_enabled ? local.name_to_monitoring_metric_descriptor : null
 
   description  = each.value.description
   display_name = each.value.displayName
@@ -57,7 +57,7 @@ resource "google_monitoring_metric_descriptor" "metric_descriptor" {
 }
 
 resource "google_logging_metric" "logging_metric" {
-  for_each     = local.name_to_logging_metric_descriptor
+  for_each = var.monitoring_enabled ? local.name_to_logging_metric_descriptor : null
   name         = each.value.name
   description  = lookup(each.value, "description", null)
   filter       = each.value.filter
