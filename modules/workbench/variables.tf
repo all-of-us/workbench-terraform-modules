@@ -1,3 +1,7 @@
+locals {
+  monitoring_project_id = var.monitoring_project_id == null ? var.project_id : monitoring_project_id
+}
+
 #
 # Environment Variables
 #
@@ -30,7 +34,7 @@ variable "zone" {
 variable monitoring_project_id {
   description = "GCP Project to create alerts&dashboard&metrics within"
   type        = string
-  default     = var.project_id
+  default     = null
 }
 
 #
