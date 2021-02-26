@@ -14,7 +14,7 @@ module "reporting" {
 # GCP Monitoring
 module "monitoring" {
   source = "./modules/monitoring"
-  project_id = var.project_id
+  project_id = var.monitoring_project_id
   notification_channel_id = var.notification_channel_id
   expected_instance_count = var.expected_instance_count
   aou_env = var.aou_env

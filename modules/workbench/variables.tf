@@ -27,6 +27,12 @@ variable "zone" {
   default     = "us-central1-c"
 }
 
+variable monitoring_project_id {
+  description = "GCP Project to create alerts&dashboard&metrics within"
+  type        = string
+  default     = var.project_id
+}
+
 #
 # Reporting
 #
