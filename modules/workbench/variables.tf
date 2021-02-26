@@ -1,5 +1,5 @@
 locals {
-  monitoring_project_id = var.monitoring_project_id == null ? var.project_id : monitoring_project_id
+  monitoring_project_id = var.monitoring_project_id == null ? var.project_id : var.monitoring_project_id
 }
 
 #
