@@ -8,6 +8,7 @@ locals {
     project_id = var.project_id
     namespace  = var.aou_env
     notification_channel_id  = var.notification_channel_id
+    high_priority_notification_channel_id  = var.high_priority_notification_channel_id
     expected_instance_count  = var.expected_instance_count
   }))
   ]

@@ -10,6 +10,11 @@ variable aou_env {
 
 variable notification_channel_id {
   description = "The notification channel on where the alert should be delivered to"
+  type    = list(string)
+}
+
+variable high_priority_notification_channel_id {
+  description = "The notification channel for more important alerts. "
   type        = string
 }
 
