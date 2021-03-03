@@ -13,6 +13,11 @@ variable notification_channel_id {
   type        = string
 }
 
+variable high_priority_notification_channel_id {
+  description = "The notification channel for more important alerts. "
+  type        = string
+}
+
 variable expected_instance_count {
   description = "The expected number of instances. It is used for too_few_instances alert."
   type        = number

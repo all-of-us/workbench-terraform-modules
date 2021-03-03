@@ -1,5 +1,6 @@
 locals {
   monitoring_project_id = var.monitoring_project_id == null ? var.project_id : var.monitoring_project_id
+  high_priority_notification_channel_id = var.high_priority_notification_channel_id == null ? var.notification_channel_id : var.high_priority_notification_channel_id
 }
 
 #
@@ -29,12 +30,6 @@ variable "zone" {
   description = "GCP zone"
   type        = string
   default     = "us-central1-c"
-}
-
-variable monitoring_project_id {
-  description = "GCP Project to create alerts, dashboards and metrics within"
-  type        = string
-  default     = null
 }
 
 #
@@ -71,6 +66,16 @@ variable reporting_dataset_access {
 variable notification_channel_id {
   description = "The notification channel on where the alert should be delivered to"
   type        = string
+}
+variable high_priority_notification_channel_id {
+  description = "The notification channel for more important alerts. We may want to use different notification channel to get quicker response."
+  type        = string
+  default     = null
+}
+variable monitoring_project_id {
+  description = "GCP Project to create alerts, dashboards and metrics within"
+  type        = string
+  default     = null
 }
 variable expected_instance_count {
   description = "The expected number of instances. It is used for too_few_instances alert."
