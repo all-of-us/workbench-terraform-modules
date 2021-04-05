@@ -53,15 +53,9 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "data_access_level",
-    "type": "STRING",
-    "description": "DEPRECATED - use access_tier_short_names.  An indication of whether the user has completed the requirements for access to the\nregistered tier.",
-    "mode": "NULLABLE"
-  },
-  {
     "name": "data_use_agreement_bypass_time",
     "type": "TIMESTAMP",
-    "description": "Time an admin bypassed the DUCC rerquirement for this user, or null if that has not happened.\nThis value is reset to null if a user's bypassed status  is revoked.",
+    "description": "Time an admin bypassed the DUCC requirement for this user, or null if that has not happened.\nThis value is reset to null if a user's bypassed status is revoked.",
     "mode": "NULLABLE"
   },
   {
