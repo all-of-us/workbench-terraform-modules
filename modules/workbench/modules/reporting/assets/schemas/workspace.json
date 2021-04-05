@@ -205,7 +205,7 @@
   {
     "name": "workspace_id",
     "type": "INTEGER",
-    "description": "Primary key of the workspace table in Workrbench application database. Along with\nsnapshot_timestamp, serves as a pseudo-primary key for this table.",
+    "description": "Primary key of the workspace table in the Workbench application database. Along with\nsnapshot_timestamp, serves as a pseudo-primary key for this table.",
     "mode": "NULLABLE"
   },
   {
