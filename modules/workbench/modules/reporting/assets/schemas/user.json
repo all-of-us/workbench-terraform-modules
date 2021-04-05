@@ -61,7 +61,7 @@
   {
     "name": "data_use_agreement_bypass_time",
     "type": "TIMESTAMP",
-    "description": "Time an admin bypassed the DUCC rerquirement for this user, or null if that has not happened.\nThis value is reset to null if a user's bypassed status  is revoked.",
+    "description": "Time an admin bypassed the DUCC requirement for this user, or null if that has not happened.\nThis value is reset to null if a user's bypassed status is revoked.",
     "mode": "NULLABLE"
   },
   {
