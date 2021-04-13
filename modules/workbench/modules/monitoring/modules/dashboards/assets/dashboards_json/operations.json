@@ -157,19 +157,19 @@
                 }
             },
             {
-                "title": "Workspaces by status",
+                "title": "Workspaces by status and access tier",
                 "xyChart": {
                     "dataSets": [
                         {
                             "timeSeriesQuery": {
                                 "timeSeriesFilter": {
-                                    "filter": "metric.type=\"custom.googleapis.com/workspace_count_3\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
+                                    "filter": "metric.type=\"custom.googleapis.com/workspace_count_4\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\"",
                                     "aggregation": {
                                         "perSeriesAligner": "ALIGN_MEAN",
                                         "crossSeriesReducer": "REDUCE_MAX",
                                         "groupByFields": [
                                             "metric.label.\"ActiveStatus\"",
-                                            "metric.label.\"DataAccessLevel\""
+                                            "metric.label.\"access_tier_short_name\""
                                         ]
                                     }
                                 },
