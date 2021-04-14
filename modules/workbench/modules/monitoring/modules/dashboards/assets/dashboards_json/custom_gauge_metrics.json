@@ -23,7 +23,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "legendTemplate": "Status: ${metric__labels__buffer_entry_status}, ${metric__labels__access_tier_short_name}",
+                            "legendTemplate": "Status: ${metric__labels__buffer_entry_status}, Access Tier: ${metric__labels__access_tier_short_name}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
