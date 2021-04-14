@@ -175,6 +175,7 @@
                                 },
                                 "unitOverride": "1"
                             },
+                            "legendTemplate": "Access Tier: ${metric__labels__access_tier_short_name}, Status: ${metric__labels__ActiveStatus}",
                             "plotType": "LINE",
                             "minAlignmentPeriod": "60s"
                         }

@@ -92,7 +92,7 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "legendTemplate": "Tier: ${metric__labels__access_tier_short_name}",
+                            "legendTemplate": "Access Tier: ${metric__labels__access_tier_short_name}",
                             "minAlignmentPeriod": "60s"
                         }
                     ],
