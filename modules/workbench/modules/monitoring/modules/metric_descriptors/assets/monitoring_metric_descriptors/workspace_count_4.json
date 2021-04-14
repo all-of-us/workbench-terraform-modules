@@ -1,7 +1,7 @@
 {
     "labels": [
         {
-            "key": "DataAccessLevel"
+            "key": "access_tier_short_name"
         },
         {
             "key": "ActiveStatus"
@@ -14,7 +14,7 @@
     "metricKind": "GAUGE",
     "valueType": "INT64",
     "unit": "1",
-    "description": "Count of all workspaces",
+    "description": "Count of all workspaces by access tier",
     "displayName": "custom.googleapis.com/workspace_count_4",
     "type": "custom.googleapis.com/workspace_count_4"
 }
