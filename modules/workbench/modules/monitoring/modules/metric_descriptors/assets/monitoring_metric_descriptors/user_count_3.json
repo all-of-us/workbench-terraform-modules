@@ -1,7 +1,7 @@
 {
     "labels": [
         {
-            "key": "DataAccessLevel"
+            "key": "access_tier_short_names"
         },
         {
             "key": "Disabled"
@@ -9,15 +9,12 @@
         {
             "key": "opencensus_task",
             "description": "Opencensus task identifier"
-        },
-        {
-            "key": "BypassedBeta"
         }
     ],
     "metricKind": "GAUGE",
     "valueType": "INT64",
     "unit": "1",
-    "description": "total number of users",
-    "displayName": "custom.googleapis.com/user_count_2",
-    "type": "custom.googleapis.com/user_count_2"
+    "description": "total number of users by access tier",
+    "displayName": "custom.googleapis.com/user_count_3",
+    "type": "custom.googleapis.com/user_count_3"
 }
