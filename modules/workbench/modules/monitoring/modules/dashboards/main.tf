@@ -8,14 +8,15 @@ locals {
     templatefile(pathexpand("${path.module}/assets/dashboards_json/${full_path}"), {
       namespace                           = var.aou_env
       project_id                          = var.project_id
-      metric__labels__buffer_entry_status = join("", ["$", "{metric.labels.BufferEntryStatus}"])
-      metric__labels__data_access_level   = join("", ["$", "{metric.labels.DataAccessLevel}"])
-      metric__labels__gsuite_domain       = join("", ["$", "{metric.labels.gsuite_domain}"])
-      metric__labels__status              = join("", ["$", "{metric.labels.status}"])
-      metric__labels__name                = join("", ["$", "{metric.labels.name}"])
-      metric__labels__requestId           = join("", ["$", "{metric.labels.requestId}"])
-      metric__labels__access_tier_short_name = join("", ["$", "{metric.labels.access_tier_short_name}"])
+      metric__labels__access_tier_short_name  = join("", ["$", "{metric.labels.access_tier_short_name}"])
       metric__labels__access_tier_short_names = join("", ["$", "{metric.labels.access_tier_short_names}"])
+      metric__labels__active_status           = join("", ["$", "{metric.labels.ActiveStatus}"])
+      metric__labels__buffer_entry_status     = join("", ["$", "{metric.labels.BufferEntryStatus}"])
+      metric__labels__data_access_level       = join("", ["$", "{metric.labels.DataAccessLevel}"])
+      metric__labels__gsuite_domain           = join("", ["$", "{metric.labels.gsuite_domain}"])
+      metric__labels__name                    = join("", ["$", "{metric.labels.name}"])
+      metric__labels__requestId               = join("", ["$", "{metric.labels.requestId}"])
+      metric__labels__status                  = join("", ["$", "{metric.labels.status}"])
     })
   ]
 
