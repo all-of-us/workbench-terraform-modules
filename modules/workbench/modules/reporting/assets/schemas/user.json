@@ -7,7 +7,7 @@
   {
     "name": "about_you",
     "type": "STRING",
-    "description": "User's description of  their research background, experience and research interests.",
+    "description": "DEPRECATED - has not been collected for a long time.  Was: user's description of their research background, experience and research interests.",
     "mode": "NULLABLE"
   },
   {
@@ -49,7 +49,7 @@
   {
     "name": "current_position",
     "type": "STRING",
-    "description": "User's current role/position.",
+    "description": "DEPRECATED - has not been collected for a long time.  Was: User's current role/position.",
     "mode": "NULLABLE"
   },
   {
@@ -121,7 +121,7 @@
   {
     "name": "free_tier_credits_limit_days_override",
     "type": "INTEGER",
-    "description": "Override value for the default free tier time limit (days).",
+    "description": "DEPRECATED - there is no longer a time limit associated with free credits.  Was: Override value for the default free tier time limit (days).",
     "mode": "NULLABLE"
   },
   {
