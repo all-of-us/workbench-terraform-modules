@@ -103,7 +103,7 @@
   {
     "name": "rp_control_set",
     "type": "BOOLEAN",
-    "description": "Reserch Control selected. All of Us data will be used as a reference or control\ndataset for comparison with another dataset from a different resource (e.g.\nCase-control studies).",
+    "description": "Research Control selected. All of Us data will be used as a reference or control\ndataset for comparison with another dataset from a different resource (e.g.\nCase-control studies).",
     "mode": "NULLABLE"
   },
   {
@@ -115,7 +115,7 @@
   {
     "name": "rp_disease_of_focus",
     "type": "STRING",
-    "description": "For workspaces that include Disese-focused Research, the user-supplied name of the diseas\nof focus (in the Name of Disease field).",
+    "description": "For workspaces that include Diseese-focused Research, the user-supplied name of the disease\nof focus (in the Name of Disease field).",
     "mode": "NULLABLE"
   },
   {
@@ -181,7 +181,7 @@
   {
     "name": "rp_review_requested",
     "type": "BOOLEAN",
-    "description": "If true, a reivew has been requested by the Resource Access Board. This\nflag is currently not reset when a review is completed.",
+    "description": "If true, a review has been requested by the Resource Access Board. This\nflag is currently not reset when a review is completed.",
     "mode": "NULLABLE"
   },
   {
