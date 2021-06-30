@@ -115,7 +115,7 @@
   {
     "name": "rp_disease_of_focus",
     "type": "STRING",
-    "description": "For workspaces that include Diseese-focused Research, the user-supplied name of the disease\nof focus (in the Name of Disease field).",
+    "description": "For workspaces that include Disease-focused Research, the user-supplied name of the disease\nof focus (in the Name of Disease field).",
     "mode": "NULLABLE"
   },
   {
