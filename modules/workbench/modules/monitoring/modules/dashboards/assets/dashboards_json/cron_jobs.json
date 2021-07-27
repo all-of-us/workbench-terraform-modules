@@ -232,40 +232,6 @@
                 }
             },
             {
-                "title": "Bulk Sync EraCommons Status [Every 24 Hours]",
-                "xyChart": {
-                    "dataSets": [
-                        {
-                            "timeSeriesQuery": {
-                                "timeSeriesFilter": {
-                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"bulkSyncEraCommonsStatus\"",
-                                    "aggregation": {
-                                        "perSeriesAligner": "ALIGN_RATE",
-                                        "crossSeriesReducer": "REDUCE_COUNT",
-                                        "groupByFields": [
-                                            "metric.label.\"status\""
-                                        ]
-                                    },
-                                    "secondaryAggregation": {}
-                                },
-                                "unitOverride": "1"
-                            },
-                            "plotType": "STACKED_BAR",
-                            "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
-                        }
-                    ],
-                    "timeshiftDuration": "0s",
-                    "yAxis": {
-                        "label": "y1Axis",
-                        "scale": "LINEAR"
-                    },
-                    "chartOptions": {
-                        "mode": "COLOR"
-                    }
-                }
-            },
-            {
                 "title": "Bulk Sync Two Factor Auth Status [Every 24 Hours]",
                 "xyChart": {
                     "dataSets": [
