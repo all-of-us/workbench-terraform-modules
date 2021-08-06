@@ -13,7 +13,7 @@
         "comparison": "COMPARISON_LT",
         "duration": "60s",
         "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count_3\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"AVAILABLE\" metric.label.\"access_tier_short_name\"=\"registered\"",
-        "thresholdValue": 25,
+        "thresholdValue": ${min_buffer_projects_registered},
         "trigger": {
           "count": 1
         }
@@ -32,7 +32,7 @@
         "comparison": "COMPARISON_LT",
         "duration": "60s",
         "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count_3\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"AVAILABLE\" metric.label.\"access_tier_short_name\"=\"controlled\"",
-        "thresholdValue": 25,
+        "thresholdValue": ${min_buffer_projects_controlled},
         "trigger": {
           "count": 1
         }
@@ -55,7 +55,7 @@
         "comparison": "COMPARISON_GT",
         "duration": "0s",
         "filter": "metric.type=\"custom.googleapis.com/billing_buffer_project_count_3\" resource.type=\"generic_node\" resource.label.\"namespace\"=\"${namespace}\" metric.label.\"BufferEntryStatus\"=\"ERROR\"",
-        "thresholdValue": 5,
+        "thresholdValue": ${max_buffer_errors_per_minute},
         "trigger": {
           "count": 1
         }

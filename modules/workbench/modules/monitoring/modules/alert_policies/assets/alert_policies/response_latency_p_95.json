@@ -13,7 +13,7 @@
         "comparison": "COMPARISON_GT",
         "duration": "300s",
         "filter": "metric.type=\"appengine.googleapis.com/http/server/response_latencies\" resource.type=\"gae_app\"",
-        "thresholdValue": 15000,
+        "thresholdValue": ${max_response_95p_latency_ms},
         "trigger": {
           "count": 1
         }
