@@ -22,10 +22,5 @@ module "alert_policies" {
   aou_env    = var.aou_env
   notification_channel_id = var.notification_channel_id
   high_priority_notification_channel_id  = var.high_priority_notification_channel_id
-  expected_instance_count  = var.expected_instance_count
-  max_response_95p_latency_ms = var.max_response_95p_latency_ms
-  max_5xx_error_rate = var.max_5xx_error_rate
-  min_buffer_projects_registered = var.min_buffer_projects_registered
-  min_buffer_projects_controlled = var.min_buffer_projects_controlled
-  max_buffer_errors_per_minute = var.max_buffer_errors_per_minute
+  alert_thresholds = var.alert_thresholds
 }

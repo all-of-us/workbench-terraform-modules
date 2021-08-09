@@ -13,7 +13,7 @@
         "comparison": "COMPARISON_GT",
         "duration": "180s",
         "filter": "metric.type=\"appengine.googleapis.com/http/server/response_count\" resource.type=\"gae_app\" metric.label.\"response_code\"\u003e=\"500\" metric.label.\"response_code\"\u003c\"600\"",
-        "thresholdValue": ${max_5xx_error_rate},
+        "thresholdValue": ${alert_thresholds.max_5xx_error_rate},
         "trigger": {
           "count": 1
         }
