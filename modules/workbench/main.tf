@@ -15,8 +15,8 @@ module "reporting" {
 module "monitoring" {
   source = "./modules/monitoring"
   project_id = local.monitoring_project_id
+  aou_env = var.aou_env
   notification_channel_id = var.notification_channel_id
   high_priority_notification_channel_id = local.high_priority_notification_channel_id
-  expected_instance_count = var.expected_instance_count
-  aou_env = var.aou_env
+  alert_thresholds = var.alert_thresholds
 }

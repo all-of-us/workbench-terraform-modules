@@ -13,7 +13,7 @@
         "comparison": "COMPARISON_LT",
         "duration": "300s",
         "filter": "metric.type=\"appengine.googleapis.com/system/instance_count\" resource.type=\"gae_app\"",
-        "thresholdValue": "${expected_instance_count}",
+        "thresholdValue": "${alert_thresholds.min_instance_count}",
         "trigger": {
           "percent": 100
         }
