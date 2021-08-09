@@ -13,7 +13,7 @@
   {
     "name": "dua_type_enum",
     "type": "STRING",
-    "description": "Data Use Agreement type.",
+    "description": "DEPRECATED. Replaced by registered_tier_requirement. Data Use Agreement type.",
     "mode": "NULLABLE"
   },
   {
