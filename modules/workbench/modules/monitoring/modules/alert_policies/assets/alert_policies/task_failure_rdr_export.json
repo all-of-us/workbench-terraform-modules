@@ -2,14 +2,14 @@
   "combiner": "OR",
   "conditions": [
     {
-      "aggregations": [
-        {
-          "alignmentPeriod": "60s",
-          "crossSeriesReducer": "REDUCE_SUM",
-          "perSeriesAligner": "ALIGN_RATE"
-        }
-      ],
       "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_RATE"
+          }
+        ],
         "filter": "metric.type=\"cloudtasks.googleapis.com/queue/task_attempt_count\" resource.type=\"cloud_tasks_queue\" metric.label.\"response_code\"!=\"ok\" resource.label.\"queue_id\"=\"rdrExportQueue\"",
         "comparison": "COMPARISON_GT",
         "duration": "180s",
