@@ -11,17 +11,17 @@
           }
         ],
         "duration": "90000s",
-        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"bulkSyncTwoFactorAuthStatus\" metric.label.\"status\"=\"204\"",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"synchronizeUserAccess\" metric.label.\"status\"=\"204\"",
         "trigger": {
           "percent": 100
         }
       },
-      "displayName": "Bulk Sync Two Factor Auth Cron Signal Absent"
+      "displayName": "Synchronize User Access absent"
     }
   ],
-  "displayName": "Cron Failure: Sync Two Factor Auth",
+  "displayName": "Cron failure: synchronizeUserAccess",
   "documentation": {
-    "content": "Update our database cache of users' two-factor authentication settings on their GSuite accounts\nvia Google Directory Service.\n",
+    "content": "Dispatches Cloud Tasks to ensure all users have correct tier access, including expiration.\n",
     "mimeType": "text/markdown"
   },
   "enabled": true,
