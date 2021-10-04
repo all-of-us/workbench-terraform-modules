@@ -68,7 +68,7 @@
     "content": "Playbook: https://broad.io/aou-playbook",
     "mimeType": "text/markdown"
   },
-  "enabled": true,
+  "enabled": false,
   "notificationChannels": [
     "projects/${project_id}/notificationChannels/${high_priority_notification_channel_id}"
   ]

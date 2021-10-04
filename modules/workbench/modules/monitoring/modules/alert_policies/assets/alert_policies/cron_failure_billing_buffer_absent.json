@@ -24,7 +24,7 @@
     "content": "Billing Buffer-related cron tasks. Repeated failures may affect our ability to run the billing buffer pipeline effectively.",
     "mimeType": "text/markdown"
   },
-  "enabled": true,
+  "enabled": false,
   "notificationChannels": [
     "projects/${project_id}/notificationChannels/${notification_channel_id}"
   ]
