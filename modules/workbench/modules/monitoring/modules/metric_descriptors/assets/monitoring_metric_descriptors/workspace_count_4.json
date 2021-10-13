@@ -14,7 +14,7 @@
     "metricKind": "GAUGE",
     "valueType": "INT64",
     "unit": "1",
-    "description": "Count of all workspaces by access tier",
+    "description": "Count of all active workspaces per tier",
     "displayName": "custom.googleapis.com/workspace_count_4",
     "type": "custom.googleapis.com/workspace_count_4"
 }
