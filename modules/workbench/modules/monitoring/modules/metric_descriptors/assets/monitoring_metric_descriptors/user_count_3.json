@@ -14,7 +14,7 @@
     "metricKind": "GAUGE",
     "valueType": "INT64",
     "unit": "1",
-    "description": "total number of users by access tier",
+    "description": "total number of users",
     "displayName": "custom.googleapis.com/user_count_3",
     "type": "custom.googleapis.com/user_count_3"
 }
