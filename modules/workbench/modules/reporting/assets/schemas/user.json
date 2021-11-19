@@ -31,7 +31,7 @@
   {
     "name": "compliance_training_expiration_time",
     "type": "TIMESTAMP",
-    "description": "Time User's compliance training will expire, or null if training not taken or if bypassed",
+    "description": "[DELETED] Was: Time User's compliance training will expire, or null if training not taken or if bypassed",
     "mode": "NULLABLE"
   },
   {
