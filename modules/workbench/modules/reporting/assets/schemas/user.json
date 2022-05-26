@@ -113,13 +113,13 @@
     "mode": "NULLABLE"
   },
   {
-    "name": "registered_tier_first_enabled",
+    "name": "registered_tier_first_enabled_time",
     "type": "TIMESTAMP",
     "description": "The time at which this user's registered tier access was first granted, if ever. Note: expiration of access does not affect this field.",
     "mode": "NULLABLE"
   },
   {
-    "name": "controlled_tier_first_enabled",
+    "name": "controlled_tier_first_enabled_time",
     "type": "TIMESTAMP",
     "description": "The time at which this user's controlled tier access was first granted, if ever. Note: expiration of access does not affect this field.",
     "mode": "NULLABLE"
