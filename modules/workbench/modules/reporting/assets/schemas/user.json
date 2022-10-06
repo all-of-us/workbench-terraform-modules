@@ -101,6 +101,18 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "ras_login_gov_bypass_time",
+    "type": "TIMESTAMP",
+    "description": "Time an administrator bypassed the RAS Login.gov requirement for this user.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "ras_login_gov_completion_time",
+    "type": "TIMESTAMP",
+    "description": "Time user completed the RAS Login.gov account link.",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "family_name",
     "type": "STRING",
     "description": "User last name (family name).",
