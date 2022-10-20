@@ -400,6 +400,40 @@
                         "mode": "COLOR"
                     }
                 }
+            },
+            {
+                "title": "checkObjectNameSize [Every 6 Hours]",
+                "xyChart": {
+                    "dataSets": [
+                        {
+                            "timeSeriesQuery": {
+                                "timeSeriesFilter": {
+                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkObjectNameSize\"",
+                                    "aggregation": {
+                                        "perSeriesAligner": "ALIGN_RATE",
+                                        "crossSeriesReducer": "REDUCE_SUM",
+                                        "groupByFields": [
+                                            "metric.label.\"status\""
+                                        ]
+                                    },
+                                    "secondaryAggregation": {}
+                                },
+                                "unitOverride": "1"
+                            },
+                            "plotType": "STACKED_BAR",
+                            "legendTemplate": "${metric__labels__status}",
+                            "minAlignmentPeriod": "60s"
+                        }
+                    ],
+                    "timeshiftDuration": "0s",
+                    "yAxis": {
+                        "label": "y1Axis",
+                        "scale": "LINEAR"
+                    },
+                    "chartOptions": {
+                        "mode": "COLOR"
+                    }
+                }
             }
         ]
     }
