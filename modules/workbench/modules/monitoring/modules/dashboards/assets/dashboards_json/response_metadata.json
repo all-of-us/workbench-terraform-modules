@@ -20,7 +20,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "2XX Responses",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         },
                         {
                             "timeSeriesQuery": {
@@ -35,7 +36,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "3XX Responses\n",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         },
                         {
                             "timeSeriesQuery": {
@@ -50,7 +52,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "4XX Responses",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         },
                         {
                             "timeSeriesQuery": {
@@ -65,7 +68,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "5XX Responses",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",

@@ -24,7 +24,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "Status: ${metric__labels__buffer_entry_status}, Access Tier: ${metric__labels__access_tier_short_name}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -58,7 +59,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "Access Tiers: ${metric__labels__access_tier_short_names}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -93,7 +95,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "Access Tier: ${metric__labels__access_tier_short_name}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -123,7 +126,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "Cohort Count",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -153,7 +157,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "Cohort Review Count",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -186,7 +191,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "Domain: ${metric__labels__gsuite_domain}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",

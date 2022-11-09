@@ -22,7 +22,8 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "300s"
+                            "minAlignmentPeriod": "300s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -54,7 +55,8 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "300s"
+                            "minAlignmentPeriod": "300s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
