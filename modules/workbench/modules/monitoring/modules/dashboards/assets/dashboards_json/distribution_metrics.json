@@ -22,7 +22,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "HEATMAP",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -51,7 +52,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "HEATMAP",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -83,7 +85,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -115,7 +118,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",

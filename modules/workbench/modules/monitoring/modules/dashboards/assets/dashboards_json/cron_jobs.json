@@ -24,7 +24,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -64,7 +65,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -104,7 +106,8 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -144,7 +147,8 @@
                             },
                             "plotType": "STACKED_AREA",
                             "legendTemplate": "${metric__labels__name} ${metric__labels__status} ${metric__labels__requestId}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -184,7 +188,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -218,7 +223,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -252,7 +258,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -286,7 +293,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -320,7 +328,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -354,7 +363,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -388,7 +398,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -422,7 +433,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",

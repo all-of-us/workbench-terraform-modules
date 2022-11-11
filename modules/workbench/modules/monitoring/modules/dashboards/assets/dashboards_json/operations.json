@@ -22,7 +22,8 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "300s"
+                            "minAlignmentPeriod": "300s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -54,7 +55,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -83,7 +85,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         },
                         {
                             "timeSeriesQuery": {
@@ -97,7 +100,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         },
                         {
                             "timeSeriesQuery": {
@@ -111,7 +115,8 @@
                                 "unitOverride": "ms"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -143,7 +148,8 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -177,7 +183,8 @@
                             },
                             "legendTemplate": "Access Tier: ${metric__labels__access_tier_short_name}, Status: ${metric__labels__active_status}",
                             "plotType": "LINE",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -209,7 +216,8 @@
                                 "unitOverride": "1"
                             },
                             "plotType": "STACKED_BAR",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -244,7 +252,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         },
                         {
                             "timeSeriesQuery": {
@@ -263,7 +272,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
@@ -298,7 +308,8 @@
                             },
                             "plotType": "STACKED_BAR",
                             "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
-                            "minAlignmentPeriod": "60s"
+                            "minAlignmentPeriod": "60s",
+                            "targetAxis": "Y1"
                         }
                     ],
                     "timeshiftDuration": "0s",
