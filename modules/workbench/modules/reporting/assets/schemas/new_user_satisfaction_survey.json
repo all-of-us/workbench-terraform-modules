@@ -1,0 +1,43 @@
+ [
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "id",
+    "type": "INTEGER",
+    "description": "ID of the survey response.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "user_id",
+    "type": "INTEGER",
+    "description": "ID of the user who created the survey response.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created",
+    "type": "TIMESTAMP",
+    "description": "Time the survey response was created.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "modified",
+    "type": "TIMESTAMP",
+    "description": "Time the survey response was last modified.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "satisfaction",
+    "type": "STRING",
+    "description": "How satisfied the user is with the researcher workbench. One of: VERY_UNSATISFIED, UNSATISFIED, NEUTRAL, SATISFIED, or VERY_SATISFIED.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "additional_info",
+    "type": "STRING",
+    "description": "Additional information regarding the satisfaction score.",
+    "mode": "NULLABLE"
+  }
+]

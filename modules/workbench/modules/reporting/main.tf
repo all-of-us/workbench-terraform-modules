@@ -3,14 +3,6 @@ locals {
   # Tables
   #
 
-  # Description attribute for each table. If absent, no description is set (null).
-  table_to_description = {
-    cohort      = "Workbench Cohorts, including Uncompressed JSON Criteria"
-    user        = "All Workbench users at each snapshot, including disabled or incompletely registered accounts."
-    institution = "Institutions represented by workbench users in an official affiliation"
-    workspace   = "Workbench Workspaces (Active Only). Includes all user-supplied data about the research being conducted in each workspace."
-  }
-
   # Values that don't ever change set for this dataset.
   TABLE_CONSTANTS = {
     time_partitioning = null
@@ -35,7 +27,6 @@ locals {
     # TODO(jaycarlton) I do not yet see a way around doing the replacement twice, as it's not possible
     #   to refer to other values in the same object when defining it.
     table_id    = replace(basename(full_path), local.TABLE_SCHEMA_SUFFIX, "")
-    description = lookup(local.table_to_description, replace(basename(full_path), local.TABLE_SCHEMA_SUFFIX, ""), null)
   }]
 
   # Merge calculated inputs with the ones we use every time.
