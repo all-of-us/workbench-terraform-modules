@@ -81,7 +81,6 @@ variable alert_thresholds {
   description = "Alerting thresholds"
   type = object({
     min_instance_count = number
-    max_response_95p_latency_ms = number
     max_5xx_error_rate = number
     min_buffer_projects_registered = number
     min_buffer_projects_controlled = number
