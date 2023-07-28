@@ -198,37 +198,37 @@
   {
     "name": "city",
     "type": "STRING",
-    "description": "User-reported city of residence.",
+    "description": "[DELETED] Was: User-reported city of residence.",
     "mode": "NULLABLE"
   },
   {
     "name": "country",
     "type": "STRING",
-    "description": "User-reported country of residence.",
+    "description": "[DELETED] Was: User-reported country of residence.",
     "mode": "NULLABLE"
   },
   {
     "name": "state",
     "type": "STRING",
-    "description": "User-reported state or province. Not guaranteed to match official abbreviations or spellings.",
+    "description": "[DELETED] Was: User-reported state or province. Not guaranteed to match official abbreviations or spellings.",
     "mode": "NULLABLE"
   },
   {
     "name": "street_address_1",
     "type": "STRING",
-    "description": "First line of user street address.",
+    "description": "[DELETED] Was: First line of user-reported street address.",
     "mode": "NULLABLE"
   },
   {
     "name": "street_address_2",
     "type": "STRING",
-    "description": "Second line of user street address.",
+    "description": "[DELETED] Was: Second line of user-reported street address.",
     "mode": "NULLABLE"
   },
   {
     "name": "zip_code",
     "type": "STRING",
-    "description": "Up to 10-digit zip code for use residence.",
+    "description": "[DELETED] Was: Up to 10-digit zip code for user-reported street address.",
     "mode": "NULLABLE"
   },
   {
