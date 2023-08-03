@@ -103,13 +103,13 @@
   {
     "name": "ras_login_gov_bypass_time",
     "type": "TIMESTAMP",
-    "description": "Time an administrator bypassed the RAS Login.gov requirement for this user.",
+    "description": "[DELETED] Time an administrator bypassed the RAS Login.gov requirement for this user.",
     "mode": "NULLABLE"
   },
   {
     "name": "ras_login_gov_completion_time",
     "type": "TIMESTAMP",
-    "description": "Time user completed the RAS Login.gov account link.",
+    "description": "[DELETED] Was: Time user completed the RAS Login.gov account link.",
     "mode": "NULLABLE"
   },
   {
@@ -312,6 +312,24 @@
     "name": "access_tier_short_names",
     "type": "STRING",
     "description": "List of access tiers available to the user, comma-delimited if multiple",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "identity_bypass_time",
+    "type": "TIMESTAMP",
+    "description": "Time an administrator bypassed the identity requirement for this user.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "identity_completion_time",
+    "type": "TIMESTAMP",
+    "description": "Time user completed the identity requirement.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "identity_verification_system",
+    "type": "STRING",
+    "description": "The system that the user used to complete identity verification.",
     "mode": "NULLABLE"
   }
 ]
