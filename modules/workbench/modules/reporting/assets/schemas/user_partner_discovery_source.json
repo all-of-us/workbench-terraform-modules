@@ -5,12 +5,6 @@
     "type": "INTEGER"
   },
   {
-    "name": "id",
-    "type": "INTEGER",
-    "description": "ID of the general discovery source response.",
-    "mode": "NULLABLE"
-  },
-  {
     "name": "user_id",
     "type": "INTEGER",
     "description": "ID of the user who created the survey response.",
