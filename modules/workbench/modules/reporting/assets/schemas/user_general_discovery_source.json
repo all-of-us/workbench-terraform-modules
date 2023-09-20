@@ -1,0 +1,25 @@
+ [
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "user_id",
+    "type": "INTEGER",
+    "description": "ID of the user who created the survey response.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "answer",
+    "type": "STRING",
+    "description": "User answer of How did you learn about the All of Us Researcher Workbench question when signup.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "other_text",
+    "type": "STRING",
+    "description": "User input when choosing Other",
+    "mode": "NULLABLE"
+  }
+]
