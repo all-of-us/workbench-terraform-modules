@@ -13,7 +13,7 @@
   {
     "name": "answer",
     "type": "STRING",
-    "description": "User answer of Did you learn about the All of Us Researcher Workbench from any of these program partners?.",
+    "description": "User answer of Did you learn about the All of Us Researcher Workbench from any of these program partners.",
     "mode": "NULLABLE"
   },
   {
