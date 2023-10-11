@@ -6,6 +6,7 @@ locals {
   # Values that don't ever change set for this dataset.
   TABLE_CONSTANTS = {
     time_partitioning = null
+    range_partitioning = null
     expiration_time   = null
     clustering        = []
     labels = {
