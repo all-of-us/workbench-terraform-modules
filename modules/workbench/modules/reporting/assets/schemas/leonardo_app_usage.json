@@ -11,6 +11,12 @@
      "mode": "NULLABLE"
    },
    {
+     "name": "status",
+     "type": "STRING",
+     "description": "App status in Leonardo DB",
+     "mode": "NULLABLE"
+   },
+   {
      "name": "app_name",
      "type": "STRING",
      "description": "App name, e.g. all-of-us-sas-123",
