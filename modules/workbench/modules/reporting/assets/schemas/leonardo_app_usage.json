@@ -57,5 +57,11 @@
      "type": "STRING",
      "description": "All environment variables AoU passes to Leo when creating App.",
      "mode": "NULLABLE"
+   },
+   {
+     "name": "app_type",
+     "type": "STRING",
+     "description": "App type in AoU, e.g. SAS, Cromwell, RStudio, this is extracted from app_name",
+     "mode": "NULLABLE"
    }
  ]
