@@ -1,0 +1,67 @@
+ [
+   {
+     "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+     "name": "snapshot_timestamp",
+     "type": "INTEGER"
+   },
+   {
+     "name": "app_id",
+     "type": "INTEGER",
+     "description": "App ID in Leonardo DB",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "status",
+     "type": "STRING",
+     "description": "App status in Leonardo DB",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "app_name",
+     "type": "STRING",
+     "description": "App name, e.g. all-of-us-sas-123",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "creator",
+     "type": "STRING",
+     "description": "App creator username",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "start_time",
+     "type": "TIMESTAMP",
+     "description": "App start time, it can be the time when app is created or resumed",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "stop_time",
+     "type": "TIMESTAMP",
+     "description": "App stop time, it can be the time when app is deleted or paused",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "created_date",
+     "type": "TIMESTAMP",
+     "description": "App creation time",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "destroyed_date",
+     "type": "TIMESTAMP",
+     "description": "App deletion time",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "environment_variables",
+     "type": "STRING",
+     "description": "All environment variables AoU passes to Leo when creating App.",
+     "mode": "NULLABLE"
+   },
+   {
+     "name": "app_type",
+     "type": "STRING",
+     "description": "App type in AoU, e.g. SAS, Cromwell, RStudio, this is extracted from app_name",
+     "mode": "NULLABLE"
+   }
+ ]
