@@ -2,7 +2,7 @@
 // Child modules receive their provider configurations from the root module.
 terraform {
   required_providers {
-    google = ">= 3.23.0"
+    google = ">= 4.7.1"
   }
 }
 
