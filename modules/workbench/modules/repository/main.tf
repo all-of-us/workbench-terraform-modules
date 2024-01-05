@@ -2,7 +2,7 @@
 resource "google_artifact_registry_repository" "gar_remote_docker" {
   project = var.project_id
   location      = "us-central1"
-  repository_id = "aou-rw-gar-remote-repo-docker"
+  repository_id = join("-", ["aou-rw-gar-remote-repo-docker", var.aou_env])
   description   = "Workbench remote docker repository"
   format        = "DOCKER"
   mode          = "REMOTE_REPOSITORY"
