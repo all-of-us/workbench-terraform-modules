@@ -19,7 +19,7 @@ resource "google_artifact_registry_repository_iam_member" "remote_docker_iam-mem
   location = google_artifact_registry_repository.gar_remote_docker.location
   repository = google_artifact_registry_repository.gar_remote_docker.name
   role = "roles/artifactregistry.reader"
-  member = var.registered_tier_group_name
+  member = join("", ["group:", var.registered_tier_group_name])
 }
 
 resource "google_artifact_registry_repository_iam_member" "remote_docker_iam-member_ct" {
@@ -27,5 +27,5 @@ resource "google_artifact_registry_repository_iam_member" "remote_docker_iam-mem
   location = google_artifact_registry_repository.gar_remote_docker.location
   repository = google_artifact_registry_repository.gar_remote_docker.name
   role = "roles/artifactregistry.reader"
-  member = var.controlled_tier_group_name
+  member = join("", ["group:", var.controlled_tier_group_name])
 }

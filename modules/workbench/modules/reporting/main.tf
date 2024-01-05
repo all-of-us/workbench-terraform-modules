@@ -24,7 +24,7 @@ locals {
   # Build a vector of objects, one for each table
   table_inputs = [for full_path in local.table_schema_paths : {
     // Path json string instead of file path.
-    schema = jsondecode(file(full_path))
+    schema = file(full_path)
     # TODO(jaycarlton) I do not yet see a way around doing the replacement twice, as it's not possible
     #   to refer to other values in the same object when defining it.
     table_id    = replace(basename(full_path), local.TABLE_SCHEMA_SUFFIX, "")
