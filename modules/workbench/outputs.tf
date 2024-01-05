@@ -10,3 +10,8 @@ output "table_names" {
   value = module.reporting.table_names
 }
 
+output "docker_repo_name" {
+  description = "Remote docker GAR repo name"
+  value       = module.repository.docker_repo_name
+}
+

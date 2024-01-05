@@ -20,3 +20,12 @@ module "monitoring" {
   high_priority_notification_channel_id = local.high_priority_notification_channel_id
   alert_thresholds = var.alert_thresholds
 }
+
+# GAR Repository
+module "repository" {
+  source = "./modules/repository"
+  project_id = var.project_id
+  aou_env = var.aou_env
+  registered_tier_group_name = var.registered_tier_group_name
+  controlled_tier_group_name = var.controlled_tier_group_name
+}
