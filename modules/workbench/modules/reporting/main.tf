@@ -86,7 +86,7 @@ locals {
 # All BigQuery assets for Reporting subsystem
 module "main" {
   source     = "terraform-google-modules/bigquery/google"
-  version    = "~> 4.3"
+  version    = ">= 4.3"
   dataset_id = var.reporting_dataset_id
   project_id = var.project_id
   location   = "US"
