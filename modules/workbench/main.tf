@@ -22,8 +22,8 @@ module "monitoring" {
 }
 
 # GAR Repository
-module "artifact_repository" {
-  source = "modules/artifact_repository"
+module "artifact_registry" {
+  source = "modules/artifact_registry"
   project_id = var.project_id
   aou_env = var.aou_env
   registered_tier_group_name = var.registered_tier_group_name
