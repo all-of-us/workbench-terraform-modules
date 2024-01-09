@@ -23,10 +23,12 @@ locals {
 
   # Build a vector of objects, one for each table
   table_inputs = [for full_path in local.table_schema_paths : {
-    schema = full_path
+    // Path json string instead of file path.
+    schema = file(full_path)
     # TODO(jaycarlton) I do not yet see a way around doing the replacement twice, as it's not possible
     #   to refer to other values in the same object when defining it.
     table_id    = replace(basename(full_path), local.TABLE_SCHEMA_SUFFIX, "")
+    range_partitioning = null
   }]
 
   # Merge calculated inputs with the ones we use every time.
@@ -86,7 +88,7 @@ locals {
 # All BigQuery assets for Reporting subsystem
 module "main" {
   source     = "terraform-google-modules/bigquery/google"
-  version    = "~> 4.3"
+  version    = ">= 4.3"
   dataset_id = var.reporting_dataset_id
   project_id = var.project_id
   location   = "US"
