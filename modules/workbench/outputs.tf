@@ -12,6 +12,6 @@ output "table_names" {
 
 output "docker_repo_name" {
   description = "Remote docker GAR repo name"
-  value       = module.repository.docker_repo_name
+  value       = module.artifact_registry.docker_repo_name
 }
 
