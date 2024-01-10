@@ -85,6 +85,7 @@ variable alert_thresholds {
     min_buffer_projects_registered = number
     min_buffer_projects_controlled = number
     max_buffer_errors_per_minute = number
+    gsuite_users_count = number
   })
 }
 
