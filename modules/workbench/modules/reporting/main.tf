@@ -29,7 +29,7 @@ locals {
     #   to refer to other values in the same object when defining it.
     table_id    = replace(basename(full_path), local.TABLE_SCHEMA_SUFFIX, "")
     range_partitioning = null
-    deletion_protection = false
+    deletion_protection = true
   }]
 
   # Merge calculated inputs with the ones we use every time.
