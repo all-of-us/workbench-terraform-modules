@@ -1,0 +1,38 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "GSuite User Count",
+      "conditionThreshold": {
+        "filter": "resource.type = \"generic_node\" AND metric.type = \"custom.googleapis.com/gsuite_user_count\"",
+        "aggregations": [
+          {
+            "alignmentPeriod": "300s",
+            "crossSeriesReducer": "REDUCE_NONE",
+            "perSeriesAligner": "ALIGN_MEAN"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "0s",
+        "trigger": {
+          "count": 1
+        },
+        "thresholdValue": "${alert_thresholds.gsuite_users_count}"
+      }
+    }
+  ],
+  "displayName": "Number of users in GSuite",
+  "documentation": {
+    "content": "When the number of gsuite users exceeds ${alert_thresholds.gsuite_users_count}, this is a sign that we need to address the issue of having more licences. The number of licences is currently set to 100k in prod, however we'll need to increase it when this alert is fired. Related jira ticket is RW-8474",
+    "mimeType": "text/markdown",
+    "subject": "Number of Gsuite users exceeded ${alert_thresholds.gsuite_users_count}"
+  },
+  "alertStrategy": {
+    "autoClose": "604800s"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ],
+  "severity": "CRITICAL"
+}
