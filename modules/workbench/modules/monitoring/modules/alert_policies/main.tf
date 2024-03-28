@@ -29,6 +29,13 @@ resource "google_monitoring_alert_policy" "policy" {
     mime_type   =  lookup(each.value.documentation, "mimeType")
   }
 
+
+  alert_strategy {
+    notification_channel_strategy {
+      renotify_interval = "1d"
+    }
+  }
+
   dynamic "conditions" {
     for_each = each.value.conditions
     content {
