@@ -45,47 +45,6 @@
                 }
             },
             {
-                "title": "Update Gauge Metrics [Every Minute]",
-                "xyChart": {
-                    "dataSets": [
-                        {
-                            "timeSeriesQuery": {
-                                "timeSeriesFilter": {
-                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"monitoring/updateGaugeMetrics\"",
-                                    "aggregation": {
-                                        "perSeriesAligner": "ALIGN_RATE",
-                                        "crossSeriesReducer": "REDUCE_SUM",
-                                        "groupByFields": [
-                                            "metric.label.\"status\""
-                                        ]
-                                    },
-                                    "secondaryAggregation": {}
-                                },
-                                "unitOverride": "1"
-                            },
-                            "plotType": "LINE",
-                            "legendTemplate": "${metric__labels__status}",
-                            "minAlignmentPeriod": "60s",
-                            "targetAxis": "Y1"
-                        }
-                    ],
-                    "timeshiftDuration": "0s",
-                    "thresholds": [
-                        {
-                            "label": "label",
-                            "value": 0.01666666753590107
-                        }
-                    ],
-                    "yAxis": {
-                        "label": "y1Axis",
-                        "scale": "LINEAR"
-                    },
-                    "chartOptions": {
-                        "mode": "COLOR"
-                    }
-                }
-            },
-            {
                 "title": "Sync Billing Project Status [Every Minute]",
                 "xyChart": {
                     "dataSets": [
@@ -106,47 +65,6 @@
                             },
                             "plotType": "LINE",
                             "legendTemplate": "${metric__labels__name} ${metric__labels__status}",
-                            "minAlignmentPeriod": "60s",
-                            "targetAxis": "Y1"
-                        }
-                    ],
-                    "timeshiftDuration": "0s",
-                    "thresholds": [
-                        {
-                            "label": "label",
-                            "value": 0.01666666753590107
-                        }
-                    ],
-                    "yAxis": {
-                        "label": "y1Axis",
-                        "scale": "LINEAR"
-                    },
-                    "chartOptions": {
-                        "mode": "COLOR"
-                    }
-                }
-            },
-            {
-                "title": "Clean Billing Buffer [Every Hour]",
-                "xyChart": {
-                    "dataSets": [
-                        {
-                            "timeSeriesQuery": {
-                                "timeSeriesFilter": {
-                                    "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"cleanBillingBuffer\"",
-                                    "aggregation": {
-                                        "perSeriesAligner": "ALIGN_RATE",
-                                        "crossSeriesReducer": "REDUCE_COUNT",
-                                        "groupByFields": [
-                                            "metric.label.\"status\""
-                                        ]
-                                    },
-                                    "secondaryAggregation": {}
-                                },
-                                "unitOverride": "1"
-                            },
-                            "plotType": "STACKED_AREA",
-                            "legendTemplate": "${metric__labels__name} ${metric__labels__status} ${metric__labels__requestId}",
                             "minAlignmentPeriod": "60s",
                             "targetAxis": "Y1"
                         }
