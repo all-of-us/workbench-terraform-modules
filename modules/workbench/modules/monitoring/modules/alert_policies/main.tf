@@ -32,7 +32,8 @@ resource "google_monitoring_alert_policy" "policy" {
 
   alert_strategy {
     notification_channel_strategy {
-      renotify_interval = "1d"
+      # 1 day
+      renotify_interval = "86400s"
     }
   }
 
