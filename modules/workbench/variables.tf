@@ -98,3 +98,17 @@ variable controlled_tier_group_name {
   description = "Google group that contains all controlled tier users"
   type        = string
 }
+
+#
+# Workload Identity
+#
+
+variable circleci_org_id {
+  type        = string
+  description = "Your CircleCI org ID.  Can be found under \"Organization Settings\" in the CircleCI application."
+}
+
+variable circleci_service_account_email {
+  type        = string
+  description = "The email address of the service account that CircleCI will impersonate."
+}
