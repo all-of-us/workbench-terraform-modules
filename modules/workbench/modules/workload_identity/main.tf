@@ -1,14 +1,14 @@
 # adapted from https://github.com/jtreutel/circleci-gcp-oidc-terraform/blob/master/main.tf
 
-resource "google_iam_workload_identity_pool" "circleci" {
+resource "google_iam_workload_identity_pool" "circleci2" {
   project = var.project_id
   workload_identity_pool_id = "${var.aou_env}-oidc-pool"
   display_name              = "${var.aou_env} OIDC Auth Pool"
   description               = "Identity pool for CircleCI OIDC authentication - ${var.aou_env}"
 }
 
-resource "google_iam_workload_identity_pool_provider" "circleci" {
-  workload_identity_pool_id          = google_iam_workload_identity_pool.circleci.workload_identity_pool_id
+resource "google_iam_workload_identity_pool_provider" "circleci2" {
+  workload_identity_pool_id          = google_iam_workload_identity_pool.circleci2.workload_identity_pool_id
   workload_identity_pool_provider_id = "${var.aou_env}-oidc-prv"
   display_name                       = "${var.aou_env} OIDC Auth"
   description                        = "Identity pool provider for CircleCI OIDC authentication - ${var.aou_env}"
@@ -36,5 +36,5 @@ data "google_service_account" "circleci_service_account" {
 resource "google_service_account_iam_member" "circleci_impersonation" {
   service_account_id = data.google_service_account.circleci_service_account.name
   role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.circleci.workload_identity_pool_id}/attribute.org_id/${var.circleci_org_id}"
+  member             = "principalSet://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.circleci2.workload_identity_pool_id}/attribute.org_id/${var.circleci_org_id}"
 }
