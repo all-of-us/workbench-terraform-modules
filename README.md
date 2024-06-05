@@ -56,3 +56,9 @@ One recommended way can be:
     * Lists alert policies: `gcloud alpha monitoring policies list --project all-of-us-rw-prod --format json`
 3. Create/Replace the new json file.
 4. Apply this change to other envs.
+
+### Artifact Registry
+TODO
+
+### Workload Identity
+TODO

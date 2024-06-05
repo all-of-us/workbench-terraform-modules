@@ -13,7 +13,7 @@ command name repeatedly below.
 
 ## Installation
 For the work so far, I've used the [Terraform CLI](https://www.terraform.io/docs/cli-index.html), which has the  advantage of not costing
-money or requiring an email registration. On the mac, `brew inistall terraform` is pretty much all it takes. 
+money or requiring an email registration. On the mac, `brew install terraform` is pretty much all it takes. 
 
 Terraform works by keeping state  on the local filesystem for evaluating diffs and staging changes. Primary files for users to author
 and check in to source control are:
@@ -66,7 +66,7 @@ by installing the FileWitchers plugin and adding a Terraform Format action. Runs
 It's handy to have a human-readable label called `managedByTerraform` and set it to `true` for all TF artifacts.
 It's possible to set up default labels and things for this.
 ### Local Variables
-Using a `locals` bock allows you to assign values (computed once) to variables to be used elsewhere. This
+Using a `locals` block allows you to assign values (computed once) to variables to be used elsewhere. This
 is especially useful for nested map lookups: 
 ```hcl-terraform
 locals {
@@ -132,7 +132,7 @@ the most part going to one organization for help with the other's platform will 
 at best. Good luck differentiating them on your resume.
 
 ### Mis-configuring a tfstate file
-The file really shouldn't be checked into source contol, because
+The file really shouldn't be checked into source control, because
 it's not safe to have multiple developers working with it. It's too easy to getinito an inconsistent view of the world.
 
 However, that doesn't mean it's safe to lost track of the tfstate JSON file altogether.
