@@ -2,16 +2,16 @@
 
 resource "google_iam_workload_identity_pool" "circleci" {
   project = var.project_id
-  workload_identity_pool_id = "${var.aou_env}-2-oidc-pool"
-  display_name              = "${var.aou_env} OIDC Auth Pool v2"
-  description               = "Identity pool for CircleCI OIDC authentication - ${var.aou_env} v2"
+  workload_identity_pool_id = "circleci-oidc-pool-${var.aou_env}"
+  display_name              = "Circle OIDC Auth Pool for ${var.aou_env}"
+  description               = "Identity pool for CircleCI OIDC authentication - ${var.aou_env}"
 }
 
 resource "google_iam_workload_identity_pool_provider" "circleci" {
   workload_identity_pool_id          = google_iam_workload_identity_pool.circleci.workload_identity_pool_id
-  workload_identity_pool_provider_id = "${var.aou_env}-2-oidc-prv"
-  display_name                       = "${var.aou_env} OIDC Auth v2"
-  description                        = "Identity pool provider for CircleCI OIDC authentication - ${var.aou_env} v2"
+  workload_identity_pool_provider_id = "circleci-oidc-prv-${var.aou_env}"
+  display_name                       = "Circle OIDC Auth Pool Provider for ${var.aou_env}"
+  description                        = "Identity pool provider for CircleCI OIDC authentication - ${var.aou_env}"
   attribute_condition                = "attribute.org_id=='${var.circleci_org_id}'"
   attribute_mapping = {
     "attribute.org_id" = "assertion.aud",
