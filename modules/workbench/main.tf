@@ -29,3 +29,12 @@ module "artifact_registry" {
   registered_tier_group_name = var.registered_tier_group_name
   controlled_tier_group_name = var.controlled_tier_group_name
 }
+
+# Workload Identity
+module "workload_identity" {
+  source = "./modules/workload_identity"
+  project_id = var.project_id
+  aou_env = var.aou_env
+  circleci_org_id = var.circleci_org_id
+  circleci_service_account_email = var.circleci_service_account_email
+}
