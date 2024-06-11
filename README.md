@@ -58,7 +58,13 @@ One recommended way can be:
 4. Apply this change to other envs.
 
 ### Artifact Registry
-TODO
+Google Artifact Registry allows us to provide Docker Hub access to members of the Registered and Controlled Tiers.
 
 ### Workload Identity
-TODO
+Workload Identity Federation allows us to grant access to our Service Accounts to external services without using keys
+or stored credentials.
+
+These steps allow CircleCI to impersonate an SA for use in deployment:
+1. Create a Workflow Identity Pool
+2. Create a Workflow Identity Pool Provider
+3. Grant access to the deployment Service Account to the Workflow Identity Pool
