@@ -111,4 +111,5 @@ variable circleci_org_id {
 variable circleci_service_account_email {
   type        = string
   description = "The email address of the service account that CircleCI will impersonate."
+  default = null
 }
