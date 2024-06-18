@@ -33,11 +33,13 @@ data "google_project" "project" {
 
 # allows retrieval of the service account's full path, as its "name"
 data "google_service_account" "circleci_service_account" {
-  account_id = var.circleci_service_account_email
+  count = var.circleci_service_account_email == null ? 0 : 1
+  account_id = var.circleci_service_account_email == null ? "" : var.circleci_service_account_email
 }
 
 resource "google_service_account_iam_member" "circleci_impersonation" {
-  service_account_id = data.google_service_account.circleci_service_account.name
+  count = var.circleci_service_account_email == null ? 0 : 1
+  service_account_id =  var.circleci_service_account_email == null ? "" : data.google_service_account.circleci_service_account[0].name
   role               = "roles/iam.workloadIdentityUser"
   member             = "principalSet://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.circleci.workload_identity_pool_id}/attribute.org_id/${var.circleci_org_id}"
 }
