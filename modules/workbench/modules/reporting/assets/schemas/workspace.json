@@ -67,7 +67,7 @@
   {
     "name": "published",
     "type": "BOOLEAN",
-    "description": "If true, this workspace has been published.",
+    "description": "[DEPRECATED] Check for the existence of featured_workspace_category instead.  WAS: If true, this workspace has been published.",
     "mode": "NULLABLE"
   },
   {
@@ -224,6 +224,12 @@
     "name": "access_tier_short_name",
     "type": "STRING",
     "description": "A brief string identifying the access tier of this workspace, e.g. 'registered'",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "featured_workspace_category",
+    "type": "STRING",
+    "description": "The category of featured workspace that contains this workspace, if it is featured, e.g. 'COMMUNITY'",
     "mode": "NULLABLE"
   }
 ]
