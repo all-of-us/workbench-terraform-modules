@@ -10,7 +10,7 @@
             "perSeriesAligner": "ALIGN_RATE"
           }
         ],
-        "filter": "metric.type=\"cloudtasks.googleapis.com/queue/task_attempt_count\" resource.type=\"cloud_tasks_queue\" metric.label.\"response_code\"!=\"ok\" resource.label.\"queue_id\"=\"rdrExportQueue\"",
+        "filter": "metric.type=\"cloudtasks.googleapis.com/queue/task_attempt_count\" resource.type=\"cloud_tasks_queue\" metric.label.\"response_code\"!=\"ok\" resource.label.\"queue_id\"=\"auditProjectQueue\"",
         "comparison": "COMPARISON_GT",
         "duration": "60s",
         "thresholdValue": 0,
@@ -18,10 +18,10 @@
           "count": 1
         }
       },
-      "displayName": "Cloud Task failure: rdrExportQueue"
+      "displayName": "Cloud Task failure: auditProjectQueue"
     }
   ],
-  "displayName": "Cloud Task failure: rdrExportQueue",
+  "displayName": "Cloud Task failure: auditProjectQueue",
   "documentation": {
     "content": "Playbook: https://broad.io/aou-playbook",
     "mimeType": "text/markdown"

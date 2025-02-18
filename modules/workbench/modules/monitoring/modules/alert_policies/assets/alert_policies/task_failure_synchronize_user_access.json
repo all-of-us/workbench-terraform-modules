@@ -19,10 +19,10 @@
           "count": 1
         }
       },
-      "displayName": "synchronizeAccessQueue task failure"
+      "displayName": "Cloud Task failure: synchronizeAccessQueue"
     }
   ],
-  "displayName": "Cloud Task failure: synchronizeUserAccess",
+  "displayName": "Cloud Task failure: synchronizeAccessQueue",
   "documentation": {
     "content": "Playbook: https://broad.io/aou-playbook",
     "mimeType": "text/markdown"
