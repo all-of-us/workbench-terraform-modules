@@ -19,7 +19,7 @@
           "count": 1
         }
       },
-      "displayName": "egressEventQueue task failure"
+      "displayName": "Cloud Task failure: egressEventQueue"
     }
   ],
   "displayName": "Cloud Task failure: egressEventQueue",
