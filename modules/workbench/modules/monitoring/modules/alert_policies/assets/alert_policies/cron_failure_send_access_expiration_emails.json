@@ -11,17 +11,17 @@
           }
         ],
         "duration": "89940s",
-        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"status\"=\"204\" metric.label.\"name\"=\"uploadReportingSnapshot\"",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"status\"=\"204\" metric.label.\"name\"=\"sendAccessExpirationEmails\"",
         "trigger": {
           "percent": 100
         }
       },
-      "displayName": "uploadReportingSnapshot Cron Signal Absent"
+      "displayName": "sendAccessExpirationEmails Cron Signal Absent"
     }
   ],
-  "displayName": "Cron Failure: Upload Reporting Snapshot",
+  "displayName": "Cron Failure: sendAccessExpirationEmails",
   "documentation": {
-    "content": "This job checks that the most recent reporting upload job succeeded..\n",
+    "content": "This job checks that the most recent sendAccessExpirationEmails job succeeded..\n",
     "mimeType": "text/markdown"
   },
   "enabled": true,

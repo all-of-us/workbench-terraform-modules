@@ -3,8 +3,8 @@
   "conditions": [
     {
       "conditionAbsent": {
-        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkFreeTierBillingUsageCloudTask\" metric.label.\"status\"=\"204\"",
-        "duration": "7200s",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkObjectNameSize\" metric.label.\"status\"=\"204\"",
+        "duration": "89940s",
         "trigger": {
           "percent": 100
         },
@@ -16,15 +16,14 @@
           }
         ]
       },
-      "displayName": "checkFreeTierBillingUsageCloudTask Cron Signal Absent",
-      "name": "projects/all-of-us-rw-prod/alertPolicies/10595350486947347942/conditions/10595350486947344889"
+      "displayName": "checkObjectNameSize Cron Signal Absent"
     }
   ],
   "documentation": {
-    "content": "Job to find and alert users that have exceeded their free tier billing usage.\n",
+    "content": "Job to find and alert users that created files with very large names.\n",
     "mimeType": "text/markdown"
   },
-  "displayName": "Cron Failure: Free Tier Billing Usage",
+  "displayName": "Cron Failure: Check object names",
   "enabled": true,
   "notificationChannels": [
     "projects/${project_id}/notificationChannels/${notification_channel_id}"
