@@ -4,7 +4,7 @@
     {
       "conditionAbsent": {
         "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkInitialCreditsExpiration\" metric.label.\"status\"=\"204\"",
-        "duration": "7200s",
+        "duration": "89940s",
         "trigger": {
           "percent": 100
         },

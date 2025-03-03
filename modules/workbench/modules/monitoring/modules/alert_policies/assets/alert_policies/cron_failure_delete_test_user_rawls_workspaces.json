@@ -10,7 +10,7 @@
             "perSeriesAligner": "ALIGN_RATE"
           }
         ],
-        "duration": "25200s",
+        "duration": "89940s",
         "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"deleteTestUserWorkspacesOrphanedInRawls\" metric.label.\"status\"=\"204\"",
         "trigger": {
           "percent": 100
