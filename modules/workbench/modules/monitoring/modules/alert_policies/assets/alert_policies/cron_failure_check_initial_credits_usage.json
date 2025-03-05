@@ -3,8 +3,8 @@
   "conditions": [
     {
       "conditionAbsent": {
-        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkObjectNameSize\" metric.label.\"status\"=\"204\"",
-        "duration": "43200s",
+        "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkInitialCreditsUsage\" metric.label.\"status\"=\"204\"",
+        "duration": "89940s",
         "trigger": {
           "percent": 100
         },
@@ -16,14 +16,15 @@
           }
         ]
       },
-      "displayName": "checkObjectNameSize Cron Signal Absent"
+      "displayName": "checkInitialCreditsUsage Cron Signal Absent",
+      "name": "projects/all-of-us-rw-prod/alertPolicies/10595350486947347942/conditions/10595350486947344889"
     }
   ],
   "documentation": {
-    "content": "Job to find and alert users that created files with very large names.\n",
+    "content": "Job to find and alert users that have exceeded their initial credits usage.\n",
     "mimeType": "text/markdown"
   },
-  "displayName": "Cron Failure: Check object names",
+  "displayName": "Cron Failure: checkInitialCreditsUsage",
   "enabled": true,
   "notificationChannels": [
     "projects/${project_id}/notificationChannels/${notification_channel_id}"
