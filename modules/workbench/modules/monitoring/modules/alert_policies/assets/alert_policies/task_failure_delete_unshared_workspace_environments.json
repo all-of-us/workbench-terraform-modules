@@ -14,7 +14,7 @@
         "comparison": "COMPARISON_GT",
 
         "duration": "60s",
-        "thresholdValue": 0,
+        "thresholdValue": 0.1,
         "trigger": {
           "count": 1
         }
