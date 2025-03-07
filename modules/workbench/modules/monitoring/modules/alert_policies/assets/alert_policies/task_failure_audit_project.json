@@ -13,7 +13,7 @@
         "filter": "metric.type=\"cloudtasks.googleapis.com/queue/task_attempt_count\" resource.type=\"cloud_tasks_queue\" metric.label.\"response_code\"!=\"ok\" resource.label.\"queue_id\"=\"auditProjectQueue\"",
         "comparison": "COMPARISON_GT",
         "duration": "60s",
-        "thresholdValue": 0.1,
+        "thresholdValue": 0,
         "trigger": {
           "count": 1
         }
