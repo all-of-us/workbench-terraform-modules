@@ -5,12 +5,12 @@
       "conditionAbsent": {
         "aggregations": [
           {
-            "alignmentPeriod": "60s",
+            "alignmentPeriod": "3600s",
             "crossSeriesReducer": "REDUCE_SUM",
             "perSeriesAligner": "ALIGN_RATE"
           }
         ],
-        "duration": "89940s",
+        "duration": "84600s",
         "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"status\"=\"204\" metric.label.\"name\"=\"sendAccessExpirationEmails\"",
         "trigger": {
           "percent": 100
