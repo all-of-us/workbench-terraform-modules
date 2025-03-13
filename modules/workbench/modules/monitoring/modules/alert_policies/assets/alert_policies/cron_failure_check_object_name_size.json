@@ -4,13 +4,13 @@
     {
       "conditionAbsent": {
         "filter": "metric.type=\"logging.googleapis.com/user/cron_job_completion\" resource.type=\"gae_app\" metric.label.\"name\"=\"checkObjectNameSize\" metric.label.\"status\"=\"204\"",
-        "duration": "89940s",
+        "duration": "84600s",
         "trigger": {
           "percent": 100
         },
         "aggregations": [
           {
-            "alignmentPeriod": "60s",
+            "alignmentPeriod": "3600s",
             "perSeriesAligner": "ALIGN_RATE",
             "crossSeriesReducer": "REDUCE_SUM"
           }
