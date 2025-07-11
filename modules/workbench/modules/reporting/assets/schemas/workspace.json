@@ -77,6 +77,18 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "rp_aian_research_details",
+    "type": "STRING",
+    "description": "Additional details about American Indian and Alaska Native research.",
+    "mode": "NULLABLE"
+  },
+    {
+    "name": "rp_aian_research_type",
+    "type": "STRING",
+    "description": "Type of research involving American Indian and Alaska Native populations.",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "rp_ancestry",
     "type": "BOOLEAN",
     "description": "If true, user has reported this workspace will study ancestry.",
