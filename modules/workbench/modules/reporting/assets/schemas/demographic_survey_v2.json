@@ -5,12 +5,6 @@
     "type": "INTEGER"
   },
   {
-    "name": "demographic_survey_v2_id",
-    "type": "INTEGER",
-    "description": "ID of the demographic survey response.",
-    "mode": "NULLABLE"
-  },
-  {
     "name": "user_id",
     "type": "INTEGER",
     "description": "ID of the user who created the survey response.",
