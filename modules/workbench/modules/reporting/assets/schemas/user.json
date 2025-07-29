@@ -393,6 +393,24 @@
     "mode": "NULLABLE"
   },
   {
+    "name": "dsv2_ethnic_category",
+    "type": "STRING",
+    "description": "User-reported ethnic category information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_gender_identity",
+    "type": "STRING",
+    "description": "User-reported gender identity information",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_sexual_orientation",
+    "type": "STRING",
+    "description": "User-reported sexual orientation information",
+    "mode": "NULLABLE"
+  },
+  {
     "name": "dsv2_ethnicity_ai_an_other_text",
     "type": "STRING",
     "description": "Other text for American Indian/Alaska Native ethnicity.",
