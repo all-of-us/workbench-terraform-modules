@@ -338,6 +338,60 @@
     "description": "Time the survey was completed.",
     "mode": "NULLABLE"
   },
+    {
+    "name": "dsv2_disability_concentrating",
+    "type": "STRING",
+    "description": "Disability status for concentrating.",
+    "mode": "NULLABLE"
+  },
+{
+    "name": "dsv2_disability_dressing",
+    "type": "STRING",
+    "description": "Disability status for dressing.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_disability_errands",
+    "type": "STRING",
+    "description": "Disability status for doing errands.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_disability_hearing",
+    "type": "STRING",
+    "description": "Disability status for hearing.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_disability_other_text",
+    "type": "STRING",
+    "description": "Other text for disability.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_disability_seeing",
+    "type": "STRING",
+    "description": "Disability status for seeing.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_disability_walking",
+    "type": "STRING",
+    "description": "Disability status for walking.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_disadvantaged",
+    "type": "STRING",
+    "description": "Disadvantaged status.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dsv2_education",
+    "type": "STRING",
+    "description": "Education level.",
+    "mode": "NULLABLE"
+  },
   {
     "name": "dsv2_ethnicity_ai_an_other_text",
     "type": "STRING",
@@ -374,16 +428,16 @@
     "description": "Other text for Native Hawaiian/Pacific Islander ethnicity.",
     "mode": "NULLABLE"
   },
+    {
+    "name": "dsv2_ethnicity_other_text",
+    "type": "STRING",
+    "description": "Other text for ethnicity not covered by other categories.",
+    "mode": "NULLABLE"
+  },
   {
     "name": "dsv2_ethnicity_white_other_text",
     "type": "STRING",
     "description": "Other text for White ethnicity.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_ethnicity_other_text",
-    "type": "STRING",
-    "description": "Other text for ethnicity not covered by other categories.",
     "mode": "NULLABLE"
   },
   {
@@ -410,6 +464,12 @@
     "description": "Other text for sex at birth.",
     "mode": "NULLABLE"
   },
+    {
+    "name": "dsv2_survey_comments",
+    "type": "STRING",
+    "description": "General comments about the survey.",
+    "mode": "NULLABLE"
+  },
   {
     "name": "dsv2_year_of_birth",
     "type": "INTEGER",
@@ -420,66 +480,6 @@
     "name": "dsv2_year_of_birth_prefer_not",
     "type": "BOOLEAN",
     "description": "Whether the user preferred not to answer year of birth.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disability_hearing",
-    "type": "STRING",
-    "description": "Disability status for hearing.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disability_seeing",
-    "type": "STRING",
-    "description": "Disability status for seeing.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disability_concentrating",
-    "type": "STRING",
-    "description": "Disability status for concentrating.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disability_walking",
-    "type": "STRING",
-    "description": "Disability status for walking.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disability_dressing",
-    "type": "STRING",
-    "description": "Disability status for dressing.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disability_errands",
-    "type": "STRING",
-    "description": "Disability status for doing errands.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disability_other_text",
-    "type": "STRING",
-    "description": "Other text for disability.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_education",
-    "type": "STRING",
-    "description": "Education level.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_disadvantaged",
-    "type": "STRING",
-    "description": "Disadvantaged status.",
-    "mode": "NULLABLE"
-  },
-  {
-    "name": "dsv2_survey_comments",
-    "type": "STRING",
-    "description": "General comments about the survey.",
     "mode": "NULLABLE"
   }
 ]
