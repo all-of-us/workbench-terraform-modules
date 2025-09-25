@@ -243,5 +243,11 @@
     "type": "STRING",
     "description": "The category of featured workspace that contains this workspace, if it is featured, e.g. 'COMMUNITY'",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "active_status",
+    "type": "STRING",
+    "description": "Indicates the status of the workspace. It can be either 'Active' or 'Deleted'",
+    "mode": "NULLABLE"
   }
 ]
