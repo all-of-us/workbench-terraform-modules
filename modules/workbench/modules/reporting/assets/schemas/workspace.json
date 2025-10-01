@@ -249,5 +249,17 @@
     "type": "STRING",
     "description": "Indicates the status of the workspace. It can be either 'Active' or 'Deleted'",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "focus_on_under_represented_populations",
+    "type": "BOOLEAN",
+    "description": "Represents if researchers has selected YES for question 'Will your study focus on any historically underrepresented populations?'",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "workspace_demographic",
+    "type": "STRING",
+    "description": "Demographic information about the populations being studied in this workspace.",
+    "mode": "NULLABLE"
   }
 ]
