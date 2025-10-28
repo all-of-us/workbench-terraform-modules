@@ -249,5 +249,71 @@
     "type": "STRING",
     "description": "Indicates the status of the workspace. It can be either 'Active' or 'Deleted'",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "focus_on_under_represented_populations",
+    "type": "BOOLEAN",
+    "description": "Represents if researchers has selected YES for question 'Will your study focus on any historically underrepresented populations?'",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_race_ethnicity",
+    "type": "STRING",
+    "description": "Ethnicity and race information about the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_age",
+    "type": "STRING",
+    "description": "Age information about the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_access_to_care",
+    "type": "STRING",
+    "description": "Access to care information about the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_disability_status",
+    "type": "STRING",
+    "description": "Disability status of the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_education_level",
+    "type": "STRING",
+    "description": "Education level of the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_income_level",
+    "type": "STRING",
+    "description": "Income level of the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_geography",
+    "type": "STRING",
+    "description": "Geographical information about the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_sexual_orientation",
+    "type": "STRING",
+    "description": "Sexual orientation information about the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_gender_identity",
+    "type": "STRING",
+    "description": "Gender identity of the populations being studied in this workspace.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "wd_sex_at_birth",
+    "type": "STRING",
+    "description": "Sex at birth information of the populations being studied in this workspace.",
+    "mode": "NULLABLE"
   }
 ]
