@@ -1,0 +1,25 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "workspace_id",
+    "type": "INTEGER",
+    "description": "Primary key of the workspace table in the Workbench application database. Join with workspace_id in workspace table to get more workspace information.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "user_id",
+    "type": "INTEGER",
+    "description": "User ID of user. Join with user_id in user table to get more user information.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "role",
+    "type": "STRING",
+    "description": "The user's role on the workspace.",
+    "mode": "NULLABLE"
+  }
+]
