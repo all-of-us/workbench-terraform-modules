@@ -1,0 +1,28 @@
+{
+  "name": "reporting_upload_failure",
+  "description": "Latest reporting snapshot failures",
+  "filter": "resource.type=\"gae_app\"\nlogName=\"projects/${project_id}/logs/%2Fvar%2Flog%2Fapp\"\ntextPayload=~\"Reporting Upload Failure:.*snapshotTimestamp=(\\\\d+)\"",
+  "metricDescriptor": {
+    "name": "projects/${project_id}/metricDescriptors/logging.googleapis.com/user/reporting_upload_failure",
+    "labels": [
+      {
+        "key": "insertId",
+        "description": "Insert ID. Useful for finding the log entry later"
+      },
+      {
+        "key": "snapshot_timestamp",
+        "valueType": "INT64",
+        "description": "Epoch timestamp of the failed reporting snapshot"
+      }
+    ],
+    "metricKind": "DELTA",
+    "valueType": "INT64",
+    "unit": "1",
+    "description": "Reporting snapshot failures",
+    "type": "logging.googleapis.com/user/reporting_upload_failure"
+  },
+  "labelExtractors": {
+    "insertId": "EXTRACT(insertId)",
+    "snapshot_timestamp": "REGEXP_EXTRACT(textPayload, \"Reporting Upload Failure:.*snapshotTimestamp=(\\\\d+)\"))"
+  }
+}
