@@ -7,7 +7,7 @@
           {
             "alignmentPeriod": "60s",
             "crossSeriesReducer": "REDUCE_SUM",
-            "perSeriesAligner": "ALIGN_RATE"
+            "perSeriesAligner": "ALIGN_SUM"
           }
         ],
         "comparison":  "COMPARISON_GT",
