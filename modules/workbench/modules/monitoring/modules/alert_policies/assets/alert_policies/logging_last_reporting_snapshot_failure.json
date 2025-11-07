@@ -11,9 +11,9 @@
           }
         ],
         "comparison":  "COMPARISON_GT",
-        "duration": "180s",
+        "duration": "0s",
         "filter": "metric.type=\"logging.googleapis.com/user/reporting_upload_failure\" resource.type=\"gae_app\"",
-        "thresholdValue": 1,
+        "thresholdValue": 0.5,
         "trigger": {
           "count": 1
         }
