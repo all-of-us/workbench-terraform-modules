@@ -23,6 +23,6 @@
   },
   "labelExtractors": {
     "insertId": "EXTRACT(insertId)",
-    "snapshot_timestamp": "REGEXP_EXTRACT(textPayload, \"Reporting Upload Failure:.*[snapshotTimestamp=(\\\\d+)]\")"
+    "snapshot_timestamp": "REGEXP_EXTRACT(textPayload, \"snapshotTimestamp=(\\\\d+)\")"
   }
 }
