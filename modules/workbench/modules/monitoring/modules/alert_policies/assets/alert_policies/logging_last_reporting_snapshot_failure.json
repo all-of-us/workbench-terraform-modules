@@ -23,7 +23,7 @@
   ],
   "displayName": "Upload Reporting Snapshot Failure",
   "documentation": {
-    "content": "This job monitors for failed reporting snapshot uploads\n",
+    "content": "This alert will fire if a Workbench Reporting Dataset (WRD) upload job has failed. The alert will auto-resolve, but it still requires manual investigation.\n",
     "mimeType": "text/markdown"
   },
   "enabled": true,
