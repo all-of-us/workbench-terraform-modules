@@ -1,0 +1,33 @@
+{
+  "combiner": "OR",
+  "conditions": [
+    {
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "60s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "perSeriesAligner": "ALIGN_SUM"
+          }
+        ],
+        "comparison":  "COMPARISON_GT",
+        "duration": "0s",
+        "filter": "metric.type=\"logging.googleapis.com/user/reporting_upload_failure\" resource.type=\"gae_app\"",
+        "thresholdValue": 0.5,
+        "trigger": {
+          "count": 1
+        }
+      },
+      "displayName": "Upload Reporting Snapshot Failure"
+    }
+  ],
+  "displayName": "Upload Reporting Snapshot Failure",
+  "documentation": {
+    "content": "This alert will fire if a Workbench Reporting Dataset (WRD) upload job has failed. The alert will auto-resolve, but it still requires manual investigation.\n",
+    "mimeType": "text/markdown"
+  },
+  "enabled": true,
+  "notificationChannels": [
+    "projects/${project_id}/notificationChannels/${notification_channel_id}"
+  ]
+}
