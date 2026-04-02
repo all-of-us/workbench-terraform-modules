@@ -315,5 +315,17 @@
     "type": "STRING",
     "description": "Sex at birth information of the populations being studied in this workspace.",
     "mode": "NULLABLE"
+  },
+  {
+    "name": "migrated_vwb_workspace_id",
+    "type": "STRING",
+    "description": "Id of the VWB workspace created when migrating this workspace from RW 1.0 to VWB",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "migration_state",
+    "type": "STRING",
+    "description": "Status of the RW 1.0 to VWB migration for this workspace",
+    "mode": "NULLABLE"
   }
 ]
