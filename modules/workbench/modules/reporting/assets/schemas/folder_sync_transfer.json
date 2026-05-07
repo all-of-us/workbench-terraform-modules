@@ -1,0 +1,43 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "created_by_user_id",
+    "type": "INTEGER",
+    "description": "User ID of user that initiated the transfer. Join with user_id in user table to get more user information.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "started",
+    "type": "TIMESTAMP",
+    "description": "Timestamp the transfer started.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "finished",
+    "type": "TIMESTAMP",
+    "description": "Timestamp the transfer finished.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "transfer_job_name",
+    "type": "STRING",
+    "description": "Name of the Storage Transfer Service job.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "transfer_state",
+    "type": "STRING",
+    "description": "Status of the transfer.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "source_workspace_namespace",
+    "type": "STRING",
+    "description": "The workspace_namespace of the source 1.0 workspace",
+    "mode": "NULLABLE"
+  }
+]
