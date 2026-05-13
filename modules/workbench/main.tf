@@ -26,8 +26,7 @@ module "artifact_registry" {
   source = "./modules/artifact_registry"
   project_id = var.project_id
   aou_env = var.aou_env
-  registered_tier_group_name = var.registered_tier_group_name
-  controlled_tier_group_name = var.controlled_tier_group_name
+  reader_group_names = var.gar_reader_group_names
 }
 
 # Workload Identity

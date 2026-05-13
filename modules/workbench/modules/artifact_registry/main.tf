@@ -14,18 +14,11 @@ resource "google_artifact_registry_repository" "gar_remote_docker" {
   }
 }
 
-resource "google_artifact_registry_repository_iam_member" "remote_docker_iam-member_rt" {
-  project = google_artifact_registry_repository.gar_remote_docker.project
-  location = google_artifact_registry_repository.gar_remote_docker.location
+resource "google_artifact_registry_repository_iam_member" "remote_docker_reader" {
+  for_each   = toset(var.reader_group_names)
+  project    = google_artifact_registry_repository.gar_remote_docker.project
+  location   = google_artifact_registry_repository.gar_remote_docker.location
   repository = google_artifact_registry_repository.gar_remote_docker.name
-  role = "roles/artifactregistry.reader"
-  member = join("", ["group:", var.registered_tier_group_name])
-}
-
-resource "google_artifact_registry_repository_iam_member" "remote_docker_iam-member_ct" {
-  project = google_artifact_registry_repository.gar_remote_docker.project
-  location = google_artifact_registry_repository.gar_remote_docker.location
-  repository = google_artifact_registry_repository.gar_remote_docker.name
-  role = "roles/artifactregistry.reader"
-  member = join("", ["group:", var.controlled_tier_group_name])
+  role       = "roles/artifactregistry.reader"
+  member     = "group:${each.value}"
 }
