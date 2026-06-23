@@ -1,0 +1,31 @@
+[
+  {
+    "description": "Time snapshot was taken, in Epoch milliseconds. Same across all rows and all tables in the snapshot, and uniquely defines a particular snapshot.",
+    "name": "snapshot_timestamp",
+    "type": "INTEGER"
+  },
+  {
+    "name": "legacy_workspace_id",
+    "type": "INTEGER",
+    "description": "Workspace ID of workspace being archived. Join with workspace_id in workspace table to get more information.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "gcs_path",
+    "type": "STRING",
+    "description": "URL path of the destination folder in the archive bucket",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "created",
+    "type": "TIMESTAMP",
+    "description": "Timestamp the archive was created.",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "status",
+    "type": "STRING",
+    "description": "Status of the archive.",
+    "mode": "NULLABLE"
+  }
+]
