@@ -12,6 +12,18 @@ resource "google_artifact_registry_repository" "gar_remote_docker" {
       public_repository = "DOCKER_HUB"
     }
   }
+  cleanup_policies {
+    action = "DELETE"
+    id = "delete-older-than-30-days"
+
+    condition {
+      older_than = "2592000s"
+      package_name_prefixes = []
+      tag_prefixes = []
+      tag_state = "ANY"
+      version_name_prefixes = []
+    }
+  }
 }
 
 resource "google_artifact_registry_repository_iam_member" "remote_docker_reader" {

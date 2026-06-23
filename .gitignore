@@ -3,3 +3,8 @@
 *.backup
 *.iml
 .DS_Store
+**/.terraform
+**/*.tfvars
+**/*.tfstate*
+**/backend.tf
+**/.terraform.lock*
