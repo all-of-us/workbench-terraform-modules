@@ -14,7 +14,7 @@ resource "google_artifact_registry_repository" "gar_remote_docker" {
   }
     cleanup_policies {
     action = "DELETE"
-    id = "delete-older-than-30-days"
+    id = "delete-older-than-7-days"
 
     condition {
       older_than = "604800s"
