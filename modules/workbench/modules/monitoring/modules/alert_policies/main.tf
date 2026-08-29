@@ -88,4 +88,10 @@ resource "google_monitoring_alert_policy" "policy" {
   user_labels = lookup(each.value, "userLabels", null)
   # Don't set notification if input is empty.
   notification_channels = var.notification_channel_id == "" ? null : each.value.notificationChannels
+
+  alert_strategy {
+    notification_channel_strategy {
+      renotify_interval = "1d"
+    }
+  }
 }
